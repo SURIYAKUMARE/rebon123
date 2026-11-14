@@ -1,0 +1,84 @@
+{
+  "day": 1,
+  "part": "A",
+  "language": "tanglish",
+  "title": "Meet Ren — What Cloud Really Is",
+  "duration_minutes": 14,
+  "blocks": [
+    {
+      "block": 0,
+      "type": "lesson_intro",
+      "heading": "STUDENT MODE · LESSON 1 OF 10",
+      "board_text": "Student Mode = cloud literacy BEFORE the console.\n\nToday:\n• Who Ren is and how she teaches\n• Cloud = rent, not own\n• Why this mode exists\n\nNo AWS console today. Board + voice only.",
+      "ren_voice": "Naan Ren. Top companies-la cloud work panniten. College system job-ready people create pannala — adhaan naan teach panren. Student Mode short — pathu lessons fundamentals. Console Professional Mode-la. Innikku: cloud enna nu clear aaganum.",
+      "check_question": null
+    },
+    {
+      "block": 1,
+      "type": "concept_intro",
+      "heading": "CLOUD = RENT, NOT OWN",
+      "board_text": "Cloud computing = using computers, storage, and software over the internet that someone else owns and maintains.\n\nLike electricity: you do not buy a power plant. You connect, use, and pay for what you used.\n\nBig providers: AWS · Azure · Google Cloud",
+      "ren_voice": "Cloud naa internet moolama computers rent panrathu — office-la server vangi vechikkura maadhiri illa. Use pannadhukku mattum pay. AWS, Azure, Google Cloud data centers own panraanga.",
+      "check_question": {
+        "question": "Oru sentence-la — cloud buying servers-kitten enna different?",
+        "expected_response_type": "open",
+        "accept_keywords": [
+          "rent",
+          "own",
+          "buy",
+          "internet",
+          "pay",
+          "use"
+        ],
+        "ren_response_if_correct": "Sari — rent, own illa. Adhaan foundation.",
+        "ren_response_if_incorrect": "Rent versus buy think pannunga. Cloud = internet-la vera yaarodhu computers rent."
+      }
+    },
+    {
+      "block": 2,
+      "type": "why_companies",
+      "heading": "WHY THIS MODE COMES FIRST",
+      "board_text": "College often jumps to buttons before mental models.\nResult: people click without knowing why the bill exists.\n\nRebon order:\n1) Understand the problem cloud solves\n2) Then touch the console in Professional Mode",
+      "ren_voice": "Day one-lae console-la push panna matten. First mental model. Apram AWS open pannumbodhu every service-ku meaning irukkum.",
+      "check_question": {
+        "question": "Student Mode-la console delay panradhu yen?",
+        "expected_response_type": "open",
+        "accept_keywords": [
+          "fundament",
+          "mental",
+          "model",
+          "understand",
+          "before",
+          "why"
+        ],
+        "ren_response_if_correct": "Correct — fundamentals first, then clicks have meaning.",
+        "ren_response_if_incorrect": "Model illama click panna button-pusher aaguvinga, engineer illa."
+      }
+    },
+    {
+      "block": 3,
+      "type": "mistake_simulation",
+      "heading": "JUNIOR TRAP",
+      "board_text": "Trap: memorizing service names with no picture of rent vs own.\nHabit: always ask — what problem does this solve for the business?",
+      "ren_voice": "Juniors EC2 S3 VPC list maadhiri padichuttu irupaanga. Pressure-la useless. Habit: every concept business pain remove panradhaa nu kelunga.",
+      "check_question": null
+    },
+    {
+      "block": 4,
+      "type": "summary",
+      "heading": "LOCK IT IN",
+      "board_text": "• Cloud = rent infrastructure over the internet\n• Student Mode = literacy before console\n• Next: why companies actually pay for cloud",
+      "ren_voice": "Lock: cloud = rent. Pathu short lessons. Console earn pannathukku apram.",
+      "check_question": null
+    }
+  ],
+  "lesson_summary": {
+    "board_text": "Cloud = rent. Console later.",
+    "ren_voice": "Lesson 1 done. Clear-aa irukanum."
+  },
+  "doubt_session": {
+    "ren_opening": "Rent versus own-la doubt irukka?",
+    "wait_for_response": true,
+    "ren_closing": "Nalla. Lesson 2-ku varom."
+  }
+}

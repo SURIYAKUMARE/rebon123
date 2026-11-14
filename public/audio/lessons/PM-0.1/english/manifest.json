@@ -1,0 +1,385 @@
+{
+  "lesson_id": "pm_console_intro",
+  "lesson_file": "PM-0.1_english.json",
+  "lesson_folder": "PM-0.1",
+  "language": "english",
+  "engine": "indic-parler-tts",
+  "voice": "indic-parler-indian-female",
+  "generated_at": "2026-10-07T06:08:14.347226+00:00",
+  "clip_count": 53,
+  "url_prefix": "/audio/lessons/PM-0.1/english",
+  "clips": {
+    "207c12d46cbe83d8": {
+      "file": "207c12d46cbe83d8.wav",
+      "url": "/audio/lessons/PM-0.1/english/207c12d46cbe83d8.wav",
+      "bytes": 1921068,
+      "text": "Welcome to Finova. I am Ren. Before any service deep-dive — IAM, tickets, VPC — you need to know how to use and handle the AWS console. What is on this screen. Where Region lives. Where Account ID lives. How search works. Why something looks missing when it is not. This is Lesson one for every Professional path. Master the console first. Then we earn the rest.",
+      "text_preview": "Welcome to Finova. I am Ren. Before any service deep-dive — IAM, tickets, VPC — you need to know how to use and handle t"
+    },
+    "e731a1fdfe1082b2": {
+      "file": "e731a1fdfe1082b2.wav",
+      "url": "/audio/lessons/PM-0.1/english/e731a1fdfe1082b2.wav",
+      "bytes": 1032236,
+      "text": "In your first week at any cloud team, you are going to open this console and something is going to look wrong. A resource will be missing. A teammate will say 'which account are you in?' and you will not know where to look. These are not skill problems — they are familiarity problems. I am going to fix them right now, in this console, before you do anything else.",
+      "text_preview": "In your first week at any cloud team, you are going to open this console and something is going to look wrong. A resourc"
+    },
+    "0961463586a5e9c3": {
+      "file": "0961463586a5e9c3.wav",
+      "url": "/audio/lessons/PM-0.1/english/0961463586a5e9c3.wav",
+      "bytes": 745516,
+      "text": "Watch this. I am not going to do anything complicated. I am going to change one setting and show you what happens to your resources.",
+      "text_preview": "Watch this. I am not going to do anything complicated. I am going to change one setting and show you what happens to you"
+    },
+    "6614f7520795e0a1": {
+      "file": "6614f7520795e0a1.wav",
+      "url": "/audio/lessons/PM-0.1/english/6614f7520795e0a1.wav",
+      "bytes": 556076,
+      "text": "I have three EC2 instances running right now. Mumbai. ap-south-1. All three active.",
+      "text_preview": "I have three EC2 instances running right now. Mumbai. ap-south-1. All three active."
+    },
+    "bacfcdcdeddcd40e": {
+      "file": "bacfcdcdeddcd40e.wav",
+      "url": "/audio/lessons/PM-0.1/english/bacfcdcdeddcd40e.wav",
+      "bytes": 290860,
+      "text": "I am going to change exactly one thing. Watch the top right.",
+      "text_preview": "I am going to change exactly one thing. Watch the top right."
+    },
+    "a6e1d82d02b5ffcc": {
+      "file": "a6e1d82d02b5ffcc.wav",
+      "url": "/audio/lessons/PM-0.1/english/a6e1d82d02b5ffcc.wav",
+      "bytes": 194604,
+      "text": "I switch the region to Virginia.",
+      "text_preview": "I switch the region to Virginia."
+    },
+    "679a28fe5571c73d": {
+      "file": "679a28fe5571c73d.wav",
+      "url": "/audio/lessons/PM-0.1/english/679a28fe5571c73d.wav",
+      "bytes": 157740,
+      "text": "Look at the instances list.",
+      "text_preview": "Look at the instances list."
+    },
+    "8898352989ff7a53": {
+      "file": "8898352989ff7a53.wav",
+      "url": "/audio/lessons/PM-0.1/english/8898352989ff7a53.wav",
+      "bytes": 2623540,
+      "text": "Zero instances. I did not delete them. They are still running. They are still billing this account. They are in Mumbai. But I am now looking at Virginia — and Virginia has nothing. The region selector does not filter what you see. It changes your entire view of the account. This is the single most common thing that sends engineers into a debugging spiral in their first month. They spend an hour looking for a resource that was never missing.",
+      "text_preview": "Zero instances. I did not delete them. They are still running. They are still billing this account. They are in Mumbai. "
+    },
+    "e0ab67049f238a6a": {
+      "file": "e0ab67049f238a6a.wav",
+      "url": "/audio/lessons/PM-0.1/english/e0ab67049f238a6a.wav",
+      "bytes": 547884,
+      "text": "Before I explain the region selector — in your own words, tell me what you just saw happen.",
+      "text_preview": "Before I explain the region selector — in your own words, tell me what you just saw happen."
+    },
+    "011ba865a039d25a": {
+      "file": "011ba865a039d25a.wav",
+      "url": "/audio/lessons/PM-0.1/english/011ba865a039d25a.wav",
+      "bytes": 771116,
+      "text": "Exactly right. The resources did not move. The view moved. That distinction is the whole lesson. Now let me make sure you can always prevent it.",
+      "text_preview": "Exactly right. The resources did not move. The view moved. That distinction is the whole lesson. Now let me make sure yo"
+    },
+    "d929307c9608a5de": {
+      "file": "d929307c9608a5de.wav",
+      "url": "/audio/lessons/PM-0.1/english/d929307c9608a5de.wav",
+      "bytes": 965676,
+      "text": "Think about what changed and what did not change. Did the instances themselves do anything? Or did something about how you were looking at them change?",
+      "text_preview": "Think about what changed and what did not change. Did the instances themselves do anything? Or did something about how y"
+    },
+    "1bb4e2cbbaa3c0a4": {
+      "file": "1bb4e2cbbaa3c0a4.wav",
+      "url": "/audio/lessons/PM-0.1/english/1bb4e2cbbaa3c0a4.wav",
+      "bytes": 503852,
+      "text": "The region selector is at the top right of every page in this console. It never moves.",
+      "text_preview": "The region selector is at the top right of every page in this console. It never moves."
+    },
+    "6a2cec3acef3b231": {
+      "file": "6a2cec3acef3b231.wav",
+      "url": "/audio/lessons/PM-0.1/english/6a2cec3acef3b231.wav",
+      "bytes": 57388,
+      "text": "Click it.",
+      "text_preview": "Click it."
+    },
+    "77c5fed7a9ff82af": {
+      "file": "77c5fed7a9ff82af.wav",
+      "url": "/audio/lessons/PM-0.1/english/77c5fed7a9ff82af.wav",
+      "bytes": 1215532,
+      "text": "This is the list of AWS data center locations around the world. Mumbai is ap-south-1. Singapore is ap-southeast-1. Virginia is us-east-1.",
+      "text_preview": "This is the list of AWS data center locations around the world. Mumbai is ap-south-1. Singapore is ap-southeast-1. Virgi"
+    },
+    "27342fe732f75de1": {
+      "file": "27342fe732f75de1.wav",
+      "url": "/audio/lessons/PM-0.1/english/27342fe732f75de1.wav",
+      "bytes": 501804,
+      "text": "Whichever region is selected — that is where resources are created when you build something.",
+      "text_preview": "Whichever region is selected — that is where resources are created when you build something."
+    },
+    "4dc194ed7ca27c7e": {
+      "file": "4dc194ed7ca27c7e.wav",
+      "url": "/audio/lessons/PM-0.1/english/4dc194ed7ca27c7e.wav",
+      "bytes": 361516,
+      "text": "And that is which resources you can see when you look for something.",
+      "text_preview": "And that is which resources you can see when you look for something."
+    },
+    "090ab4cd814b555e": {
+      "file": "090ab4cd814b555e.wav",
+      "url": "/audio/lessons/PM-0.1/english/090ab4cd814b555e.wav",
+      "bytes": 149548,
+      "text": "Switching back to Mumbai.",
+      "text_preview": "Switching back to Mumbai."
+    },
+    "ba2a524694d0fea2": {
+      "file": "ba2a524694d0fea2.wav",
+      "url": "/audio/lessons/PM-0.1/english/ba2a524694d0fea2.wav",
+      "bytes": 949292,
+      "text": "Three instances. Back. The habit: every time you open this console, before you create or look for anything — check the region selector first. Not after you cannot find something. Before.",
+      "text_preview": "Three instances. Back. The habit: every time you open this console, before you create or look for anything — check the r"
+    },
+    "a62801d86cec68b7": {
+      "file": "a62801d86cec68b7.wav",
+      "url": "/audio/lessons/PM-0.1/english/a62801d86cec68b7.wav",
+      "bytes": 1039404,
+      "text": "Your team's application runs in Mumbai. You need to create a new EC2 instance for it right now. The region selector shows us-east-1. What do you do before clicking anything else?",
+      "text_preview": "Your team's application runs in Mumbai. You need to create a new EC2 instance for it right now. The region selector show"
+    },
+    "92a1f1522cefa984": {
+      "file": "92a1f1522cefa984.wav",
+      "url": "/audio/lessons/PM-0.1/english/92a1f1522cefa984.wav",
+      "bytes": 1319472,
+      "text": "Switch the region to ap-south-1 first. Then create. If you create the instance in Virginia, it runs in Virginia — far from your application, higher latency, cross-region costs, and a confused team when they look for it in Mumbai.",
+      "text_preview": "Switch the region to ap-south-1 first. Then create. If you create the instance in Virginia, it runs in Virginia — far fr"
+    },
+    "b382330b6767b0ed": {
+      "file": "b382330b6767b0ed.wav",
+      "url": "/audio/lessons/PM-0.1/english/b382330b6767b0ed.wav",
+      "bytes": 1036332,
+      "text": "Look at the region selector. Your application is in Mumbai. The console is pointing at Virginia right now. What needs to change before you create anything?",
+      "text_preview": "Look at the region selector. Your application is in Mumbai. The console is pointing at Virginia right now. What needs to"
+    },
+    "28f0e6e7a384b50b": {
+      "file": "28f0e6e7a384b50b.wav",
+      "url": "/audio/lessons/PM-0.1/english/28f0e6e7a384b50b.wav",
+      "bytes": 388140,
+      "text": "Top right, next to the region selector. Your account name. Click it.",
+      "text_preview": "Top right, next to the region selector. Your account name. Click it."
+    },
+    "16af322a4047b370": {
+      "file": "16af322a4047b370.wav",
+      "url": "/audio/lessons/PM-0.1/english/16af322a4047b370.wav",
+      "bytes": 564268,
+      "text": "This 12-digit number is your Account ID. It is how AWS uniquely identifies your account.",
+      "text_preview": "This 12-digit number is your Account ID. It is how AWS uniquely identifies your account."
+    },
+    "c080454f6d737e82": {
+      "file": "c080454f6d737e82.wav",
+      "url": "/audio/lessons/PM-0.1/english/c080454f6d737e82.wav",
+      "bytes": 422956,
+      "text": "You need it for three things. Support tickets — AWS asks for it first.",
+      "text_preview": "You need it for three things. Support tickets — AWS asks for it first."
+    },
+    "c541b98d76a5ad13": {
+      "file": "c541b98d76a5ad13.wav",
+      "url": "/audio/lessons/PM-0.1/english/c541b98d76a5ad13.wav",
+      "bytes": 537644,
+      "text": "Cross-account IAM roles — when one account's resources need to access another account's resources.",
+      "text_preview": "Cross-account IAM roles — when one account's resources need to access another account's resources."
+    },
+    "a44573f9f912829f": {
+      "file": "a44573f9f912829f.wav",
+      "url": "/audio/lessons/PM-0.1/english/a44573f9f912829f.wav",
+      "bytes": 530476,
+      "text": "And whenever a teammate asks 'which account are you in?' — this is the answer. Three seconds.",
+      "text_preview": "And whenever a teammate asks 'which account are you in?' — this is the answer. Three seconds."
+    },
+    "9c54db8f20077db2": {
+      "file": "9c54db8f20077db2.wav",
+      "url": "/audio/lessons/PM-0.1/english/9c54db8f20077db2.wav",
+      "bytes": 1120300,
+      "text": "Your company has three AWS accounts — production, staging, and development. Your manager asks you to confirm you are in the development account before making any changes. What do you do?",
+      "text_preview": "Your company has three AWS accounts — production, staging, and development. Your manager asks you to confirm you are in "
+    },
+    "295df838448933cf": {
+      "file": "295df838448933cf.wav",
+      "url": "/audio/lessons/PM-0.1/english/295df838448933cf.wav",
+      "bytes": 1104432,
+      "text": "Click the account name, read the 12-digit Account ID, and cross-reference it with your team's account list. Matches dev — you are in the right place. Does not match — do not touch anything until you switch.",
+      "text_preview": "Click the account name, read the 12-digit Account ID, and cross-reference it with your team's account list. Matches dev "
+    },
+    "e818fcf16fa4ceaf": {
+      "file": "e818fcf16fa4ceaf.wav",
+      "url": "/audio/lessons/PM-0.1/english/e818fcf16fa4ceaf.wav",
+      "bytes": 1132080,
+      "text": "The answer is at the top right of this screen. Click the account name and look at the 12-digit number. Your team will have a reference list of which number is production, which is staging, which is dev.",
+      "text_preview": "The answer is at the top right of this screen. Click the account name and look at the 12-digit number. Your team will ha"
+    },
+    "8a66b81a219b11c5": {
+      "file": "8a66b81a219b11c5.wav",
+      "url": "/audio/lessons/PM-0.1/english/8a66b81a219b11c5.wav",
+      "bytes": 291884,
+      "text": "I am going to navigate to IAM twice. Watch the difference.",
+      "text_preview": "I am going to navigate to IAM twice. Watch the difference."
+    },
+    "9c4b4145e5b5f69f": {
+      "file": "9c4b4145e5b5f69f.wav",
+      "url": "/audio/lessons/PM-0.1/english/9c4b4145e5b5f69f.wav",
+      "bytes": 157740,
+      "text": "First way — Services menu.",
+      "text_preview": "First way — Services menu."
+    },
+    "393e9eed4d9fe519": {
+      "file": "393e9eed4d9fe519.wav",
+      "url": "/audio/lessons/PM-0.1/english/393e9eed4d9fe519.wav",
+      "bytes": 370732,
+      "text": "Click Security, Identity and Compliance. Find IAM in the list.",
+      "text_preview": "Click Security, Identity and Compliance. Find IAM in the list."
+    },
+    "db1614f78f29c356": {
+      "file": "db1614f78f29c356.wav",
+      "url": "/audio/lessons/PM-0.1/english/db1614f78f29c356.wav",
+      "bytes": 332844,
+      "text": "Three clicks through a category list. Every single time.",
+      "text_preview": "Three clicks through a category list. Every single time."
+    },
+    "39e104ff9ca6c486": {
+      "file": "39e104ff9ca6c486.wav",
+      "url": "/audio/lessons/PM-0.1/english/39e104ff9ca6c486.wav",
+      "bytes": 378924,
+      "text": "Second way. Search bar. Center of the top navigation bar.",
+      "text_preview": "Second way. Search bar. Center of the top navigation bar."
+    },
+    "3f6261e37e899721": {
+      "file": "3f6261e37e899721.wav",
+      "url": "/audio/lessons/PM-0.1/english/3f6261e37e899721.wav",
+      "bytes": 114732,
+      "text": "I type IAM.",
+      "text_preview": "I type IAM."
+    },
+    "e8a9e0ef95fd19e5": {
+      "file": "e8a9e0ef95fd19e5.wav",
+      "url": "/audio/lessons/PM-0.1/english/e8a9e0ef95fd19e5.wav",
+      "bytes": 869420,
+      "text": "Top result. And below it — direct shortcuts into Users, Roles, Policies. I can skip the IAM home page entirely and jump straight to what I need.",
+      "text_preview": "Top result. And below it — direct shortcuts into Users, Roles, Policies. I can skip the IAM home page entirely and jump "
+    },
+    "d791cd1d0f167296": {
+      "file": "d791cd1d0f167296.wav",
+      "url": "/audio/lessons/PM-0.1/english/d791cd1d0f167296.wav",
+      "bytes": 140332,
+      "text": "One click. Done.",
+      "text_preview": "One click. Done."
+    },
+    "58aad11a22afaf2d": {
+      "file": "58aad11a22afaf2d.wav",
+      "url": "/audio/lessons/PM-0.1/english/58aad11a22afaf2d.wav",
+      "bytes": 825388,
+      "text": "Engineers who have used AWS for years almost never open the Services menu. They type. Within two weeks, you will too.",
+      "text_preview": "Engineers who have used AWS for years almost never open the Services menu. They type. Within two weeks, you will too."
+    },
+    "66f8ade0d6347608": {
+      "file": "66f8ade0d6347608.wav",
+      "url": "/audio/lessons/PM-0.1/english/66f8ade0d6347608.wav",
+      "bytes": 370732,
+      "text": "When would you actually use the Services menu instead of the search bar?",
+      "text_preview": "When would you actually use the Services menu instead of the search bar?"
+    },
+    "e60eb1b87aea8355": {
+      "file": "e60eb1b87aea8355.wav",
+      "url": "/audio/lessons/PM-0.1/english/e60eb1b87aea8355.wav",
+      "bytes": 1182256,
+      "text": "Right — when you are exploring and do not know which service you need. The menu shows you categories to browse. Once you know the service name, search is always faster. The menu is for discovery, the search bar is for everything else.",
+      "text_preview": "Right — when you are exploring and do not know which service you need. The menu shows you categories to browse. Once you"
+    },
+    "8f9d69ba15b3d6b4": {
+      "file": "8f9d69ba15b3d6b4.wav",
+      "url": "/audio/lessons/PM-0.1/english/8f9d69ba15b3d6b4.wav",
+      "bytes": 835628,
+      "text": "Think about the one situation where typing into the search bar does not help. What would you need to not know for the search bar to be the wrong choice?",
+      "text_preview": "Think about the one situation where typing into the search bar does not help. What would you need to not know for the se"
+    },
+    "20438820ec205d81": {
+      "file": "20438820ec205d81.wav",
+      "url": "/audio/lessons/PM-0.1/english/20438820ec205d81.wav",
+      "bytes": 1155116,
+      "text": "Your turn. Use the search bar to navigate to EC2. Not the Services menu — the search bar. Once you land on the EC2 dashboard, tell me the region the console is showing.",
+      "text_preview": "Your turn. Use the search bar to navigate to EC2. Not the Services menu — the search bar. Once you land on the EC2 dashb"
+    },
+    "6f7258ba88365dbb": {
+      "file": "6f7258ba88365dbb.wav",
+      "url": "/audio/lessons/PM-0.1/english/6f7258ba88365dbb.wav",
+      "bytes": 432172,
+      "text": "Click the search bar at the top center of the screen. Then type EC2.",
+      "text_preview": "Click the search bar at the top center of the screen. Then type EC2."
+    },
+    "cbecf802989447ef": {
+      "file": "cbecf802989447ef.wav",
+      "url": "/audio/lessons/PM-0.1/english/cbecf802989447ef.wav",
+      "bytes": 290860,
+      "text": "One more thing, and this one surprises most people.",
+      "text_preview": "One more thing, and this one surprises most people."
+    },
+    "9cccf0ed06e7b7ba": {
+      "file": "9cccf0ed06e7b7ba.wav",
+      "url": "/audio/lessons/PM-0.1/english/9cccf0ed06e7b7ba.wav",
+      "bytes": 130092,
+      "text": "Navigate to IAM.",
+      "text_preview": "Navigate to IAM."
+    },
+    "7ec06dc61aa06362": {
+      "file": "7ec06dc61aa06362.wav",
+      "url": "/audio/lessons/PM-0.1/english/7ec06dc61aa06362.wav",
+      "bytes": 148524,
+      "text": "Look at the region selector.",
+      "text_preview": "Look at the region selector."
+    },
+    "f1ff32d581cd955b": {
+      "file": "f1ff32d581cd955b.wav",
+      "url": "/audio/lessons/PM-0.1/english/f1ff32d581cd955b.wav",
+      "bytes": 273452,
+      "text": "It says Global. You cannot change it for IAM.",
+      "text_preview": "It says Global. You cannot change it for IAM."
+    },
+    "e7ec1800a6ac275f": {
+      "file": "e7ec1800a6ac275f.wav",
+      "url": "/audio/lessons/PM-0.1/english/e7ec1800a6ac275f.wav",
+      "bytes": 663596,
+      "text": "IAM is a global service. IAM users, roles, groups, and policies exist across your entire account — not tied to any region.",
+      "text_preview": "IAM is a global service. IAM users, roles, groups, and policies exist across your entire account — not tied to any regio"
+    },
+    "84376cfcb331fe01": {
+      "file": "84376cfcb331fe01.wav",
+      "url": "/audio/lessons/PM-0.1/english/84376cfcb331fe01.wav",
+      "bytes": 896044,
+      "text": "EC2 instances: regional. VPCs: regional. RDS databases: regional. Lambda functions: regional. S3 buckets: regional.",
+      "text_preview": "EC2 instances: regional. VPCs: regional. RDS databases: regional. Lambda functions: regional. S3 buckets: regional."
+    },
+    "adc5281403148e63": {
+      "file": "adc5281403148e63.wav",
+      "url": "/audio/lessons/PM-0.1/english/adc5281403148e63.wav",
+      "bytes": 317484,
+      "text": "IAM: global. Route 53: global. CloudFront: global.",
+      "text_preview": "IAM: global. Route 53: global. CloudFront: global."
+    },
+    "f6b7f1a1ec3ea9b3": {
+      "file": "f6b7f1a1ec3ea9b3.wav",
+      "url": "/audio/lessons/PM-0.1/english/f6b7f1a1ec3ea9b3.wav",
+      "bytes": 920620,
+      "text": "When an engineer says their IAM role is missing — region is never the cause. When they say their EC2 instance is missing — region is the first thing you check.",
+      "text_preview": "When an engineer says their IAM role is missing — region is never the cause. When they say their EC2 instance is missing"
+    },
+    "5623b33f6916f351": {
+      "file": "5623b33f6916f351.wav",
+      "url": "/audio/lessons/PM-0.1/english/5623b33f6916f351.wav",
+      "bytes": 869420,
+      "text": "Your teammate says their Lambda function is missing. Lambda — global or regional? And based on that, what is the first thing you tell them to check?",
+      "text_preview": "Your teammate says their Lambda function is missing. Lambda — global or regional? And based on that, what is the first t"
+    },
+    "db086fb015965909": {
+      "file": "db086fb015965909.wav",
+      "url": "/audio/lessons/PM-0.1/english/db086fb015965909.wav",
+      "bytes": 830508,
+      "text": "Regional. Same pattern as EC2 — region selector first. Created it in one region, looking in another, it will not appear in the list.",
+      "text_preview": "Regional. Same pattern as EC2 — region selector first. Created it in one region, looking in another, it will not appear "
+    }
+  },
+  "notes": "Path A: static teaching lines only. Live doubts / dynamic Ren answers use Path B (local TTS), not this folder."
+}

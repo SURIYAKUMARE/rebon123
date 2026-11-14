@@ -1,0 +1,161 @@
+{
+  "lesson_id": "PM-1.3",
+  "lesson_title": "Reading IAM Policies",
+  "session_id": "PM-1",
+  "mode": "professional",
+  "language": "tanglish",
+  "schema_version": 2,
+  "duration_minutes": 20,
+  "company": {
+    "name": "Finova Technologies",
+    "your_role": "Cloud Support Associate (L1)",
+    "current_account": "finova-dev"
+  },
+  "account": {
+    "account_id": "847291635028",
+    "account_name": "finova-dev",
+    "region": "ap-south-1"
+  },
+  "lesson_intro": {
+    "heading": "CSA L1 · Reading policies",
+    "board_text": "Reading IAM Policies\nFinova · Cloud Support Associate\n\nToday:\n• Effect / Action / Resource / Condition\n• Managed vs inline\n• Explicit Deny wins\n• You READ policies at L1 — you do not invent Admin JSON",
+    "ren_voice": "Vanakkam. Access tickets without reading policies are guessing. Today you learn to read Effect, Action, Resource, and Condition. At L1 you attach existing managed policies and spot Deny. You do not invent AdministratorAccess."
+  },
+  "whiteboard_intro": {
+    "duration_seconds": 40,
+    "board_text": "Policy anatomy\n• Effect: Allow or Deny\n• Action: service:api (s3:GetObject)\n• Resource: ARN or *\n• Condition: optional constraints\n\nEvaluation: explicit Deny beats Allow. Missing Allow is an implicit deny.",
+    "ren_voice": "Vanakkam. Four fields. Effect, Action, Resource, Condition. Remember: an explicit Deny always wins. Silence is also a deny — if nothing Allows, the call fails."
+  },
+  "segments": [
+    {
+      "id": "S1",
+      "type": "demonstrate",
+      "title": "Open Policies",
+      "setup_voice": "Paathukonga — Policies console — this is the library of permission documents.",
+      "steps": [
+        {
+          "voice": "Open IAM Policies.",
+          "cursor": {
+            "action": "navigate",
+            "target": "nav-policies"
+          },
+          "pause_ms": 1000
+        },
+        {
+          "voice": "AWS managed policies are maintained by AWS. Customer managed are Finova's. Inline live on one user or role.",
+          "cursor": {
+            "action": "highlight",
+            "target": "nav-policies"
+          },
+          "pause_ms": 1000
+        }
+      ],
+      "lesson_voice": "Prefer customer or AWS managed policies attached to groups. Inline policies are harder to audit — flag them when you see them on a ticket.",
+      "check": {
+        "voice": "Why do we prefer managed policies on groups over inline on a single user?",
+        "wait_for_input": true,
+        "accept_keywords": [
+          "audit",
+          "reuse",
+          "group",
+          "manage",
+          "consistent",
+          "review"
+        ],
+        "response_if_correct": "Reuse and audit. One change, many users. Inline hides in the identity.",
+        "response_if_incorrect": "Think about how many people need the same permission and how a senior reviews it."
+      }
+    },
+    {
+      "id": "S2",
+      "type": "teach",
+      "title": "Read a statement",
+      "steps": [
+        {
+          "voice": "Open a user and the Permissions tab — you see attached policies.",
+          "cursor": {
+            "action": "navigate",
+            "target": "nav-users"
+          },
+          "pause_ms": 900
+        },
+        {
+          "voice": "When you open the JSON, start with Effect, then Action, then Resource.",
+          "cursor": {
+            "action": "highlight",
+            "target": "tab-permissions"
+          },
+          "pause_ms": 900
+        },
+        {
+          "voice": "If you see Effect Deny on the same action the user needs — that is your smoking gun.",
+          "cursor": {
+            "action": "highlight",
+            "target": "json-policy-viewer"
+          },
+          "pause_ms": 1000
+        }
+      ],
+      "check": {
+        "voice": "A policy has Allow s3:GetObject on bucket A and Deny s3:* on bucket A. What happens on GetObject?",
+        "wait_for_input": true,
+        "accept_keywords": [
+          "deny",
+          "wins",
+          "blocked",
+          "fail",
+          "explicit"
+        ],
+        "response_if_correct": "Deny wins. Explicit Deny beats Allow every time.",
+        "response_if_incorrect": "Remember evaluation order — which Effect always wins when both match?"
+      }
+    },
+    {
+      "id": "S3",
+      "type": "practice",
+      "title": "Open Policies list",
+      "instruction_voice": "Ungal turn. Navigate to IAM Policies yourself.",
+      "target": "nav-policies",
+      "success_targets": [
+        "nav-policies"
+      ],
+      "hint_after_seconds": 18,
+      "hint_voice": "Hint: IAM left nav — Policies.",
+      "completion_voice": "Super. Good. That list is where you confirm which document is attached."
+    },
+    {
+      "id": "S4",
+      "type": "ask",
+      "title": "Synthesis",
+      "question": "Ticket: user can list buckets but cannot GetObject. Name two policy places you check and what you look for.",
+      "wait_for_input": true,
+      "accept_keywords": [
+        "allow",
+        "deny",
+        "getobject",
+        "resource",
+        "group",
+        "inline",
+        "managed",
+        "action"
+      ],
+      "response_if_correct": "Attached group policies and any inline — look for missing GetObject Allow, wrong Resource ARN, or an explicit Deny.",
+      "response_if_incorrect": "Think Action and Resource — and whether a Deny is hiding."
+    }
+  ],
+  "session_close": {
+    "ren_voice": "Vanakkam. Read Effect, Action, Resource, Condition. Explicit Deny wins. L1 attaches known policies — does not invent Admin. Next: debugging Access Denied end to end.",
+    "summary_points": [
+      "Effect / Action / Resource / Condition",
+      "Managed preferred over inline",
+      "Explicit Deny wins",
+      "Missing Allow = implicit deny"
+    ],
+    "doubt_session": {
+      "ren_opening": "Doubt irukka? Questions on reading policies?",
+      "wait_for_response": true,
+      "ren_response_template": "Stay on policy anatomy, managed vs inline, and Deny vs Allow. Defer writing custom policies and Access Analyzer to seniors.",
+      "ren_closing": "Next we debug a live Access Denied like a support ticket. Seri — next lesson ku ready."
+    }
+  }
+}

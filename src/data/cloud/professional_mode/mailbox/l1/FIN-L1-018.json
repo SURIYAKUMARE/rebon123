@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "role_id": "l1_cloud_support_associate",
+  "content_status": "ready",
+  "duration_minutes": 8,
+  "ticket_id": "FIN-L1-018",
+  "tier": 1,
+  "sequence": 18,
+  "service": "cloudwatch",
+  "source_lessons": [
+    "PM-5.1"
+  ],
+  "unlock": {
+    "lessons_complete": [
+      "PM-5.1"
+    ],
+    "tickets_closed": [
+      "FIN-L1-002"
+    ]
+  },
+  "email": {
+    "message_id": "Is payments--oahr",
+    "from": {
+      "name": "Meera Iyer",
+      "email": "meera.iyer@finova.tech",
+      "title": "Payments Eng Manager"
+    },
+    "to": [
+      {
+        "name": "You",
+        "email": "cloud-support@finova.tech",
+        "title": "Cloud Support Associate (L1)"
+      }
+    ],
+    "subject": "Is payments-api CPU high right now?",
+    "body": "Is payments-api hot right now?\n\nWHAT HAPPENED\nCustomers say checkout is slow. I need the CPU number, not a feeling.\n\nWHAT YOU NEED TO DO\n1. Open CloudWatch, Dashboards, payments-api.\n2. Read the CPU number and the time it peaked.\n3. Note the window: last 1 hour.\n\nDO NOT\nDo not reboot the instance.\n\nREPLY WITH\nThe CPU percent you saw, the peak time, and that the window is the last hour.\n\n— Meera",
+    "received_at_label": "Today",
+    "priority": "P3"
+  },
+  "work": {
+    "environment": "checklist",
+    "steps": [
+      {
+        "id": "s1",
+        "kind": "checklist",
+        "instruction": "Open CloudWatch dashboards / metrics for payments-api.",
+        "confirm_label": "Opened metrics"
+      },
+      {
+        "id": "s2",
+        "kind": "observe",
+        "instruction": "Peak CPU % in sim?",
+        "question": "Peak %?",
+        "accept_keywords": [
+          "72",
+          "seventy"
+        ],
+        "hint": "72%",
+        "capture_as": "cpu"
+      }
+    ]
+  },
+  "reply": {
+    "min_words": 15,
+    "max_words": 200,
+    "accept_keywords": [
+      {
+        "id": "cpu",
+        "label": "cpu value",
+        "any_of": [
+          "72",
+          "cpu"
+        ]
+      },
+      {
+        "id": "window",
+        "label": "time window",
+        "any_of": [
+          "1h",
+          "hour",
+          "10:40",
+          "last"
+        ]
+      }
+    ],
+    "required_groups": [
+      "cpu"
+    ],
+    "bonus_groups": [
+      "window"
+    ],
+    "model_reply": "payments-api CPU peaked ~72% in the last 1h (around 10:40 in sim). — L1",
+    "max_attempts_before_model": 3
+  },
+  "debrief": {
+    "english": "Report value + time window.",
+    "tanglish": "Value + time window solunga."
+  }
+}

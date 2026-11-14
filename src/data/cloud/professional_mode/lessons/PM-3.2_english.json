@@ -1,0 +1,157 @@
+{
+  "lesson_id": "PM-3.2",
+  "lesson_title": "Auto Scaling Groups",
+  "session_id": "PM-3",
+  "session_name": "EC2",
+  "mode": "professional",
+  "language": "english",
+  "schema_version": 2,
+  "duration_minutes": 18,
+  "teaching_level": "principal_mentor_l5",
+  "company": {
+    "name": "Finova Technologies",
+    "your_role": "Cloud Engineer",
+    "current_account": "finova-dev",
+    "manager": "Arjun Mehta (Infrastructure Lead)"
+  },
+  "account": {
+    "account_id": "847291635028",
+    "account_name": "finova-dev",
+    "region": "ap-south-1"
+  },
+  "lesson_intro": {
+    "heading": "Cloud Engineer · PM-3.2",
+    "board_text": "Auto Scaling Groups\nFinova · finova-dev · ap-south-1\n\nWhy before how:\nFestival traffic must add and remove capacity without human heroics.\n\nMental model:\nASG = desired/min/max + health replace. Policy decides when.\n\nYou will: watch → learn → practice one navigation.",
+    "ren_voice": "I am Ren. Festival traffic must add and remove capacity without human heroics. Mental model: ASG = desired/min/max + health replace. Policy decides when. I demonstrate, then you practice. Least privilege and Region discipline stay non-negotiable."
+  },
+  "whiteboard_intro": {
+    "duration_seconds": 40,
+    "board_text": "Auto Scaling Groups\n• ASG = desired/min/max + health replace. Policy decides when.\n• Mistake: Fixed fleet sized for peak 24/7 — burning ₹.\n• Habit: Scale on a metric that matches user pain — not vanity CPU only.",
+    "ren_voice": "Board picture: ASG = desired/min/max + health replace. Policy decides when.. Juniors usually: Fixed fleet sized for peak 24/7 — burning ₹.. Your habit: Scale on a metric that matches user pain — not vanity CPU only.."
+  },
+  "segments": [
+    {
+      "id": "S1",
+      "type": "demonstrate",
+      "title": "Open EC2",
+      "setup_voice": "Watch — we open EC2 the way a real ticket starts.",
+      "steps": [
+        {
+          "voice": "Navigate to EC2. Confirm Region ap-south-1 before you trust the empty list.",
+          "cursor": {
+            "action": "navigate",
+            "target": "service-ec2"
+          },
+          "pause_ms": 1100
+        },
+        {
+          "voice": "Compute capacity planning starts from EC2 thinking — ASG is the rubber band.",
+          "cursor": {
+            "action": "highlight",
+            "target": "service-ec2"
+          },
+          "pause_ms": 900
+        }
+      ],
+      "lesson_voice": "ASG replaces unhealthy instances. That is reliability, not just cost.",
+      "check": {
+        "voice": "What problem does an Auto Scaling Group solve?",
+        "wait_for_input": true,
+        "accept_keywords": [
+          "asg",
+          "scale",
+          "auto",
+          "capacity",
+          "health",
+          "min",
+          "max"
+        ],
+        "response_if_correct": "Add/remove capacity automatically and replace unhealthy nodes.",
+        "response_if_incorrect": "Rubber-band capacity and health replacement."
+      }
+    },
+    {
+      "id": "S2",
+      "type": "teach",
+      "title": "Company story + trap",
+      "steps": [
+        {
+          "voice": "Finova UPI spike — ASG saved checkout while a fixed fleet would have melted.",
+          "cursor": {
+            "action": "highlight",
+            "target": "service-ec2"
+          },
+          "pause_ms": 1000
+        },
+        {
+          "voice": "Trap: Fixed fleet sized for peak 24/7 — burning ₹.. Habit: Scale on a metric that matches user pain — not vanity CPU only.",
+          "cursor": null,
+          "pause_ms": 800
+        }
+      ],
+      "check": {
+        "voice": "What habit will you keep from this lesson?",
+        "wait_for_input": true,
+        "accept_keywords": [
+          "asg",
+          "scale",
+          "auto",
+          "capacity",
+          "health",
+          "min",
+          "max",
+          "habit",
+          "region",
+          "least"
+        ],
+        "response_if_correct": "That habit is desk gold.",
+        "response_if_incorrect": "Scale on a metric that matches user pain — not vanity CPU only."
+      }
+    },
+    {
+      "id": "S3",
+      "type": "practice",
+      "title": "Your turn",
+      "instruction_voice": "Your turn. Open EC2 yourself. Start every ticket here.",
+      "target": "service-ec2",
+      "success_targets": [
+        "service-ec2",
+        "service-ec2"
+      ],
+      "hint_after_seconds": 20,
+      "hint_voice": "Use search or Services menu — land on EC2.",
+      "completion_voice": "Good. You found the service. That is how Ops and Engineer days begin."
+    },
+    {
+      "id": "S4",
+      "type": "ask",
+      "title": "Say it back",
+      "question": "What problem does an Auto Scaling Group solve?",
+      "wait_for_input": true,
+      "accept_keywords": [
+        "asg",
+        "scale",
+        "auto",
+        "capacity",
+        "health",
+        "min",
+        "max"
+      ],
+      "response_if_correct": "Add/remove capacity automatically and replace unhealthy nodes.",
+      "response_if_incorrect": "Rubber-band capacity and health replacement."
+    }
+  ],
+  "session_close": {
+    "ren_voice": "Close PM-3.2. Scale on a metric that matches user pain — not vanity CPU only.",
+    "summary_points": [
+      "ASG = desired/min/max + health replace. Policy decides when.",
+      "Scale on a metric that matches user pain — not vanity CPU only.",
+      "Region + account before panic"
+    ],
+    "doubt_session": {
+      "ren_opening": "Doubt on this service family?",
+      "wait_for_response": true,
+      "ren_closing": "See you on the next ticket lesson."
+    }
+  }
+}

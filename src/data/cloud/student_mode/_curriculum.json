@@ -1,0 +1,102 @@
+{
+  "mode": "student",
+  "status": "live",
+  "canonical_track": "SM-10",
+  "console_required": false,
+  "total_days": 10,
+  "hours_ceiling": 3,
+  "hours_per_day": 0.25,
+  "days": [
+    {
+      "day": 1,
+      "title": "Meet Ren — What Cloud Really Is",
+      "lesson_parts": [
+        "day1"
+      ],
+      "workspace": "day1_workspace.json",
+      "has_readiness_badge": false
+    },
+    {
+      "day": 2,
+      "title": "Why Companies Pay for Cloud",
+      "lesson_parts": [
+        "day2"
+      ],
+      "workspace": "day2_workspace.json",
+      "has_readiness_badge": false
+    },
+    {
+      "day": 3,
+      "title": "How Cloud Helps — Elasticity & Regions",
+      "lesson_parts": [
+        "day3"
+      ],
+      "workspace": "day3_workspace.json",
+      "has_readiness_badge": false
+    },
+    {
+      "day": 4,
+      "title": "Shared Responsibility — Who Fixes What",
+      "lesson_parts": [
+        "day4"
+      ],
+      "workspace": "day4_workspace.json",
+      "has_readiness_badge": false
+    },
+    {
+      "day": 5,
+      "title": "Service Families Map",
+      "lesson_parts": [
+        "day5"
+      ],
+      "workspace": "day5_workspace.json",
+      "has_readiness_badge": false
+    },
+    {
+      "day": 6,
+      "title": "Identity & Compute — Why They Exist",
+      "lesson_parts": [
+        "day6"
+      ],
+      "workspace": "day6_workspace.json",
+      "has_readiness_badge": false
+    },
+    {
+      "day": 7,
+      "title": "Storage & Network — Why They Exist",
+      "lesson_parts": [
+        "day7"
+      ],
+      "workspace": "day7_workspace.json",
+      "has_readiness_badge": false
+    },
+    {
+      "day": 8,
+      "title": "Observe — Why Monitoring Exists",
+      "lesson_parts": [
+        "day8"
+      ],
+      "workspace": "day8_workspace.json",
+      "has_readiness_badge": false
+    },
+    {
+      "day": 9,
+      "title": "Finova Company Lens",
+      "lesson_parts": [
+        "day9"
+      ],
+      "workspace": "day9_workspace.json",
+      "has_readiness_badge": false
+    },
+    {
+      "day": 10,
+      "title": "Capstone — Ready for Professional Mode",
+      "lesson_parts": [
+        "day10"
+      ],
+      "workspace": "day10_workspace.json",
+      "has_readiness_badge": true
+    }
+  ],
+  "readiness_check": "readiness_check.json"
+}

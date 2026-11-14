@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "role_id": "l1_cloud_support_associate",
+  "content_status": "ready",
+  "duration_minutes": 8,
+  "ticket_id": "FIN-L1-004",
+  "tier": 1,
+  "sequence": 4,
+  "service": "console",
+  "source_lessons": [
+    "PM-0.1"
+  ],
+  "unlock": {
+    "lessons_complete": [
+      "PM-0.1"
+    ],
+    "tickets_closed": [
+      "FIN-L1-003"
+    ]
+  },
+  "email": {
+    "message_id": "URGENT? Fix -gg6q",
+    "from": {
+      "name": "Meera Iyer",
+      "email": "meera.iyer@finova.tech",
+      "title": "Payments Eng Manager"
+    },
+    "to": [
+      {
+        "name": "You",
+        "email": "cloud-support@finova.tech",
+        "title": "Cloud Support Associate (L1)"
+      }
+    ],
+    "subject": "URGENT? Fix Mumbai VPC for payments — please handle",
+    "body": "Hi,\n\nWHAT HAPPENED\nPayments feels slow. Someone asked you to edit the Mumbai VPC routes right now.\n\nWHAT YOU NEED TO DO\n1. Confirm which account and Region you are in.\n2. You may look at finova-payments-vpc so you know it exists.\n3. Decide whether an L1 should change those routes.\n\nDO NOT\nDo not edit routes, subnets, or security groups. VPC changes are not your job.\n\nREPLY WITH\nSay you verified the account and Region, and that this is out of scope for L1. Escalate to a cloud engineer.\n\n— Meera",
+    "received_at_label": "Today",
+    "priority": "P3"
+  },
+  "work": {
+    "environment": "checklist",
+    "steps": [
+      {
+        "id": "s1",
+        "kind": "checklist",
+        "instruction": "Verify account + Region. Do NOT change VPC.",
+        "confirm_label": "Verified — no VPC change"
+      },
+      {
+        "id": "s2",
+        "kind": "checklist",
+        "instruction": "Escalate: VPC changes are out of L1 scope.",
+        "confirm_label": "Escalated to Ren / Engineer"
+      }
+    ]
+  },
+  "reply": {
+    "min_words": 15,
+    "max_words": 200,
+    "accept_keywords": [
+      {
+        "id": "check",
+        "label": "mentions account/region check",
+        "any_of": [
+          "account",
+          "region",
+          "ap-south",
+          "verified"
+        ]
+      },
+      {
+        "id": "scope",
+        "label": "out of scope / escalated",
+        "any_of": [
+          "escalat",
+          "out of scope",
+          "cloud engineer",
+          "not l1",
+          "ren"
+        ]
+      }
+    ],
+    "required_groups": [
+      "check",
+      "scope"
+    ],
+    "reject_keywords": [
+      "i fixed the vpc",
+      "changed route",
+      "deleted subnet"
+    ],
+    "model_reply": "Hi Meera — verified finova-dev / ap-south-1. VPC changes out of L1 scope; escalated. No networking changes made. — L1",
+    "max_attempts_before_model": 3
+  },
+  "debrief": {
+    "english": "Know what NOT to touch. Escalate cleanly.",
+    "tanglish": "Touch panna koodathu-nu theriyanum."
+  }
+}

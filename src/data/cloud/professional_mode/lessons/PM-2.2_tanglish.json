@@ -1,0 +1,154 @@
+{
+  "lesson_id": "PM-2.2",
+  "lesson_title": "Building a VPC From Scratch",
+  "session_id": "PM-2",
+  "session_name": "VPC",
+  "mode": "professional",
+  "language": "tanglish",
+  "schema_version": 2,
+  "duration_minutes": 18,
+  "teaching_level": "principal_mentor_l5",
+  "company": {
+    "name": "Finova Technologies",
+    "your_role": "Cloud Engineer",
+    "current_account": "finova-dev",
+    "manager": "Arjun Mehta (Infrastructure Lead)"
+  },
+  "account": {
+    "account_id": "847291635028",
+    "account_name": "finova-dev",
+    "region": "ap-south-1"
+  },
+  "lesson_intro": {
+    "heading": "Cloud Engineer · PM-2.2",
+    "board_text": "Building a VPC From Scratch\nFinova · finova-dev · ap-south-1\n\nWhy before how:\nBlank account needs a designed network before EC2 land.\n\nMental model:\nCIDR first, then public/private subnets, then routes.\n\nYou will: watch → learn → practice one navigation.",
+    "ren_voice": "Naan Ren. Blank account needs a designed network before EC2 land. Mental model: CIDR first, then public/private subnets, then routes. Naan demonstrate panren, neenga practice. Least privilege and Region — non-negotiable."
+  },
+  "whiteboard_intro": {
+    "duration_seconds": 40,
+    "board_text": "Building a VPC From Scratch\n• CIDR first, then public/private subnets, then routes.\n• Mistake: Overlapping CIDRs across accounts — VPN hell later.\n• Habit: Write the CIDR plan on the board before Create VPC.",
+    "ren_voice": "Board: CIDR first, then public/private subnets, then routes.. Juniors: Overlapping CIDRs across accounts — VPN hell later.. Habit: Write the CIDR plan on the board before Create VPC.."
+  },
+  "segments": [
+    {
+      "id": "S1",
+      "type": "demonstrate",
+      "title": "Open VPC",
+      "setup_voice": "Paathuko — ticket start aagura maadhiri VPC open panrom.",
+      "steps": [
+        {
+          "voice": "VPC-ku po. Region ap-south-1 confirm pannu.",
+          "cursor": {
+            "action": "navigate",
+            "target": "service-vpc"
+          },
+          "pause_ms": 1100
+        },
+        {
+          "voice": "Create VPC is where design becomes real.",
+          "cursor": {
+            "action": "highlight",
+            "target": "service-vpc"
+          },
+          "pause_ms": 900
+        }
+      ],
+      "lesson_voice": "Never invent CIDRs under ticket pressure — use the agreed plan.",
+      "check": {
+        "voice": "What do you decide before clicking Create VPC?",
+        "wait_for_input": true,
+        "accept_keywords": [
+          "cidr",
+          "subnet",
+          "public",
+          "private",
+          "plan",
+          "design"
+        ],
+        "response_if_correct": "CIDR and public/private layout — design first.",
+        "response_if_incorrect": "CIDR plan and subnet roles before the button."
+      }
+    },
+    {
+      "id": "S2",
+      "type": "teach",
+      "title": "Company story + trap",
+      "steps": [
+        {
+          "voice": "Finova staging overlapped prod CIDR — hybrid connectivity broke for a week.",
+          "cursor": {
+            "action": "highlight",
+            "target": "service-vpc"
+          },
+          "pause_ms": 1000
+        },
+        {
+          "voice": "Trap: Overlapping CIDRs across accounts — VPN hell later.. Habit: Write the CIDR plan on the board before Create VPC.",
+          "cursor": null,
+          "pause_ms": 800
+        }
+      ],
+      "check": {
+        "voice": "Indha lesson-la entha habit vechikkuringa?",
+        "wait_for_input": true,
+        "accept_keywords": [
+          "cidr",
+          "subnet",
+          "public",
+          "private",
+          "plan",
+          "design",
+          "habit",
+          "region",
+          "least"
+        ],
+        "response_if_correct": "Adhu desk gold.",
+        "response_if_incorrect": "Write the CIDR plan on the board before Create VPC."
+      }
+    },
+    {
+      "id": "S3",
+      "type": "practice",
+      "title": "Your turn",
+      "instruction_voice": "Ungal turn. VPC neenga open pannunga.",
+      "target": "create-vpc",
+      "success_targets": [
+        "create-vpc",
+        "service-vpc"
+      ],
+      "hint_after_seconds": 20,
+      "hint_voice": "Search illa Services menu use panni VPC find pannunga.",
+      "completion_voice": "Nalla. Service find aachu."
+    },
+    {
+      "id": "S4",
+      "type": "ask",
+      "title": "Say it back",
+      "question": "What do you decide before clicking Create VPC?",
+      "wait_for_input": true,
+      "accept_keywords": [
+        "cidr",
+        "subnet",
+        "public",
+        "private",
+        "plan",
+        "design"
+      ],
+      "response_if_correct": "CIDR and public/private layout — design first.",
+      "response_if_incorrect": "CIDR plan and subnet roles before the button."
+    }
+  ],
+  "session_close": {
+    "ren_voice": "PM-2.2 close. Write the CIDR plan on the board before Create VPC.",
+    "summary_points": [
+      "CIDR first, then public/private subnets, then routes.",
+      "Write the CIDR plan on the board before Create VPC.",
+      "Region + account before panic"
+    ],
+    "doubt_session": {
+      "ren_opening": "Doubt irukka?",
+      "wait_for_response": true,
+      "ren_closing": "Next ticket lesson-la paakalam."
+    }
+  }
+}

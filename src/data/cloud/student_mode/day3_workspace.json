@@ -1,0 +1,144 @@
+{
+  "day": 3,
+  "language": "english",
+  "pass_threshold": 0.75,
+  "items": [
+    {
+      "id": "D3-Q1",
+      "type": "quiz",
+      "question": "Elasticity means:",
+      "options": [
+        "Capacity can stretch and shrink with demand",
+        "Servers never change",
+        "Only one region forever",
+        "Deleting accounts weekly"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Rubber-band capacity."
+    },
+    {
+      "id": "D3-Q2",
+      "type": "quiz",
+      "question": "ap-south-1 is:",
+      "options": [
+        "Mumbai Region",
+        "Virginia",
+        "Ireland",
+        "A VPC only"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Mumbai."
+    },
+    {
+      "id": "D3-Q3",
+      "type": "quiz",
+      "question": "An Availability Zone is best thought of as:",
+      "options": [
+        "A separate failure domain / building cluster in a Region",
+        "A password",
+        "A billing coupon",
+        "A laptop"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Failure isolation."
+    },
+    {
+      "id": "D3-Q4",
+      "type": "quiz",
+      "question": "Wrong Region often causes:",
+      "options": [
+        "High latency for users",
+        "Free forever compute",
+        "No need for IAM",
+        "Automatic Admin"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Geography matters."
+    },
+    {
+      "id": "D3-TF1",
+      "type": "true_false",
+      "statement": "Regions are just cosmetic labels with no latency impact.",
+      "correct": false,
+      "ren_hint_english": "True or false — watch for the junior trap.",
+      "ren_hint_tanglish": "True or false — watch for the junior trap.",
+      "explanation": "Geography affects latency."
+    },
+    {
+      "id": "D3-TF2",
+      "type": "true_false",
+      "statement": "Multi-AZ thinking helps survive one building/power failure.",
+      "correct": true,
+      "ren_hint_english": "True or false — watch for the junior trap.",
+      "ren_hint_tanglish": "True or false — watch for the junior trap.",
+      "explanation": "Blast radius."
+    },
+    {
+      "id": "D3-SA1",
+      "type": "short_answer",
+      "question": "What question should you ask about Region before deploying?",
+      "model_answer": "Which Region is closest to users, and can we survive one AZ failing?",
+      "accept_keywords": [
+        {
+          "id": "g1",
+          "label": "region + AZ part 1",
+          "any_of": [
+            "region",
+            "mumbai",
+            "latency",
+            "user"
+          ]
+        },
+        {
+          "id": "g2",
+          "label": "region + AZ part 2",
+          "any_of": [
+            "az",
+            "fail",
+            "survive"
+          ]
+        }
+      ],
+      "required_groups": [
+        "g1",
+        "g2"
+      ],
+      "ren_hint_english": "Use your own words — hit the key idea.",
+      "ren_hint_tanglish": "Use your own words — hit the key idea.",
+      "explanation": "Which Region is closest to users, and can we survive one AZ failing?"
+    },
+    {
+      "id": "D3-SA2",
+      "type": "short_answer",
+      "question": "Explain elasticity in one sentence.",
+      "model_answer": "Cloud capacity can grow and shrink with demand so you do not wait weeks for hardware.",
+      "accept_keywords": [
+        {
+          "id": "g1",
+          "label": "stretch with demand part 1",
+          "any_of": [
+            "scale",
+            "elastic",
+            "grow",
+            "shrink",
+            "demand"
+          ]
+        }
+      ],
+      "required_groups": [
+        "g1"
+      ],
+      "ren_hint_english": "Use your own words — hit the key idea.",
+      "ren_hint_tanglish": "Use your own words — hit the key idea.",
+      "explanation": "Cloud capacity can grow and shrink with demand so you do not wait weeks for hardware."
+    }
+  ]
+}

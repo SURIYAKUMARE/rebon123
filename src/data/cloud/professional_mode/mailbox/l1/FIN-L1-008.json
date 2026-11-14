@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "role_id": "l1_cloud_support_associate",
+  "content_status": "ready",
+  "duration_minutes": 8,
+  "ticket_id": "FIN-L1-008",
+  "tier": 1,
+  "sequence": 8,
+  "service": "console",
+  "source_lessons": [
+    "PM-0.1"
+  ],
+  "unlock": {
+    "lessons_complete": [
+      "PM-0.1"
+    ],
+    "tickets_closed": [
+      "FIN-L1-007"
+    ]
+  },
+  "email": {
+    "message_id": "Desk habit —-unof",
+    "from": {
+      "name": "Ren",
+      "email": "ren.mentor@finova.tech",
+      "title": "L1 Desk Lead"
+    },
+    "to": [
+      {
+        "name": "You",
+        "email": "cloud-support@finova.tech",
+        "title": "Cloud Support Associate (L1)"
+      }
+    ],
+    "subject": "Desk habit — pin IAM + CloudWatch",
+    "body": "L1s,\n\nWHAT HAPPENED\nPeople lose time because IAM and CloudWatch are not pinned.\n\nWHAT YOU NEED TO DO\n1. Pin IAM in the console favorites.\n2. Pin CloudWatch in the console favorites.\n3. Glance at Recently visited so you know it exists.\n\nDO NOT\nDo not change users, alarms, or instances.\n\nREPLY WITH\nThe two services you pinned: IAM and CloudWatch.\n\n— Ren",
+    "received_at_label": "Today",
+    "priority": "P4"
+  },
+  "work": {
+    "environment": "checklist",
+    "steps": [
+      {
+        "id": "s1",
+        "kind": "checklist",
+        "instruction": "Pin / favorite IAM for fast access (or confirm habit).",
+        "confirm_label": "IAM pinned/confirmed"
+      },
+      {
+        "id": "s2",
+        "kind": "checklist",
+        "instruction": "Pin / favorite CloudWatch.",
+        "confirm_label": "CloudWatch pinned/confirmed"
+      }
+    ]
+  },
+  "reply": {
+    "min_words": 15,
+    "max_words": 200,
+    "accept_keywords": [
+      {
+        "id": "iam",
+        "label": "mentions IAM",
+        "any_of": [
+          "iam"
+        ]
+      },
+      {
+        "id": "cw",
+        "label": "mentions CloudWatch",
+        "any_of": [
+          "cloudwatch",
+          "monitor"
+        ]
+      }
+    ],
+    "required_groups": [
+      "iam",
+      "cw"
+    ],
+    "model_reply": "Pinned IAM and CloudWatch to favorites. Will use Recently visited for speed. — L1",
+    "max_attempts_before_model": 3
+  },
+  "debrief": {
+    "english": "Desk speed = favorites + search.",
+    "tanglish": "Favorites + search = speed."
+  }
+}

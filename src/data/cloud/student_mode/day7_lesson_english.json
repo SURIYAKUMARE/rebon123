@@ -1,0 +1,84 @@
+{
+  "day": 7,
+  "part": "A",
+  "language": "english",
+  "title": "Storage & Network — Why They Exist",
+  "duration_minutes": 14,
+  "blocks": [
+    {
+      "block": 0,
+      "type": "lesson_intro",
+      "heading": "LESSON 7 OF 10",
+      "board_text": "Storage & Network — Why They Exist\n\nFocus:\nStorage (S3): durable objects. Network (VPC): private neighborhood for resources.\n\nStill no console — board literacy only.",
+      "ren_voice": "Lesson 7. Storage (S3): durable objects. Network (VPC): private neighborhood for resources. I will keep this tight — model, Finova story, trap, check, habit.",
+      "check_question": null
+    },
+    {
+      "block": 1,
+      "type": "concept_intro",
+      "heading": "MENTAL MODEL",
+      "board_text": "Storage (S3): durable objects. Network (VPC): private neighborhood for resources.",
+      "ren_voice": "Storage (S3): durable objects. Network (VPC): private neighborhood for resources.",
+      "check_question": {
+        "question": "In your words — what is the core idea of lesson 7?",
+        "expected_response_type": "open",
+        "accept_keywords": [
+          "s3",
+          "storage",
+          "vpc",
+          "network",
+          "private",
+          "bucket"
+        ],
+        "ren_response_if_correct": "Good — you own the model.",
+        "ren_response_if_incorrect": "Say it simpler: Storage (S3): durable objects. Network (VPC): private neighborhood for resources…"
+      }
+    },
+    {
+      "block": 2,
+      "type": "example",
+      "heading": "COMPANY STORY",
+      "board_text": "Photos, receipts, backups → storage. Isolated private space → network.",
+      "ren_voice": "Photos, receipts, backups → storage. Isolated private space → network.",
+      "check_question": null
+    },
+    {
+      "block": 3,
+      "type": "mistake_simulation",
+      "heading": "TRAP + HABIT",
+      "board_text": "Trap juniors fall into.\n\nHabit: Never leave a bucket public 'just for testing' in a company account.",
+      "ren_voice": "Trap exists. Habit to keep: Never leave a bucket public 'just for testing' in a company account.",
+      "check_question": {
+        "question": "What habit will you keep from this lesson?",
+        "expected_response_type": "open",
+        "accept_keywords": [
+          "s3",
+          "storage",
+          "vpc",
+          "network",
+          "private",
+          "bucket"
+        ],
+        "ren_response_if_correct": "That habit will save you on the desk.",
+        "ren_response_if_incorrect": "Never leave a bucket public 'just for testing' in a company account."
+      }
+    },
+    {
+      "block": 4,
+      "type": "summary",
+      "heading": "LOCK IT IN",
+      "board_text": "• Storage (S3): durable objects. Network (VPC): private neighborhood for resources.\n• Never leave a bucket public 'just for testing' in a company account.\n• Next lesson continues the map",
+      "ren_voice": "Lesson 7 locked. Keep going.",
+      "check_question": null
+    }
+  ],
+  "lesson_summary": {
+    "board_text": "Storage & Network — Why They Exist",
+    "ren_voice": "Lesson 7 done."
+  },
+  "doubt_session": {
+    "ren_opening": "Any doubt before we close?",
+    "wait_for_response": true,
+    "ren_closing": "Good."
+  }
+}

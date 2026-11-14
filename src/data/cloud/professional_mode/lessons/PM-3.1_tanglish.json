@@ -1,0 +1,157 @@
+{
+  "lesson_id": "PM-3.1",
+  "lesson_title": "Launching EC2 Correctly",
+  "session_id": "PM-3",
+  "session_name": "EC2",
+  "mode": "professional",
+  "language": "tanglish",
+  "schema_version": 2,
+  "duration_minutes": 18,
+  "teaching_level": "principal_mentor_l5",
+  "company": {
+    "name": "Finova Technologies",
+    "your_role": "Cloud Operations Associate",
+    "current_account": "finova-dev",
+    "manager": "Arjun Mehta (Infrastructure Lead)"
+  },
+  "account": {
+    "account_id": "847291635028",
+    "account_name": "finova-dev",
+    "region": "ap-south-1"
+  },
+  "lesson_intro": {
+    "heading": "Cloud Operations Associate · PM-3.1",
+    "board_text": "Launching EC2 Correctly\nFinova · finova-dev · ap-south-1\n\nWhy before how:\nBad launches create forever tickets — wrong subnet, open SSH, long-lived keys.\n\nMental model:\nAMI + type + network + IAM role + storage. Keys are last resort.\n\nYou will: watch → learn → practice one navigation.",
+    "ren_voice": "Naan Ren. Bad launches create forever tickets — wrong subnet, open SSH, long-lived keys. Mental model: AMI + type + network + IAM role + storage. Keys are last resort. Naan demonstrate panren, neenga practice. Least privilege and Region — non-negotiable."
+  },
+  "whiteboard_intro": {
+    "duration_seconds": 40,
+    "board_text": "Launching EC2 Correctly\n• AMI + type + network + IAM role + storage. Keys are last resort.\n• Mistake: Public IP + 0.0.0.0/0 SSH for convenience.\n• Habit: Private subnet + Session Manager + instance profile.",
+    "ren_voice": "Board: AMI + type + network + IAM role + storage. Keys are last resort.. Juniors: Public IP + 0.0.0.0/0 SSH for convenience.. Habit: Private subnet + Session Manager + instance profile.."
+  },
+  "segments": [
+    {
+      "id": "S1",
+      "type": "demonstrate",
+      "title": "Open EC2",
+      "setup_voice": "Paathuko — ticket start aagura maadhiri EC2 open panrom.",
+      "steps": [
+        {
+          "voice": "EC2-ku po. Region ap-south-1 confirm pannu.",
+          "cursor": {
+            "action": "navigate",
+            "target": "service-ec2"
+          },
+          "pause_ms": 1100
+        },
+        {
+          "voice": "EC2 Instances — Ops lives here for day-2 compute tickets.",
+          "cursor": {
+            "action": "highlight",
+            "target": "service-ec2"
+          },
+          "pause_ms": 900
+        }
+      ],
+      "lesson_voice": "Launch is a checklist, not a feeling.",
+      "check": {
+        "voice": "Name two things you set correctly before launch.",
+        "wait_for_input": true,
+        "accept_keywords": [
+          "subnet",
+          "iam",
+          "role",
+          "private",
+          "launch",
+          "ssm",
+          "session"
+        ],
+        "response_if_correct": "Subnet/network and IAM role — not open SSH as default.",
+        "response_if_incorrect": "Network placement and identity — least privilege access."
+      }
+    },
+    {
+      "id": "S2",
+      "type": "teach",
+      "title": "Company story + trap",
+      "steps": [
+        {
+          "voice": "A Finova 'quick' bastion with open SSH became a crypto-miner host.",
+          "cursor": {
+            "action": "highlight",
+            "target": "service-ec2"
+          },
+          "pause_ms": 1000
+        },
+        {
+          "voice": "Trap: Public IP + 0.0.0.0/0 SSH for convenience.. Habit: Private subnet + Session Manager + instance profile.",
+          "cursor": null,
+          "pause_ms": 800
+        }
+      ],
+      "check": {
+        "voice": "Indha lesson-la entha habit vechikkuringa?",
+        "wait_for_input": true,
+        "accept_keywords": [
+          "subnet",
+          "iam",
+          "role",
+          "private",
+          "launch",
+          "ssm",
+          "session",
+          "habit",
+          "region",
+          "least"
+        ],
+        "response_if_correct": "Adhu desk gold.",
+        "response_if_incorrect": "Private subnet + Session Manager + instance profile."
+      }
+    },
+    {
+      "id": "S3",
+      "type": "practice",
+      "title": "Your turn",
+      "instruction_voice": "Ungal turn. EC2 neenga open pannunga.",
+      "target": "launch-instance",
+      "success_targets": [
+        "launch-instance",
+        "service-ec2"
+      ],
+      "hint_after_seconds": 20,
+      "hint_voice": "Search illa Services menu use panni EC2 find pannunga.",
+      "completion_voice": "Nalla. Service find aachu."
+    },
+    {
+      "id": "S4",
+      "type": "ask",
+      "title": "Say it back",
+      "question": "Name two things you set correctly before launch.",
+      "wait_for_input": true,
+      "accept_keywords": [
+        "subnet",
+        "iam",
+        "role",
+        "private",
+        "launch",
+        "ssm",
+        "session"
+      ],
+      "response_if_correct": "Subnet/network and IAM role — not open SSH as default.",
+      "response_if_incorrect": "Network placement and identity — least privilege access."
+    }
+  ],
+  "session_close": {
+    "ren_voice": "PM-3.1 close. Private subnet + Session Manager + instance profile.",
+    "summary_points": [
+      "AMI + type + network + IAM role + storage. Keys are last resort.",
+      "Private subnet + Session Manager + instance profile.",
+      "Region + account before panic"
+    ],
+    "doubt_session": {
+      "ren_opening": "Doubt irukka?",
+      "wait_for_response": true,
+      "ren_closing": "Next ticket lesson-la paakalam."
+    }
+  }
+}

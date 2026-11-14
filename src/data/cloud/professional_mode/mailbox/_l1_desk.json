@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "role_id": "l1_cloud_support_associate",
+  "company": "Finova Technologies",
+  "wip_limit": 3,
+  "tickets": [
+    {
+      "ticket_id": "FIN-L1-001",
+      "tier": 1,
+      "sequence": 1,
+      "file": "l1/FIN-L1-001.json"
+    },
+    {
+      "ticket_id": "FIN-L1-002",
+      "tier": 1,
+      "sequence": 2,
+      "file": "l1/FIN-L1-002.json"
+    },
+    {
+      "ticket_id": "FIN-L1-003",
+      "tier": 1,
+      "sequence": 3,
+      "file": "l1/FIN-L1-003.json"
+    },
+    {
+      "ticket_id": "FIN-L1-004",
+      "tier": 1,
+      "sequence": 4,
+      "file": "l1/FIN-L1-004.json"
+    },
+    {
+      "ticket_id": "FIN-L1-005",
+      "tier": 2,
+      "sequence": 5,
+      "file": "l1/FIN-L1-005.json"
+    },
+    {
+      "ticket_id": "FIN-L1-006",
+      "tier": 1,
+      "sequence": 6,
+      "file": "l1/FIN-L1-006.json"
+    },
+    {
+      "ticket_id": "FIN-L1-007",
+      "tier": 1,
+      "sequence": 7,
+      "file": "l1/FIN-L1-007.json"
+    },
+    {
+      "ticket_id": "FIN-L1-008",
+      "tier": 1,
+      "sequence": 8,
+      "file": "l1/FIN-L1-008.json"
+    },
+    {
+      "ticket_id": "FIN-L1-009",
+      "tier": 2,
+      "sequence": 9,
+      "file": "l1/FIN-L1-009.json"
+    },
+    {
+      "ticket_id": "FIN-L1-010",
+      "tier": 1,
+      "sequence": 10,
+      "file": "l1/FIN-L1-010.json"
+    },
+    {
+      "ticket_id": "FIN-L1-011",
+      "tier": 1,
+      "sequence": 11,
+      "file": "l1/FIN-L1-011.json"
+    },
+    {
+      "ticket_id": "FIN-L1-012",
+      "tier": 2,
+      "sequence": 12,
+      "file": "l1/FIN-L1-012.json"
+    },
+    {
+      "ticket_id": "FIN-L1-013",
+      "tier": 2,
+      "sequence": 13,
+      "file": "l1/FIN-L1-013.json"
+    },
+    {
+      "ticket_id": "FIN-L1-014",
+      "tier": 2,
+      "sequence": 14,
+      "file": "l1/FIN-L1-014.json"
+    },
+    {
+      "ticket_id": "FIN-L1-015",
+      "tier": 2,
+      "sequence": 15,
+      "file": "l1/FIN-L1-015.json"
+    },
+    {
+      "ticket_id": "FIN-L1-016",
+      "tier": 3,
+      "sequence": 16,
+      "file": "l1/FIN-L1-016.json"
+    },
+    {
+      "ticket_id": "FIN-L1-017",
+      "tier": 3,
+      "sequence": 17,
+      "file": "l1/FIN-L1-017.json"
+    },
+    {
+      "ticket_id": "FIN-L1-018",
+      "tier": 1,
+      "sequence": 18,
+      "file": "l1/FIN-L1-018.json"
+    },
+    {
+      "ticket_id": "FIN-L1-019",
+      "tier": 1,
+      "sequence": 19,
+      "file": "l1/FIN-L1-019.json"
+    },
+    {
+      "ticket_id": "FIN-L1-020",
+      "tier": 2,
+      "sequence": 20,
+      "file": "l1/FIN-L1-020.json"
+    },
+    {
+      "ticket_id": "FIN-L1-021",
+      "tier": 2,
+      "sequence": 21,
+      "file": "l1/FIN-L1-021.json"
+    },
+    {
+      "ticket_id": "FIN-L1-022",
+      "tier": 2,
+      "sequence": 22,
+      "file": "l1/FIN-L1-022.json"
+    },
+    {
+      "ticket_id": "FIN-L1-023",
+      "tier": 2,
+      "sequence": 23,
+      "file": "l1/FIN-L1-023.json"
+    },
+    {
+      "ticket_id": "FIN-L1-024",
+      "tier": 3,
+      "sequence": 24,
+      "file": "l1/FIN-L1-024.json"
+    }
+  ]
+}

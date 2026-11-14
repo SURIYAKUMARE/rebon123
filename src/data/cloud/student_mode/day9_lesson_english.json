@@ -1,0 +1,84 @@
+{
+  "day": 9,
+  "part": "A",
+  "language": "english",
+  "title": "Finova Company Lens",
+  "duration_minutes": 14,
+  "blocks": [
+    {
+      "block": 0,
+      "type": "lesson_intro",
+      "heading": "LESSON 9 OF 10",
+      "board_text": "Finova Company Lens\n\nFocus:\nFinova = payments. Orders, money, trust. Outage = ₹ and reputation.\n\nStill no console — board literacy only.",
+      "ren_voice": "Lesson 9. Finova = payments. Orders, money, trust. Outage = ₹ and reputation. I will keep this tight — model, Finova story, trap, check, habit.",
+      "check_question": null
+    },
+    {
+      "block": 1,
+      "type": "concept_intro",
+      "heading": "MENTAL MODEL",
+      "board_text": "Finova = payments. Orders, money, trust. Outage = ₹ and reputation.",
+      "ren_voice": "Finova = payments. Orders, money, trust. Outage = ₹ and reputation.",
+      "check_question": {
+        "question": "In your words — what is the core idea of lesson 9?",
+        "expected_response_type": "open",
+        "accept_keywords": [
+          "finova",
+          "payment",
+          "money",
+          "trust",
+          "order",
+          "outage"
+        ],
+        "ren_response_if_correct": "Good — you own the model.",
+        "ren_response_if_incorrect": "Say it simpler: Finova = payments. Orders, money, trust. Outage = ₹ and reputation.…"
+      }
+    },
+    {
+      "block": 2,
+      "type": "example",
+      "heading": "COMPANY STORY",
+      "board_text": "Every service choice must protect money movement and customer trust.",
+      "ren_voice": "Every service choice must protect money movement and customer trust.",
+      "check_question": null
+    },
+    {
+      "block": 3,
+      "type": "mistake_simulation",
+      "heading": "TRAP + HABIT",
+      "board_text": "Trap juniors fall into.\n\nHabit: Translate every tech topic into: orders · money · trust.",
+      "ren_voice": "Trap exists. Habit to keep: Translate every tech topic into: orders · money · trust.",
+      "check_question": {
+        "question": "What habit will you keep from this lesson?",
+        "expected_response_type": "open",
+        "accept_keywords": [
+          "finova",
+          "payment",
+          "money",
+          "trust",
+          "order",
+          "outage"
+        ],
+        "ren_response_if_correct": "That habit will save you on the desk.",
+        "ren_response_if_incorrect": "Translate every tech topic into: orders · money · trust."
+      }
+    },
+    {
+      "block": 4,
+      "type": "summary",
+      "heading": "LOCK IT IN",
+      "board_text": "• Finova = payments. Orders, money, trust. Outage = ₹ and reputation.\n• Translate every tech topic into: orders · money · trust.\n• Next lesson continues the map",
+      "ren_voice": "Lesson 9 locked. Keep going.",
+      "check_question": null
+    }
+  ],
+  "lesson_summary": {
+    "board_text": "Finova Company Lens",
+    "ren_voice": "Lesson 9 done."
+  },
+  "doubt_session": {
+    "ren_opening": "Any doubt before we close?",
+    "wait_for_response": true,
+    "ren_closing": "Good."
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "role_id": "l1_cloud_support_associate",
+  "content_status": "ready",
+  "duration_minutes": 8,
+  "ticket_id": "FIN-L1-017",
+  "tier": 3,
+  "sequence": 17,
+  "service": "iam",
+  "source_lessons": [
+    "PM-1.5"
+  ],
+  "unlock": {
+    "lessons_complete": [
+      "PM-1.5"
+    ],
+    "tickets_closed": [
+      "FIN-L1-016"
+    ]
+  },
+  "email": {
+    "message_id": "Who changed -b6ow",
+    "from": {
+      "name": "Arjun Mehta",
+      "email": "arjun.mehta@finova.tech",
+      "title": "Infrastructure Lead"
+    },
+    "to": [
+      {
+        "name": "You",
+        "email": "cloud-support@finova.tech",
+        "title": "Cloud Support Associate (L1)"
+      }
+    ],
+    "subject": "Who changed the payments policy last night?",
+    "body": "Need facts, not a guess.\n\nWHAT HAPPENED\nSomeone changed a payments IAM policy last night. I need the CloudTrail details.\n\nWHAT YOU NEED TO DO\n1. Open the attachment cloudtrail-excerpt.json on this mail.\n2. Read the event name, the user name, the time, and the source IP.\n\nDO NOT\nDo not change the policy to undo it. Report the facts.\n\nREPLY WITH\nActor, event name, time, and source IP from the attachment.\n\n— Arjun",
+    "received_at_label": "Today",
+    "priority": "P2",
+    "attachments": [
+      {
+        "name": "cloudtrail-excerpt.json",
+        "kind": "json",
+        "content": "{\n  \"eventName\": \"PutUserPolicy\",\n  \"userIdentity\": { \"userName\": \"ops.lead\" },\n  \"eventTime\": \"2026-09-25T22:14:03Z\",\n  \"sourceIPAddress\": \"103.21.244.12\"\n}"
+      }
+    ]
+  },
+  "work": {
+    "environment": "checklist",
+    "steps": [
+      {
+        "id": "s1",
+        "kind": "checklist",
+        "instruction": "Read CloudTrail excerpt attachment.",
+        "confirm_label": "Excerpt read"
+      },
+      {
+        "id": "s2",
+        "kind": "observe",
+        "instruction": "Who was the actor?",
+        "question": "Actor username?",
+        "accept_keywords": [
+          "ops.lead",
+          "ops"
+        ],
+        "hint": "ops.lead",
+        "capture_as": "actor"
+      }
+    ]
+  },
+  "reply": {
+    "min_words": 15,
+    "max_words": 200,
+    "accept_keywords": [
+      {
+        "id": "actor",
+        "label": "actor",
+        "any_of": [
+          "ops.lead",
+          "ops"
+        ]
+      },
+      {
+        "id": "event",
+        "label": "event",
+        "any_of": [
+          "putuserpolicy",
+          "policy"
+        ]
+      },
+      {
+        "id": "when",
+        "label": "time",
+        "any_of": [
+          "22:14",
+          "2026-09-25",
+          "eventtime"
+        ]
+      },
+      {
+        "id": "ip",
+        "label": "source ip",
+        "any_of": [
+          "103.21.244.12",
+          "sourceip",
+          "ip"
+        ]
+      }
+    ],
+    "required_groups": [
+      "actor",
+      "event"
+    ],
+    "bonus_groups": [
+      "when",
+      "ip"
+    ],
+    "model_reply": "CloudTrail: PutUserPolicy by ops.lead at 2026-09-25T22:14:03Z from 103.21.244.12. — L1",
+    "max_attempts_before_model": 3
+  },
+  "debrief": {
+    "english": "Investigation = facts, not guesses.",
+    "tanglish": "Facts mattum — guess illa."
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "day": 8,
+  "part": "A",
+  "language": "tanglish",
+  "title": "Observe — Why Monitoring Exists",
+  "duration_minutes": 13,
+  "blocks": [
+    {
+      "block": 0,
+      "type": "lesson_intro",
+      "heading": "LESSON 8 OF 10",
+      "board_text": "Observe — Why Monitoring Exists\n\nFocus:\nCloudWatch and friends: metrics, alarms, logs — eyes on production.\n\nStill no console — board literacy only.",
+      "ren_voice": "Lesson 8. CloudWatch and friends: metrics, alarms, logs — eyes on production. Short and clear — model, Finova, trap, check, habit.",
+      "check_question": null
+    },
+    {
+      "block": 1,
+      "type": "concept_intro",
+      "heading": "MENTAL MODEL",
+      "board_text": "CloudWatch and friends: metrics, alarms, logs — eyes on production.",
+      "ren_voice": "CloudWatch and friends: metrics, alarms, logs — eyes on production.",
+      "check_question": {
+        "question": "Lesson 8 core idea unna words-la solunga?",
+        "expected_response_type": "open",
+        "accept_keywords": [
+          "cloudwatch",
+          "monitor",
+          "alarm",
+          "metric",
+          "log",
+          "observe"
+        ],
+        "ren_response_if_correct": "Nalla — model unkitta irukku.",
+        "ren_response_if_incorrect": "Simple-aa: CloudWatch and friends: metrics, alarms, logs — eyes on production.…"
+      }
+    },
+    {
+      "block": 2,
+      "type": "example",
+      "heading": "COMPANY STORY",
+      "board_text": "Without observe, you learn about outages from angry customers first.",
+      "ren_voice": "Without observe, you learn about outages from angry customers first.",
+      "check_question": null
+    },
+    {
+      "block": 3,
+      "type": "mistake_simulation",
+      "heading": "TRAP + HABIT",
+      "board_text": "Trap juniors fall into.\n\nHabit: Alarm before dashboard tourism — know what wakes you at 2am.",
+      "ren_voice": "Trap irukku. Habit: Alarm before dashboard tourism — know what wakes you at 2am.",
+      "check_question": {
+        "question": "Indha lesson-la entha habit vechikkuringa?",
+        "expected_response_type": "open",
+        "accept_keywords": [
+          "cloudwatch",
+          "monitor",
+          "alarm",
+          "metric",
+          "log",
+          "observe"
+        ],
+        "ren_response_if_correct": "Adhu desk-la save pannum.",
+        "ren_response_if_incorrect": "Alarm before dashboard tourism — know what wakes you at 2am."
+      }
+    },
+    {
+      "block": 4,
+      "type": "summary",
+      "heading": "LOCK IT IN",
+      "board_text": "• CloudWatch and friends: metrics, alarms, logs — eyes on production.\n• Alarm before dashboard tourism — know what wakes you at 2am.\n• Next lesson continues the map",
+      "ren_voice": "Lesson 8 locked. Continue.",
+      "check_question": null
+    }
+  ],
+  "lesson_summary": {
+    "board_text": "Observe — Why Monitoring Exists",
+    "ren_voice": "Lesson 8 done."
+  },
+  "doubt_session": {
+    "ren_opening": "Doubt irukka?",
+    "wait_for_response": true,
+    "ren_closing": "Ok."
+  }
+}

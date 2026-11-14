@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "role_id": "l1_cloud_support_associate",
+  "content_status": "ready",
+  "duration_minutes": 8,
+  "ticket_id": "FIN-L1-019",
+  "tier": 1,
+  "sequence": 19,
+  "service": "cloudwatch",
+  "source_lessons": [
+    "PM-5.1"
+  ],
+  "unlock": {
+    "lessons_complete": [
+      "PM-5.1"
+    ],
+    "tickets_closed": [
+      "FIN-L1-018"
+    ]
+  },
+  "email": {
+    "message_id": "Graph is fla-0h8b",
+    "from": {
+      "name": "Rahul Dev",
+      "email": "rahul.dev@finova.tech",
+      "title": "Developer"
+    },
+    "to": [
+      {
+        "name": "You",
+        "email": "cloud-support@finova.tech",
+        "title": "Cloud Support Associate (L1)"
+      }
+    ],
+    "subject": "Graph is flat — is monitoring broken?",
+    "body": "The CPU graph is a flat line.\n\nWHAT HAPPENED\nI think monitoring is dead because the chart does not move.\n\nWHAT YOU NEED TO DO\n1. Open CloudWatch, Dashboards, payments-api.\n2. Read the note on the flat graph.\n3. Check the time range before you call the metric broken.\n\nDO NOT\nDo not delete the dashboard or the alarm.\n\nREPLY WITH\nMonitoring is not broken. A flat line can be the time range or period. Say what you would widen.\n\n— Rahul",
+    "received_at_label": "Today",
+    "priority": "P3"
+  },
+  "work": {
+    "environment": "checklist",
+    "steps": [
+      {
+        "id": "s1",
+        "kind": "checklist",
+        "instruction": "Check time range / period — often too wide or wrong metric.",
+        "confirm_label": "Checked range/period"
+      },
+      {
+        "id": "s2",
+        "kind": "checklist",
+        "instruction": "Confirm metric namespace/dimension for the instance.",
+        "confirm_label": "Confirmed metric identity"
+      }
+    ]
+  },
+  "reply": {
+    "min_words": 15,
+    "max_words": 200,
+    "accept_keywords": [
+      {
+        "id": "notbroken",
+        "label": "not necessarily broken",
+        "any_of": [
+          "not broken",
+          "time range",
+          "period",
+          "wrong metric",
+          "flat"
+        ]
+      },
+      {
+        "id": "fix",
+        "label": "what to check",
+        "any_of": [
+          "range",
+          "period",
+          "dimension",
+          "namespace",
+          "refresh"
+        ]
+      }
+    ],
+    "required_groups": [
+      "notbroken",
+      "fix"
+    ],
+    "model_reply": "Flat graphs are often wrong time range/period or wrong metric dimensions — not dead monitoring. Adjust range and confirm dimensions. — L1",
+    "max_attempts_before_model": 3
+  },
+  "debrief": {
+    "english": "False alarm: range/period before 'monitoring is broken'.",
+    "tanglish": "Range/period first."
+  }
+}

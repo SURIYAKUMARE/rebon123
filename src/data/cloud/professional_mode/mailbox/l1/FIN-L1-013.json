@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "role_id": "l1_cloud_support_associate",
+  "content_status": "ready",
+  "duration_minutes": 8,
+  "ticket_id": "FIN-L1-013",
+  "tier": 2,
+  "sequence": 13,
+  "service": "iam",
+  "source_lessons": [
+    "PM-1.4"
+  ],
+  "unlock": {
+    "lessons_complete": [
+      "PM-1.4"
+    ],
+    "tickets_closed": [
+      "FIN-L1-012"
+    ]
+  },
+  "email": {
+    "message_id": "Access Denie-v0ja",
+    "from": {
+      "name": "Rahul Dev",
+      "email": "rahul.dev@finova.tech",
+      "title": "Developer"
+    },
+    "to": [
+      {
+        "name": "You",
+        "email": "cloud-support@finova.tech",
+        "title": "Cloud Support Associate (L1)"
+      }
+    ],
+    "subject": "Access Denied on s3:PutObject",
+    "body": "Error on my screen:\nAccessDenied. User rahul.dev is not authorized to perform s3:PutObject on arn:aws:s3:::finova-reports/*\n\nWHAT HAPPENED\nRahul cannot upload to the finova-reports bucket.\n\nWHAT YOU NEED TO DO\n1. Open IAM, Users, rahul.dev and read the attached policies.\n2. Open S3 and confirm the bucket finova-reports exists.\n3. Explain which permission is missing.\n\nDO NOT\nDo not attach AdministratorAccess. Do not change the bucket.\n\nREPLY WITH\nPutObject is missing. The bucket is finova-reports. The fix is a scoped policy, not admin.\n\n— Rahul",
+    "received_at_label": "Today",
+    "priority": "P3"
+  },
+  "work": {
+    "environment": "checklist",
+    "steps": [
+      {
+        "id": "s1",
+        "kind": "checklist",
+        "instruction": "Extract principal, action, resource from the error.",
+        "confirm_label": "Parsed Access Denied"
+      },
+      {
+        "id": "s2",
+        "kind": "checklist",
+        "instruction": "Decide: missing PutObject on finova-reports — route to bucket owner / scoped policy, not Admin.",
+        "confirm_label": "Routed scoped fix"
+      }
+    ]
+  },
+  "reply": {
+    "min_words": 15,
+    "max_words": 200,
+    "accept_keywords": [
+      {
+        "id": "cause",
+        "label": "missing put/permission",
+        "any_of": [
+          "putobject",
+          "permission",
+          "not authorized",
+          "denied",
+          "missing"
+        ]
+      },
+      {
+        "id": "resource",
+        "label": "bucket/reports",
+        "any_of": [
+          "finova-reports",
+          "s3",
+          "bucket"
+        ]
+      },
+      {
+        "id": "route",
+        "label": "scoped fix not admin",
+        "any_of": [
+          "scoped",
+          "owner",
+          "policy",
+          "not admin",
+          "least"
+        ]
+      }
+    ],
+    "required_groups": [
+      "cause",
+      "resource"
+    ],
+    "bonus_groups": [
+      "route"
+    ],
+    "reject_keywords": [
+      "administratoraccess"
+    ],
+    "model_reply": "rahul.dev lacks s3:PutObject on finova-reports. Request a scoped allow (or group policy) from bucket owner — not AdministratorAccess. — L1",
+    "max_attempts_before_model": 3
+  },
+  "debrief": {
+    "english": "Parse the error: who / action / resource.",
+    "tanglish": "Who + action + resource parse pannunga."
+  }
+}

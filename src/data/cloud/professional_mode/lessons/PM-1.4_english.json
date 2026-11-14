@@ -1,0 +1,122 @@
+{
+  "lesson_id": "PM-1.4",
+  "lesson_title": "Debugging Access Denied",
+  "session_id": "PM-1",
+  "mode": "professional",
+  "language": "english",
+  "schema_version": 2,
+  "duration_minutes": 20,
+  "company": {
+    "name": "Finova Technologies",
+    "your_role": "Cloud Support Associate (L1)",
+    "current_account": "finova-dev"
+  },
+  "account": {
+    "account_id": "847291635028",
+    "account_name": "finova-dev",
+    "region": "ap-south-1"
+  },
+  "lesson_intro": {
+    "heading": "CSA L1 · Access Denied",
+    "board_text": "Debugging Access Denied\nFinova support playbook\n\n1. Read the error ARN / action\n2. Identify the principal\n3. Find missing Allow or explicit Deny\n4. Fix with least privilege — never Admin panic",
+    "ren_voice": "This is the ticket that defines Cloud Support Associate work. Access Denied. You will not guess. You will read the error, find the principal, find the statement, and fix with the smallest change."
+  },
+  "whiteboard_intro": {
+    "duration_seconds": 40,
+    "board_text": "Access Denied playbook\n• Error names the action and often the resource\n• Principal = user / role ARN in the message\n• Check group policies, then inline, then SCPs if org\n• Fix: add scoped Allow OR remove Deny — never AdministratorAccess",
+    "ren_voice": "Four steps. Read the error. Name the principal. Locate the policy gap. Fix with least privilege. At Finova, attaching AdministratorAccess on an Access Denied ticket fails the security review."
+  },
+  "segments": [
+    {
+      "id": "S1",
+      "type": "demonstrate",
+      "title": "Start from the user",
+      "setup_voice": "Simulate a ticket: developer cannot GetObject on finova-dev-assets.",
+      "steps": [
+        {
+          "voice": "Open Users — find the principal named in the ticket.",
+          "cursor": { "action": "navigate", "target": "nav-users" },
+          "pause_ms": 1000
+        },
+        {
+          "voice": "Permissions tab — every attached policy is a suspect until proven otherwise.",
+          "cursor": { "action": "highlight", "target": "tab-permissions" },
+          "pause_ms": 900
+        }
+      ],
+      "lesson_voice": "Do not open Policies at random. Start from the identity the error named. Then expand each attached policy.",
+      "check": {
+        "voice": "Why start from the user instead of searching all policies in the account?",
+        "wait_for_input": true,
+        "accept_keywords": ["principal", "attached", "error", "who", "identity", "user", "ticket"],
+        "response_if_correct": "The error points at a principal. Only their effective permissions matter for this ticket.",
+        "response_if_incorrect": "The error named someone — how does that narrow your search?"
+      }
+    },
+    {
+      "id": "S2",
+      "type": "teach",
+      "title": "Board walkthrough of a denial",
+      "steps": [
+        {
+          "voice": "Imagine the error: User arn:aws:iam::847291635028:user/dev-rita is not authorized to perform s3:GetObject on arn:aws:s3:::finova-dev-assets/*",
+          "cursor": null,
+          "pause_ms": 1200
+        },
+        {
+          "voice": "You look for s3:GetObject Allow on that bucket ARN. Or a Deny on s3:* that covers it.",
+          "cursor": { "action": "highlight", "target": "json-policy-viewer" },
+          "pause_ms": 1000
+        },
+        {
+          "voice": "Fix: attach an existing Finova S3 read policy to Rita's group — not Admin.",
+          "cursor": { "action": "navigate", "target": "nav-groups" },
+          "pause_ms": 1000
+        }
+      ],
+      "check": {
+        "voice": "What would make you fail a Finova security audit while fixing this ticket?",
+        "wait_for_input": true,
+        "accept_keywords": ["admin", "administrator", "wildcard", "*:*", "over", "privilege"],
+        "response_if_correct": "AdministratorAccess or *:* as a panic fix. Scoped S3 read only.",
+        "response_if_incorrect": "Think blast radius — which policy would security reject immediately?"
+      }
+    },
+    {
+      "id": "S3",
+      "type": "practice",
+      "title": "Open the principal's users page",
+      "instruction_voice": "Practice the first click of every Access Denied ticket — open IAM Users.",
+      "target": "nav-users",
+      "success_targets": ["nav-users"],
+      "hint_after_seconds": 18,
+      "hint_voice": "IAM → Users.",
+      "completion_voice": "Good. Principal first, always."
+    },
+    {
+      "id": "S4",
+      "type": "ask",
+      "title": "Synthesis",
+      "question": "Order the four steps of an Access Denied ticket for a CSA L1.",
+      "wait_for_input": true,
+      "accept_keywords": ["error", "principal", "policy", "deny", "allow", "least", "fix"],
+      "response_if_correct": "Read error → identify principal → find missing Allow or Deny → fix with least privilege.",
+      "response_if_incorrect": "Start from the error message — what does it tell you before you click anything?"
+    }
+  ],
+  "session_close": {
+    "ren_voice": "Access Denied is a reading problem before it is a clicking problem. Principal, policy gap, least privilege fix. Admin panic fails the audit. Next: how roles differ from users when a service is denied.",
+    "summary_points": [
+      "Read the error ARN and action",
+      "Start from the principal",
+      "Find missing Allow or explicit Deny",
+      "Never AdministratorAccess as the fix"
+    ],
+    "doubt_session": {
+      "ren_opening": "Questions on the Access Denied playbook?",
+      "wait_for_response": true,
+      "ren_response_template": "Cover error reading, principal lookup, Deny vs missing Allow, and least-privilege fixes. Defer Organizations SCPs and Permission Boundaries deep-dives unless basic.",
+      "ren_closing": "Next — IAM roles: when the principal is a service, not a human."
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "role_id": "l1_cloud_support_associate",
+  "content_status": "ready",
+  "duration_minutes": 8,
+  "ticket_id": "FIN-L1-010",
+  "tier": 1,
+  "sequence": 10,
+  "service": "iam",
+  "source_lessons": [
+    "PM-1.1"
+  ],
+  "unlock": {
+    "lessons_complete": [
+      "PM-1.1"
+    ],
+    "tickets_closed": [
+      "FIN-L1-005"
+    ]
+  },
+  "email": {
+    "message_id": "Is rahul.dev-9qlg",
+    "from": {
+      "name": "Arjun Mehta",
+      "email": "arjun.mehta@finova.tech",
+      "title": "Infrastructure Lead"
+    },
+    "to": [
+      {
+        "name": "You",
+        "email": "cloud-support@finova.tech",
+        "title": "Cloud Support Associate (L1)"
+      }
+    ],
+    "subject": "Is rahul.dev in the Developers group?",
+    "body": "Quick read-only check.\n\nWHAT HAPPENED\nI need to know if rahul.dev is in the Developers group before I approve a request.\n\nWHAT YOU NEED TO DO\n1. Open IAM, then Users, then rahul.dev.\n2. Read the groups listed on that user.\n\nDO NOT\nDo not add or remove a group. This is read-only.\n\nREPLY WITH\nWhether rahul.dev is in the Developers group.\n\n— Arjun",
+    "received_at_label": "Today",
+    "priority": "P4"
+  },
+  "work": {
+    "environment": "checklist",
+    "steps": [
+      {
+        "id": "s1",
+        "kind": "checklist",
+        "instruction": "Open IAM user rahul.dev → Groups.",
+        "confirm_label": "Opened user groups"
+      },
+      {
+        "id": "s2",
+        "kind": "observe",
+        "instruction": "What group is he in? (sim: Developers)",
+        "question": "Group name?",
+        "accept_keywords": [
+          "developers",
+          "developer"
+        ],
+        "hint": "Developers",
+        "capture_as": "group"
+      }
+    ]
+  },
+  "reply": {
+    "min_words": 15,
+    "max_words": 200,
+    "accept_keywords": [
+      {
+        "id": "user",
+        "label": "names user",
+        "any_of": [
+          "rahul"
+        ]
+      },
+      {
+        "id": "group",
+        "label": "names Developers",
+        "any_of": [
+          "developers",
+          "developer"
+        ]
+      }
+    ],
+    "required_groups": [
+      "user",
+      "group"
+    ],
+    "model_reply": "rahul.dev is in the Developers group. — L1",
+    "max_attempts_before_model": 3
+  },
+  "debrief": {
+    "english": "Read-only checks are valid L1 work.",
+    "tanglish": "Read-only check-um L1 work."
+  }
+}

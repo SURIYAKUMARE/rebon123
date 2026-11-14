@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "company": "Finova Technologies",
+  "teaching_level": "principal_mentor_l5",
+  "mvp_services": ["console", "iam", "cloudwatch", "ec2", "s3", "vpc"],
+  "phase0": {
+    "launch_roles": ["l1_cloud_support_associate", "l2_cloud_operations", "cloud_engineer"],
+    "teaser_roles": ["senior_cloud_engineer", "cloud_architect_track"],
+    "r1_test_out_allowed": true,
+    "progress_storage": "local_only"
+  },
+  "notes": "Role is the spine. Six services = ladder ceiling across roles — NOT shown all at once. Entry role sees only its must-know lessons/services; promote unlocks the next role's set.",
+  "roles": [
+    {
+      "role_id": "l1_cloud_support_associate",
+      "title": "Cloud Support Associate (L1)",
+      "order": 1,
+      "company_frame": "Finova Technologies",
+      "entry_speech": "You are joining Finova as Cloud Support Associate L1. Tickets, Access Denied, dashboards — I will teach you like your desk mentor who has lived production.",
+      "must_know": [
+        "Console literacy (region, account, search) — ALWAYS first",
+        "IAM read + Access Denied triage",
+        "CloudWatch alarms and dashboards basics"
+      ],
+      "services": ["console", "iam", "cloudwatch"],
+      "lesson_sessions": ["PM-0", "PM-1", "PM-5"],
+      "entry_first_lesson": "PM-0.1",
+      "mastery_gate": {
+        "min_lessons_complete": 8,
+        "promotion_review_threshold": 0.75
+      },
+      "next_role_id": "l2_cloud_operations",
+      "available": true,
+      "launch_status": "live"
+    },
+    {
+      "role_id": "l2_cloud_operations",
+      "title": "Cloud Operations Associate",
+      "order": 2,
+      "company_frame": "Finova Technologies",
+      "entry_speech": "Promotion: Operations desk. Deeper incidents on compute and storage — still tickets, higher judgment. I will push you like a real L2 mentor.",
+      "must_know": [
+        "Console literacy if not already done (PM-0.1 first)",
+        "EC2 day-2 triage",
+        "S3 access and security incidents",
+        "Stronger CloudWatch incident tracing"
+      ],
+      "services": ["console", "ec2", "s3"],
+      "lesson_sessions": ["PM-0", "PM-3", "PM-4"],
+      "entry_first_lesson": "PM-0.1",
+      "mastery_gate": {
+        "min_lessons_complete": 4,
+        "promotion_review_threshold": 0.75
+      },
+      "next_role_id": "cloud_engineer",
+      "available": true,
+      "launch_status": "live"
+    },
+    {
+      "role_id": "cloud_engineer",
+      "title": "Cloud Engineer",
+      "order": 3,
+      "company_frame": "Finova Technologies",
+      "entry_speech": "You build and harden. VPC, launch correctly, load and scale — design with consequences. Placement may skip R1 if you already prove L1 desk skill.",
+      "must_know": [
+        "Console literacy if not already done (PM-0.1 first)",
+        "VPC building blocks",
+        "EC2 launch + ASG/ALB basics",
+        "S3 lifecycle and hardening"
+      ],
+      "services": ["console", "vpc", "ec2", "s3"],
+      "lesson_sessions": ["PM-0", "PM-2", "PM-3", "PM-4"],
+      "entry_first_lesson": "PM-0.1",
+      "mastery_gate": {
+        "min_lessons_complete": 7,
+        "promotion_review_threshold": 0.75
+      },
+      "next_role_id": "senior_cloud_engineer",
+      "available": true,
+      "launch_status": "live"
+    },
+    {
+      "role_id": "senior_cloud_engineer",
+      "title": "Senior Cloud Engineer",
+      "order": 4,
+      "company_frame": "Finova Technologies",
+      "entry_speech": "Judgment role: cost, reliability, multi-account — you mentor L1s on the desk. Outline in MVP; deepen after launch.",
+      "must_know": [
+        "Cost awareness",
+        "Cross-service incident command",
+        "Least privilege at scale"
+      ],
+      "services": ["console", "iam", "cloudwatch", "ec2", "s3", "vpc"],
+      "lesson_sessions": ["PM-6"],
+      "mastery_gate": {
+        "min_lessons_complete": 4,
+        "promotion_review_threshold": 0.75
+      },
+      "next_role_id": "cloud_architect_track",
+      "available": false,
+      "launch_status": "teaser"
+    },
+    {
+      "role_id": "cloud_architect_track",
+      "title": "Cloud Architect (track)",
+      "order": 5,
+      "company_frame": "Finova Technologies",
+      "entry_speech": "Systems thinking across Finova’s estate. Stretch track — outline in MVP, deepen post-MVP.",
+      "must_know": [
+        "End-to-end designs",
+        "Trade-off communication"
+      ],
+      "services": ["console", "iam", "cloudwatch", "ec2", "s3", "vpc"],
+      "lesson_sessions": [],
+      "mastery_gate": {
+        "min_lessons_complete": 0,
+        "promotion_review_threshold": 0.75
+      },
+      "next_role_id": null,
+      "available": false,
+      "launch_status": "teaser"
+    }
+  ]
+}

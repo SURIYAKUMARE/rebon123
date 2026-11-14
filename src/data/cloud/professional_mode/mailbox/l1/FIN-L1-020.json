@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "role_id": "l1_cloud_support_associate",
+  "content_status": "ready",
+  "duration_minutes": 8,
+  "ticket_id": "FIN-L1-020",
+  "tier": 2,
+  "sequence": 20,
+  "service": "cloudwatch",
+  "source_lessons": [
+    "PM-5.2"
+  ],
+  "unlock": {
+    "lessons_complete": [
+      "PM-5.2"
+    ],
+    "tickets_closed": [
+      "FIN-L1-019"
+    ]
+  },
+  "email": {
+    "message_id": "HighCPU alar-inda",
+    "from": {
+      "name": "L2 On-call",
+      "email": "oncall@finova.tech",
+      "title": "Cloud Ops L2"
+    },
+    "to": [
+      {
+        "name": "You",
+        "email": "cloud-support@finova.tech",
+        "title": "Cloud Support Associate (L1)"
+      }
+    ],
+    "subject": "HighCPU alarm in ALARM — need handoff",
+    "body": "Alarm is red.\n\nWHAT HAPPENED\nAlarm HighCPU-payments is in ALARM. On-call needs a handoff, not a code change.\n\nWHAT YOU NEED TO DO\n1. Open CloudWatch, then Alarms.\n2. Open HighCPU-payments.\n3. Read the state, the threshold, and the period.\n\nDO NOT\nDo not delete the alarm. Do not stop the instance.\n\nREPLY WITH\nState, threshold 80, period 5 minutes, and that you are handing this to L2 on-call.\n\n— On-call",
+    "received_at_label": "Today",
+    "priority": "P2"
+  },
+  "work": {
+    "environment": "checklist",
+    "steps": [
+      {
+        "id": "s1",
+        "kind": "checklist",
+        "instruction": "Open alarm: confirm state ALARM + threshold.",
+        "confirm_label": "Alarm details checked"
+      },
+      {
+        "id": "s2",
+        "kind": "checklist",
+        "instruction": "Handoff note ready for L2 (no silent ack).",
+        "confirm_label": "Handoff prepared"
+      }
+    ]
+  },
+  "reply": {
+    "min_words": 15,
+    "max_words": 200,
+    "accept_keywords": [
+      {
+        "id": "state",
+        "label": "ALARM",
+        "any_of": [
+          "alarm",
+          "state"
+        ]
+      },
+      {
+        "id": "thresh",
+        "label": "threshold",
+        "any_of": [
+          "80",
+          "threshold",
+          "5 min",
+          "five"
+        ]
+      },
+      {
+        "id": "hand",
+        "label": "handoff L2",
+        "any_of": [
+          "l2",
+          "on-call",
+          "handoff",
+          "escalat"
+        ]
+      }
+    ],
+    "required_groups": [
+      "state",
+      "hand"
+    ],
+    "bonus_groups": [
+      "thresh"
+    ],
+    "model_reply": "HighCPU-payments is ALARM (threshold 80%/5m). Sustained in sim. Handing to L2 on-call with metric link/context. — L1",
+    "max_attempts_before_model": 3
+  },
+  "debrief": {
+    "english": "L1 triages and hands off with facts.",
+    "tanglish": "Facts-oda handoff."
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "lesson_id": "PM-1.1",
+  "lesson_title": "Users, Groups, and Resetting Access",
+  "session_id": "PM-1",
+  "mode": "professional",
+  "language": "english",
+  "schema_version": 2,
+  "duration_minutes": 20,
+  "company": {
+    "name": "Finova Technologies",
+    "your_role": "Cloud Support Associate (L1)",
+    "current_account": "finova-dev",
+    "manager": "Arjun Mehta (Infrastructure Lead)"
+  },
+  "account": {
+    "account_id": "847291635028",
+    "account_name": "finova-dev",
+    "region": "ap-south-1"
+  },
+  "lesson_intro": {
+    "heading": "Day 2 at Finova · CSA L1",
+    "board_text": "Users, Groups, and Resetting Access\nFinova Technologies · finova-dev\n\nToday you will learn:\n• IAM user vs group\n• Least privilege — never AdministratorAccess as a shortcut\n• Create a user and attach via group\n• Reset console password and rotate access keys\n\nYou are a Cloud Support Associate. Access resets are your daily bread.",
+    "ren_voice": "Welcome back. Yesterday was console orientation. Today you start real Cloud Support Associate work. At Finova, L1 gets the access tickets — new joiners, forgotten passwords, keys that need rotating. We do it with least privilege. No AdministratorAccess shortcuts. I will teach on the board, demonstrate in IAM, then you practice."
+  },
+  "whiteboard_intro": {
+    "duration_seconds": 45,
+    "board_text": "IAM building blocks for L1\n• User = a person or service identity with long-term credentials\n• Group = a bucket of permissions you attach to people\n• Policy = the JSON that says Allow or Deny\n• Least privilege = only what the job needs\n\nSupport habit: reset access through groups, not one-off Admin policies.",
+    "ren_voice": "Three objects matter on day one: user, group, policy. Users get credentials. Groups get policies. People join groups. When a ticket says reset access — you fix the group membership or rotate credentials. You do not paste AdministratorAccess and walk away."
+  },
+  "segments": [
+    {
+      "id": "S1",
+      "type": "demonstrate",
+      "title": "Open IAM Users",
+      "setup_voice": "Watch the console. We start from IAM Users — this is where every access ticket begins.",
+      "steps": [
+        {
+          "voice": "IAM is global — region does not matter here. Open Users.",
+          "cursor": { "action": "navigate", "target": "nav-users" },
+          "pause_ms": 1000
+        },
+        {
+          "voice": "This list is every long-term human identity in finova-dev.",
+          "cursor": { "action": "highlight", "target": "nav-users" },
+          "pause_ms": 900
+        }
+      ],
+      "lesson_voice": "When a ticket says someone cannot log in, first confirm the username exists and which groups they belong to. Guessing policies before you know the principal wastes time.",
+      "check": {
+        "voice": "In your own words — why do we look at Users before we touch policies?",
+        "wait_for_input": true,
+        "accept_keywords": ["user", "principal", "who", "exist", "group", "identity", "person"],
+        "response_if_correct": "Right. Identify the principal first. Then membership. Then policy.",
+        "response_if_incorrect": "Think about the ticket: a person cannot access something. What do you verify about that person before you edit JSON?"
+      }
+    },
+    {
+      "id": "S2",
+      "type": "teach",
+      "title": "Create user with console access",
+      "steps": [
+        {
+          "voice": "Create user. We give a username that matches Finova naming — usually email-local-part.",
+          "cursor": { "action": "navigate", "target": "create-user" },
+          "pause_ms": 900
+        },
+        {
+          "voice": "Enable console password when the ticket is for a human who needs the console.",
+          "cursor": { "action": "highlight", "target": "iam-console-access" },
+          "pause_ms": 800
+        },
+        {
+          "voice": "Do not attach AdministratorAccess here. We will put them in a group next.",
+          "cursor": { "action": "highlight", "target": "btn-create-user-submit" },
+          "pause_ms": 900
+        }
+      ],
+      "check": {
+        "voice": "A ticket asks you to create a user and grant Admin so they can work. What do you do instead?",
+        "wait_for_input": true,
+        "accept_keywords": ["group", "least", "privilege", "no admin", "scoped", "policy", "not administrator"],
+        "response_if_correct": "Exactly. Group with a scoped policy. Admin is a last resort and needs a senior approve.",
+        "response_if_incorrect": "Least privilege. What object do we use so many users share the same scoped permissions?"
+      }
+    },
+    {
+      "id": "S3",
+      "type": "teach",
+      "title": "Groups and password reset",
+      "steps": [
+        {
+          "voice": "User groups live here. Permissions belong on the group, not scattered on individuals.",
+          "cursor": { "action": "navigate", "target": "nav-groups" },
+          "pause_ms": 1000
+        },
+        {
+          "voice": "For a forgotten password ticket: open the user, Security credentials, manage console password — force reset, send through the approved channel.",
+          "cursor": { "action": "navigate", "target": "nav-users" },
+          "pause_ms": 1000
+        },
+        {
+          "voice": "For leaked keys: deactivate the access key, create a new one only if still required, never paste secrets into chat.",
+          "cursor": { "action": "highlight", "target": "nav-users" },
+          "pause_ms": 900
+        }
+      ],
+      "check": {
+        "voice": "Someone posts an access key in Slack by mistake. What are the first two actions?",
+        "wait_for_input": true,
+        "accept_keywords": ["deactivate", "disable", "rotate", "delete", "revoke", "key", "credential"],
+        "response_if_correct": "Deactivate or delete the key immediately, then rotate if still needed. Chat is not a vault.",
+        "response_if_incorrect": "Think credentials incident — stop the blast first, then replace."
+      }
+    },
+    {
+      "id": "S4",
+      "type": "practice",
+      "title": "Your turn — open Users",
+      "instruction_voice": "Your turn. Navigate to IAM Users on your own. That is where every L1 access ticket starts.",
+      "target": "nav-users",
+      "success_targets": ["nav-users", "service-iam"],
+      "hint_after_seconds": 20,
+      "hint_voice": "Use the IAM left nav — Users. Or search IAM then open Users.",
+      "completion_voice": "Good. Muscle memory for Users will save you on every access ticket."
+    },
+    {
+      "id": "S5",
+      "type": "ask",
+      "title": "Synthesis",
+      "voice": "One synthesis question.",
+      "question": "A new contractor needs S3 read on finova-dev. Walk me through user, group, and what you refuse to attach.",
+      "wait_for_input": true,
+      "accept_keywords": ["user", "group", "s3", "read", "least", "admin", "policy", "not administrator"],
+      "response_if_correct": "Create user, add to a group that already has a scoped S3 read policy — or request that group from a senior. Never AdministratorAccess for read-only work.",
+      "response_if_incorrect": "Name the three pieces: identity, membership, and the permission shape. What do you refuse?"
+    }
+  ],
+  "session_close": {
+    "ren_voice": "Users hold credentials. Groups hold policies. Least privilege always. Password reset and key rotation are L1 bread-and-butter — document who approved, never paste secrets. Next we learn to read the policies themselves.",
+    "summary_points": [
+      "Identify the principal before editing policies",
+      "Permissions via groups, not one-off Admin",
+      "Reset password / rotate keys through Security credentials",
+      "Never paste secrets into chat"
+    ],
+    "doubt_session": {
+      "ren_opening": "Questions on users, groups, or access resets before we go?",
+      "wait_for_response": true,
+      "ren_response_template": "Answer using only user vs group, least privilege, console password reset, and access key rotation. Defer policy JSON syntax to the next lesson.",
+      "ren_closing": "Good. Next lesson — reading IAM policies so you can debug denials without guessing."
+    }
+  }
+}

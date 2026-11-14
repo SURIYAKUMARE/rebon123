@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "role_id": "l1_cloud_support_associate",
+  "content_status": "ready",
+  "duration_minutes": 8,
+  "ticket_id": "FIN-L1-002",
+  "tier": 1,
+  "sequence": 2,
+  "service": "console",
+  "source_lessons": [
+    "PM-0.1"
+  ],
+  "unlock": {
+    "lessons_complete": [
+      "PM-0.1"
+    ],
+    "tickets_closed": [
+      "FIN-L1-001"
+    ]
+  },
+  "email": {
+    "message_id": "Quick check -ybo8",
+    "from": {
+      "name": "Ren",
+      "email": "ren.mentor@finova.tech",
+      "title": "L1 Desk Lead"
+    },
+    "to": [
+      {
+        "name": "You",
+        "email": "cloud-support@finova.tech",
+        "title": "Cloud Support Associate (L1)"
+      }
+    ],
+    "subject": "Quick check — which Region do Finova prod workloads run in?",
+    "body": "Hey,\n\nWHAT HAPPENED\nPeople keep working in the wrong Region and think resources vanished.\n\nWHAT YOU NEED TO DO\n1. Look at the Region selector in the console.\n2. Switch to the Region where Finova India production runs.\n3. Confirm EC2 or VPC resources are actually there.\n\nDO NOT\nDo not delete anything. An empty list in N. Virginia (us-east-1) does not mean production was deleted.\n\nREPLY WITH\nThe Region name and the Region code for Finova India production.\n\n— Ren",
+    "received_at_label": "Today",
+    "priority": "P4"
+  },
+  "work": {
+    "environment": "checklist",
+    "steps": [
+      {
+        "id": "s1",
+        "kind": "checklist",
+        "instruction": "Find the Region selector top-right.",
+        "confirm_label": "I found Region selector"
+      },
+      {
+        "id": "s2",
+        "kind": "observe",
+        "instruction": "Confirm India prod Region code.",
+        "question": "Region code?",
+        "accept_keywords": [
+          "ap-south-1",
+          "mumbai"
+        ],
+        "hint": "Mumbai = ap-south-1",
+        "capture_as": "region"
+      }
+    ]
+  },
+  "reply": {
+    "min_words": 15,
+    "max_words": 200,
+    "accept_keywords": [
+      {
+        "id": "code",
+        "label": "names ap-south-1",
+        "any_of": [
+          "ap-south-1",
+          "apsouth1"
+        ]
+      },
+      {
+        "id": "city",
+        "label": "names Mumbai",
+        "any_of": [
+          "mumbai",
+          "india"
+        ]
+      }
+    ],
+    "required_groups": [
+      "code"
+    ],
+    "bonus_groups": [
+      "city"
+    ],
+    "model_reply": "Ren — Finova prod is Mumbai, ap-south-1. I will check Region before every ticket.",
+    "max_attempts_before_model": 3
+  },
+  "debrief": {
+    "english": "Wrong Region = fake missing resources.",
+    "tanglish": "Wrong Region = fake missing. Always check."
+  }
+}

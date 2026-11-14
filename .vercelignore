@@ -1,0 +1,25 @@
+# Keep Vercel uploads small — build installs deps on their side
+node_modules
+dist
+dist-ssr
+.cursor
+.git
+.vercel
+scratch
+archived
+deploy-vercel
+docs
+*.log
+err.log
+error.log
+firebase-service-account.json
+.env
+.env.*
+!.env.example
+bun.lockb
+scripts/*.png
+scripts/_*
+scripts/mine_*
+scripts/recover_*
+scripts/patch-*
+scripts/fix-flash.mjs

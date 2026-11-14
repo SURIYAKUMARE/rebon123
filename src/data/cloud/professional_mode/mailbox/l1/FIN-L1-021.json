@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "role_id": "l1_cloud_support_associate",
+  "content_status": "ready",
+  "duration_minutes": 8,
+  "ticket_id": "FIN-L1-021",
+  "tier": 2,
+  "sequence": 21,
+  "service": "cloudwatch",
+  "source_lessons": [
+    "PM-5.2"
+  ],
+  "unlock": {
+    "lessons_complete": [
+      "PM-5.2"
+    ],
+    "tickets_closed": [
+      "FIN-L1-020"
+    ]
+  },
+  "email": {
+    "message_id": "Alarm stuck -i3uw",
+    "from": {
+      "name": "Meera Iyer",
+      "email": "meera.iyer@finova.tech",
+      "title": "Payments Eng Manager"
+    },
+    "to": [
+      {
+        "name": "You",
+        "email": "cloud-support@finova.tech",
+        "title": "Cloud Support Associate (L1)"
+      }
+    ],
+    "subject": "Alarm stuck INSUFFICIENT_DATA — outage?",
+    "body": "Alarm has said INSUFFICIENT_DATA for an hour.\n\nWHAT HAPPENED\nI think we are down because the alarm is not OK.\n\nWHAT YOU NEED TO DO\n1. Open CloudWatch, Alarms, payments-metric-gap.\n2. Read the state and the description.\n\nDO NOT\nDo not declare an outage from this alarm alone.\n\nREPLY WITH\nINSUFFICIENT_DATA means the metric is missing, not that customers are down. Say you would check whether the instance is still publishing metrics.\n\n— Meera",
+    "received_at_label": "Today",
+    "priority": "P4"
+  },
+  "work": {
+    "environment": "checklist",
+    "steps": [
+      {
+        "id": "s1",
+        "kind": "checklist",
+        "instruction": "Explain INSUFFICIENT_DATA ≠ outage (stopped instance / missing metrics).",
+        "confirm_label": "Explained state"
+      },
+      {
+        "id": "s2",
+        "kind": "checklist",
+        "instruction": "Check if instance/metrics stopped publishing.",
+        "confirm_label": "Checked publishers"
+      }
+    ]
+  },
+  "reply": {
+    "min_words": 15,
+    "max_words": 200,
+    "accept_keywords": [
+      {
+        "id": "mean",
+        "label": "explains insufficient",
+        "any_of": [
+          "insufficient",
+          "not outage",
+          "missing metric",
+          "stopped",
+          "no data"
+        ]
+      },
+      {
+        "id": "next",
+        "label": "next check",
+        "any_of": [
+          "instance",
+          "metric",
+          "publish",
+          "agent",
+          "running"
+        ]
+      }
+    ],
+    "required_groups": [
+      "mean",
+      "next"
+    ],
+    "model_reply": "INSUFFICIENT_DATA means metrics aren't arriving (often stopped instance) — not automatically an outage. Checking publishers next. — L1",
+    "max_attempts_before_model": 3
+  },
+  "debrief": {
+    "english": "Know alarm states: OK / ALARM / INSUFFICIENT_DATA.",
+    "tanglish": "Moonu state theriyanum."
+  }
+}

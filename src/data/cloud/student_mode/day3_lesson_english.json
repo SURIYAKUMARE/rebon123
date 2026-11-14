@@ -1,0 +1,84 @@
+{
+  "day": 3,
+  "part": "A",
+  "language": "english",
+  "title": "How Cloud Helps — Elasticity & Regions",
+  "duration_minutes": 14,
+  "blocks": [
+    {
+      "block": 0,
+      "type": "lesson_intro",
+      "heading": "LESSON 3 OF 10",
+      "board_text": "How Cloud Helps — Elasticity & Regions\n\nFocus:\nElasticity = rubber band capacity. Region = city of data centers. AZ = separate building for failure isolation.\n\nStill no console — board literacy only.",
+      "ren_voice": "Lesson 3. Elasticity = rubber band capacity. Region = city of data centers. AZ = separate building for failure isolation. I will keep this tight — model, Finova story, trap, check, habit.",
+      "check_question": null
+    },
+    {
+      "block": 1,
+      "type": "concept_intro",
+      "heading": "MENTAL MODEL",
+      "board_text": "Elasticity = rubber band capacity. Region = city of data centers. AZ = separate building for failure isolation.",
+      "ren_voice": "Elasticity = rubber band capacity. Region = city of data centers. AZ = separate building for failure isolation.",
+      "check_question": {
+        "question": "In your words — what is the core idea of lesson 3?",
+        "expected_response_type": "open",
+        "accept_keywords": [
+          "elastic",
+          "region",
+          "az",
+          "scale",
+          "mumbai",
+          "latency"
+        ],
+        "ren_response_if_correct": "Good — you own the model.",
+        "ren_response_if_incorrect": "Say it simpler: Elasticity = rubber band capacity. Region = city of data centers. AZ = separate …"
+      }
+    },
+    {
+      "block": 2,
+      "type": "example",
+      "heading": "COMPANY STORY",
+      "board_text": "You pick Mumbai (ap-south-1) for Indian users to cut latency.",
+      "ren_voice": "You pick Mumbai (ap-south-1) for Indian users to cut latency.",
+      "check_question": null
+    },
+    {
+      "block": 3,
+      "type": "mistake_simulation",
+      "heading": "TRAP + HABIT",
+      "board_text": "Trap juniors fall into.\n\nHabit: Always ask: which Region, and can this survive one AZ failing?",
+      "ren_voice": "Trap exists. Habit to keep: Always ask: which Region, and can this survive one AZ failing?",
+      "check_question": {
+        "question": "What habit will you keep from this lesson?",
+        "expected_response_type": "open",
+        "accept_keywords": [
+          "elastic",
+          "region",
+          "az",
+          "scale",
+          "mumbai",
+          "latency"
+        ],
+        "ren_response_if_correct": "That habit will save you on the desk.",
+        "ren_response_if_incorrect": "Always ask: which Region, and can this survive one AZ failing?"
+      }
+    },
+    {
+      "block": 4,
+      "type": "summary",
+      "heading": "LOCK IT IN",
+      "board_text": "• Elasticity = rubber band capacity. Region = city of data centers. AZ = separate building for failure isolation.\n• Always ask: which Region, and can this survive one AZ failing?\n• Next lesson continues the map",
+      "ren_voice": "Lesson 3 locked. Keep going.",
+      "check_question": null
+    }
+  ],
+  "lesson_summary": {
+    "board_text": "How Cloud Helps — Elasticity & Regions",
+    "ren_voice": "Lesson 3 done."
+  },
+  "doubt_session": {
+    "ren_opening": "Any doubt before we close?",
+    "wait_for_response": true,
+    "ren_closing": "Good."
+  }
+}

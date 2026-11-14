@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "role_id": "l1_cloud_support_associate",
+  "content_status": "ready",
+  "duration_minutes": 8,
+  "ticket_id": "FIN-L1-024",
+  "tier": 3,
+  "sequence": 24,
+  "service": "cloudwatch",
+  "source_lessons": [
+    "PM-5.2",
+    "PM-5.3"
+  ],
+  "unlock": {
+    "lessons_complete": [
+      "PM-5.2",
+      "PM-5.3"
+    ],
+    "tickets_closed": [
+      "FIN-L1-023"
+    ]
+  },
+  "email": {
+    "message_id": "P1 — payment-02ft",
+    "from": {
+      "name": "Meera Iyer",
+      "email": "meera.iyer@finova.tech",
+      "title": "Payments Eng Manager"
+    },
+    "to": [
+      {
+        "name": "You",
+        "email": "cloud-support@finova.tech",
+        "title": "Cloud Support Associate (L1)"
+      }
+    ],
+    "subject": "P1 — payments 5xx spike — status update please",
+    "body": "P1. Customers see errors. I need a status update, not a code fix.\n\nWHAT HAPPENED\nPayments is throwing errors. Leadership wants four facts.\n\nWHAT YOU NEED TO DO\n1. CloudWatch, Dashboards, payments-api: read the CPU.\n2. CloudWatch, Alarms: read HighCPU-payments state.\n3. Logs Insights on /finova/payments: note timeout and 5xx lines.\n4. Decide the escalation.\n\nDO NOT\nDo not deploy code. Do not stop production.\n\nREPLY WITH\nA short status: metric, alarm state, what the logs show, and that you are escalating to L2 on-call.\n\n— Meera",
+    "received_at_label": "Today",
+    "priority": "P1"
+  },
+  "work": {
+    "environment": "checklist",
+    "steps": [
+      {
+        "id": "s1",
+        "kind": "checklist",
+        "instruction": "Pull metric + alarm + log signals into one timeline.",
+        "confirm_label": "Timeline assembled"
+      },
+      {
+        "id": "s2",
+        "kind": "checklist",
+        "instruction": "Escalate to L2/on-call; L1 sends status not a silent fix.",
+        "confirm_label": "Escalated + status ready"
+      }
+    ]
+  },
+  "reply": {
+    "min_words": 15,
+    "max_words": 200,
+    "accept_keywords": [
+      {
+        "id": "status",
+        "label": "status update",
+        "any_of": [
+          "status",
+          "spike",
+          "5xx",
+          "customers"
+        ]
+      },
+      {
+        "id": "signals",
+        "label": "metric/alarm/logs",
+        "any_of": [
+          "metric",
+          "alarm",
+          "log",
+          "cpu",
+          "timeout"
+        ]
+      },
+      {
+        "id": "esc",
+        "label": "escalated",
+        "any_of": [
+          "escalat",
+          "l2",
+          "on-call"
+        ]
+      }
+    ],
+    "required_groups": [
+      "status",
+      "esc"
+    ],
+    "bonus_groups": [
+      "signals"
+    ],
+    "model_reply": "Status: payments 5xx spike observed; HighCPU/5xx alarm context + timeout logs reviewed. Escalated to L2 on-call. L1 monitoring and will update. — L1",
+    "max_attempts_before_model": 3
+  },
+  "debrief": {
+    "english": "Incident comms: facts + escalate + next update.",
+    "tanglish": "Status + escalate + update."
+  }
+}

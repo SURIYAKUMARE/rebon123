@@ -1,0 +1,158 @@
+{
+  "day": 10,
+  "language": "english",
+  "pass_threshold": 0.75,
+  "items": [
+    {
+      "id": "D10-Q1",
+      "type": "quiz",
+      "question": "Professional Mode unlocks after:",
+      "options": [
+        "Fundamentals + readiness pass",
+        "Buying a server",
+        "Ignoring IAM",
+        "Skipping Region forever"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Gate."
+    },
+    {
+      "id": "D10-Q2",
+      "type": "quiz",
+      "question": "Before every console open, check:",
+      "options": [
+        "Region, account, and ticket pain",
+        "Only wallpaper",
+        "Only coffee",
+        "Only timezone jokes"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Habit."
+    },
+    {
+      "id": "D10-Q3",
+      "type": "quiz",
+      "question": "Cloud =",
+      "options": [
+        "Rent, not own",
+        "Own forever racks only",
+        "No bills ever",
+        "No identity"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Foundation."
+    },
+    {
+      "id": "D10-Q4",
+      "type": "quiz",
+      "question": "Service families help you:",
+      "options": [
+        "Map pain before product names",
+        "Skip shared responsibility",
+        "Avoid monitoring",
+        "Share root"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Map first."
+    },
+    {
+      "id": "D10-TF1",
+      "type": "true_false",
+      "statement": "You are ready for Professional Mode without any fundamentals.",
+      "correct": false,
+      "ren_hint_english": "True or false — watch for the junior trap.",
+      "ren_hint_tanglish": "True or false — watch for the junior trap.",
+      "explanation": "Literacy first."
+    },
+    {
+      "id": "D10-TF2",
+      "type": "true_false",
+      "statement": "Console work without Region/account discipline creates fake 'missing' resources.",
+      "correct": true,
+      "ren_hint_english": "True or false — watch for the junior trap.",
+      "ren_hint_tanglish": "True or false — watch for the junior trap.",
+      "explanation": "Classic trap."
+    },
+    {
+      "id": "D10-SA1",
+      "type": "short_answer",
+      "question": "Say the Student Mode story in two sentences.",
+      "model_answer": "Cloud is rent not own; companies pay for speed and survival; families map pain; then console in Professional Mode.",
+      "accept_keywords": [
+        {
+          "id": "g1",
+          "label": "rent + families + pro part 1",
+          "any_of": [
+            "rent",
+            "own",
+            "cloud"
+          ]
+        },
+        {
+          "id": "g2",
+          "label": "rent + families + pro part 2",
+          "any_of": [
+            "family",
+            "professional",
+            "console",
+            "speed"
+          ]
+        }
+      ],
+      "required_groups": [
+        "g1",
+        "g2"
+      ],
+      "ren_hint_english": "Use your own words — hit the key idea.",
+      "ren_hint_tanglish": "Use your own words — hit the key idea.",
+      "explanation": "Cloud is rent not own; companies pay for speed and survival; families map pain; then console in Professional Mode."
+    },
+    {
+      "id": "D10-SA2",
+      "type": "short_answer",
+      "question": "What habit do you take into Professional Mode?",
+      "model_answer": "Before every console open: Region, account, and what ticket pain you are solving.",
+      "accept_keywords": [
+        {
+          "id": "g1",
+          "label": "region account pain part 1",
+          "any_of": [
+            "region"
+          ]
+        },
+        {
+          "id": "g2",
+          "label": "region account pain part 2",
+          "any_of": [
+            "account"
+          ]
+        },
+        {
+          "id": "g3",
+          "label": "region account pain part 3",
+          "any_of": [
+            "ticket",
+            "pain",
+            "problem"
+          ]
+        }
+      ],
+      "required_groups": [
+        "g1",
+        "g2",
+        "g3"
+      ],
+      "ren_hint_english": "Use your own words — hit the key idea.",
+      "ren_hint_tanglish": "Use your own words — hit the key idea.",
+      "explanation": "Before every console open: Region, account, and what ticket pain you are solving."
+    }
+  ]
+}

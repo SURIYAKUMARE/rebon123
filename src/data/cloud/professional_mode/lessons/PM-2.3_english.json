@@ -1,0 +1,154 @@
+{
+  "lesson_id": "PM-2.3",
+  "lesson_title": "Security Groups in Practice",
+  "session_id": "PM-2",
+  "session_name": "VPC",
+  "mode": "professional",
+  "language": "english",
+  "schema_version": 2,
+  "duration_minutes": 18,
+  "teaching_level": "principal_mentor_l5",
+  "company": {
+    "name": "Finova Technologies",
+    "your_role": "Cloud Engineer",
+    "current_account": "finova-dev",
+    "manager": "Arjun Mehta (Infrastructure Lead)"
+  },
+  "account": {
+    "account_id": "847291635028",
+    "account_name": "finova-dev",
+    "region": "ap-south-1"
+  },
+  "lesson_intro": {
+    "heading": "Cloud Engineer · PM-2.3",
+    "board_text": "Security Groups in Practice\nFinova · finova-dev · ap-south-1\n\nWhy before how:\nWrong SG rules = either outage or open-to-world disaster.\n\nMental model:\nSecurity Group = stateful allow-list on the ENI. Default deny inbound.\n\nYou will: watch → learn → practice one navigation.",
+    "ren_voice": "I am Ren. Wrong SG rules = either outage or open-to-world disaster. Mental model: Security Group = stateful allow-list on the ENI. Default deny inbound. I demonstrate, then you practice. Least privilege and Region discipline stay non-negotiable."
+  },
+  "whiteboard_intro": {
+    "duration_seconds": 40,
+    "board_text": "Security Groups in Practice\n• Security Group = stateful allow-list on the ENI. Default deny inbound.\n• Mistake: 0.0.0.0/0 on SSH 'temporarily'.\n• Habit: Source should be another SG or known CIDR — never lazy open.",
+    "ren_voice": "Board picture: Security Group = stateful allow-list on the ENI. Default deny inbound.. Juniors usually: 0.0.0.0/0 on SSH 'temporarily'.. Your habit: Source should be another SG or known CIDR — never lazy open.."
+  },
+  "segments": [
+    {
+      "id": "S1",
+      "type": "demonstrate",
+      "title": "Open VPC",
+      "setup_voice": "Watch — we open VPC the way a real ticket starts.",
+      "steps": [
+        {
+          "voice": "Navigate to VPC. Confirm Region ap-south-1 before you trust the empty list.",
+          "cursor": {
+            "action": "navigate",
+            "target": "service-vpc"
+          },
+          "pause_ms": 1100
+        },
+        {
+          "voice": "Security groups live with the network story even when edited near EC2.",
+          "cursor": {
+            "action": "highlight",
+            "target": "service-vpc"
+          },
+          "pause_ms": 900
+        }
+      ],
+      "lesson_voice": "Allow only what the ticket needs. Temporary means ticket with expiry.",
+      "check": {
+        "voice": "What does a security group do by default for inbound?",
+        "wait_for_input": true,
+        "accept_keywords": [
+          "security",
+          "group",
+          "deny",
+          "allow",
+          "inbound",
+          "sg"
+        ],
+        "response_if_correct": "Deny inbound unless you allow — stateful allow-list.",
+        "response_if_incorrect": "Default deny inbound. You add allows carefully."
+      }
+    },
+    {
+      "id": "S2",
+      "type": "teach",
+      "title": "Company story + trap",
+      "steps": [
+        {
+          "voice": "An L2 opened 22 to the world to 'debug'. Scanners found it in minutes.",
+          "cursor": {
+            "action": "highlight",
+            "target": "service-vpc"
+          },
+          "pause_ms": 1000
+        },
+        {
+          "voice": "Trap: 0.0.0.0/0 on SSH 'temporarily'.. Habit: Source should be another SG or known CIDR — never lazy open.",
+          "cursor": null,
+          "pause_ms": 800
+        }
+      ],
+      "check": {
+        "voice": "What habit will you keep from this lesson?",
+        "wait_for_input": true,
+        "accept_keywords": [
+          "security",
+          "group",
+          "deny",
+          "allow",
+          "inbound",
+          "sg",
+          "habit",
+          "region",
+          "least"
+        ],
+        "response_if_correct": "That habit is desk gold.",
+        "response_if_incorrect": "Source should be another SG or known CIDR — never lazy open."
+      }
+    },
+    {
+      "id": "S3",
+      "type": "practice",
+      "title": "Your turn",
+      "instruction_voice": "Your turn. Open VPC yourself. Start every ticket here.",
+      "target": "service-vpc",
+      "success_targets": [
+        "service-vpc",
+        "service-vpc"
+      ],
+      "hint_after_seconds": 20,
+      "hint_voice": "Use search or Services menu — land on VPC.",
+      "completion_voice": "Good. You found the service. That is how Ops and Engineer days begin."
+    },
+    {
+      "id": "S4",
+      "type": "ask",
+      "title": "Say it back",
+      "question": "What does a security group do by default for inbound?",
+      "wait_for_input": true,
+      "accept_keywords": [
+        "security",
+        "group",
+        "deny",
+        "allow",
+        "inbound",
+        "sg"
+      ],
+      "response_if_correct": "Deny inbound unless you allow — stateful allow-list.",
+      "response_if_incorrect": "Default deny inbound. You add allows carefully."
+    }
+  ],
+  "session_close": {
+    "ren_voice": "Close PM-2.3. Source should be another SG or known CIDR — never lazy open.",
+    "summary_points": [
+      "Security Group = stateful allow-list on the ENI. Default deny inbound.",
+      "Source should be another SG or known CIDR — never lazy open.",
+      "Region + account before panic"
+    ],
+    "doubt_session": {
+      "ren_opening": "Doubt on this service family?",
+      "wait_for_response": true,
+      "ren_closing": "See you on the next ticket lesson."
+    }
+  }
+}

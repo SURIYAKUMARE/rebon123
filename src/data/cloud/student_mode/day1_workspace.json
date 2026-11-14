@@ -1,0 +1,151 @@
+{
+  "day": 1,
+  "language": "english",
+  "pass_threshold": 0.75,
+  "items": [
+    {
+      "id": "D1-Q1",
+      "type": "quiz",
+      "question": "Cloud computing primarily means:",
+      "options": [
+        "Renting infrastructure over the internet",
+        "Buying office servers forever",
+        "Coding without internet",
+        "Sharing one root password"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Rent, not own."
+    },
+    {
+      "id": "D1-Q2",
+      "type": "quiz",
+      "question": "Student Mode delays the console because:",
+      "options": [
+        "Mental models come before clicks",
+        "AWS is free only later",
+        "Console is broken",
+        "Ren cannot speak"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Literacy first."
+    },
+    {
+      "id": "D1-Q3",
+      "type": "quiz",
+      "question": "Which is a major cloud provider?",
+      "options": [
+        "AWS",
+        "Only a local PC shop",
+        "A single office UPS",
+        "A whiteboard"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "AWS is a major provider."
+    },
+    {
+      "id": "D1-Q4",
+      "type": "quiz",
+      "question": "Paying only for what you use is closest to:",
+      "options": [
+        "OpEx / usage billing",
+        "Buying a generator once",
+        "Ignoring capacity",
+        "Free forever"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Usage-shaped bill."
+    },
+    {
+      "id": "D1-TF1",
+      "type": "true_false",
+      "statement": "Cloud means you must buy and house physical servers yourself.",
+      "correct": false,
+      "ren_hint_english": "True or false — watch for the junior trap.",
+      "ren_hint_tanglish": "True or false — watch for the junior trap.",
+      "explanation": "Cloud = rent someone else's data center."
+    },
+    {
+      "id": "D1-TF2",
+      "type": "true_false",
+      "statement": "Understanding rent vs own should come before clicking the AWS console.",
+      "correct": true,
+      "ren_hint_english": "True or false — watch for the junior trap.",
+      "ren_hint_tanglish": "True or false — watch for the junior trap.",
+      "explanation": "That is why Student Mode is fundamentals first."
+    },
+    {
+      "id": "D1-SA1",
+      "type": "short_answer",
+      "question": "In one or two sentences, what makes cloud different from buying servers?",
+      "model_answer": "You rent infrastructure over the internet and pay for what you use instead of owning hardware.",
+      "accept_keywords": [
+        {
+          "id": "g1",
+          "label": "rent vs own part 1",
+          "any_of": [
+            "rent",
+            "own",
+            "buy"
+          ]
+        },
+        {
+          "id": "g2",
+          "label": "rent vs own part 2",
+          "any_of": [
+            "internet",
+            "use",
+            "pay"
+          ]
+        }
+      ],
+      "required_groups": [
+        "g1",
+        "g2"
+      ],
+      "ren_hint_english": "Use your own words — hit the key idea.",
+      "ren_hint_tanglish": "Use your own words — hit the key idea.",
+      "explanation": "You rent infrastructure over the internet and pay for what you use instead of owning hardware."
+    },
+    {
+      "id": "D1-SA2",
+      "type": "short_answer",
+      "question": "Why does Ren delay the console in Student Mode?",
+      "model_answer": "So you build a mental model before buttons — otherwise you become a clicker without judgment.",
+      "accept_keywords": [
+        {
+          "id": "g1",
+          "label": "model before console part 1",
+          "any_of": [
+            "mental",
+            "model",
+            "understand"
+          ]
+        },
+        {
+          "id": "g2",
+          "label": "model before console part 2",
+          "any_of": [
+            "before",
+            "console",
+            "click"
+          ]
+        }
+      ],
+      "required_groups": [
+        "g1",
+        "g2"
+      ],
+      "ren_hint_english": "Use your own words — hit the key idea.",
+      "ren_hint_tanglish": "Use your own words — hit the key idea.",
+      "explanation": "So you build a mental model before buttons — otherwise you become a clicker without judgment."
+    }
+  ]
+}

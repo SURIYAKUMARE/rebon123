@@ -1,0 +1,122 @@
+{
+  "lesson_id": "PM-1.2",
+  "lesson_title": "IAM Roles: How Services Get Permissions",
+  "session_id": "PM-1",
+  "mode": "professional",
+  "language": "english",
+  "schema_version": 2,
+  "duration_minutes": 20,
+  "company": {
+    "name": "Finova Technologies",
+    "your_role": "Cloud Support Associate (L1)",
+    "current_account": "finova-dev"
+  },
+  "account": {
+    "account_id": "847291635028",
+    "account_name": "finova-dev",
+    "region": "ap-south-1"
+  },
+  "lesson_intro": {
+    "heading": "CSA L1 · IAM Roles",
+    "board_text": "IAM Roles for L1\n• Role ≠ user — no long-term password\n• Trust policy = who can assume\n• Permission policy = what they can do\n• Instance profile = EC2 wearing a role\n\nL1 skill: READ trust + permissions when a service is denied.",
+    "ren_voice": "Sometimes Access Denied is not a human — it is EC2 or Lambda missing a role. Today you learn to read a role: trust policy versus permission policy. At L1 you diagnose. You do not invent new trust relationships without a senior."
+  },
+  "whiteboard_intro": {
+    "duration_seconds": 40,
+    "board_text": "Role anatomy\n• Trust policy (who) — ec2.amazonaws.com can AssumeRole\n• Permissions (what) — s3:GetObject on bucket X\n• Users have passwords; roles are assumed temporarily\n• Wrong trust = cannot assume; wrong permissions = assumed but denied",
+    "ren_voice": "Two documents on every role. Trust answers who. Permissions answer what. A service denied can be either — L1 learns to tell which."
+  },
+  "segments": [
+    {
+      "id": "S1",
+      "type": "demonstrate",
+      "title": "Open Roles",
+      "setup_voice": "IAM Roles list — service identities live here.",
+      "steps": [
+        {
+          "voice": "Open Roles.",
+          "cursor": { "action": "navigate", "target": "nav-roles" },
+          "pause_ms": 1000
+        },
+        {
+          "voice": "Each row is a role name. Tickets often name the role on the EC2 instance profile.",
+          "cursor": { "action": "highlight", "target": "nav-roles" },
+          "pause_ms": 900
+        }
+      ],
+      "lesson_voice": "When an instance cannot call S3, check which role is attached, then open that role — do not create a new user for the app.",
+      "check": {
+        "voice": "Why should an app on EC2 use a role instead of an IAM user access key on disk?",
+        "wait_for_input": true,
+        "accept_keywords": ["temporary", "rotate", "key", "secret", "assume", "credential", "security"],
+        "response_if_correct": "Temporary credentials, no long-lived keys on disk, automatic rotation via the instance metadata.",
+        "response_if_incorrect": "Think about keys sitting on a server — what is safer?"
+      }
+    },
+    {
+      "id": "S2",
+      "type": "teach",
+      "title": "Trust vs permissions",
+      "steps": [
+        {
+          "voice": "Trust policy: which service or account may AssumeRole.",
+          "cursor": { "action": "navigate", "target": "nav-roles" },
+          "pause_ms": 900
+        },
+        {
+          "voice": "Permission policies: same JSON shape you already read — Effect, Action, Resource.",
+          "cursor": { "action": "highlight", "target": "json-policy-viewer" },
+          "pause_ms": 900
+        },
+        {
+          "voice": "If trust excludes EC2 but permissions allow S3 — the instance never gets credentials. If trust is fine but S3 is missing — assume works, GetObject fails.",
+          "cursor": null,
+          "pause_ms": 1100
+        }
+      ],
+      "check": {
+        "voice": "EC2 can assume the role but GetObject still fails. Trust or permissions?",
+        "wait_for_input": true,
+        "accept_keywords": ["permission", "policy", "allow", "s3", "missing"],
+        "response_if_correct": "Permissions. Trust already worked — the gap is Action/Resource on S3.",
+        "response_if_incorrect": "They already assumed — which document controls what happens after assume?"
+      }
+    },
+    {
+      "id": "S3",
+      "type": "practice",
+      "title": "Open Roles",
+      "instruction_voice": "Navigate to IAM Roles on your own.",
+      "target": "nav-roles",
+      "success_targets": ["nav-roles"],
+      "hint_after_seconds": 18,
+      "hint_voice": "IAM left nav — Roles.",
+      "completion_voice": "Good. That is where service principals live."
+    },
+    {
+      "id": "S4",
+      "type": "ask",
+      "title": "Synthesis",
+      "question": "Ticket: Lambda timeout writing to DynamoDB with Access Denied. What two role documents do you open, and what does each tell you?",
+      "wait_for_input": true,
+      "accept_keywords": ["trust", "permission", "lambda", "dynamodb", "assume", "allow"],
+      "response_if_correct": "Trust — is lambda.amazonaws.com allowed to assume? Permissions — is dynamodb:PutItem (or needed action) Allowed on the table ARN?",
+      "response_if_incorrect": "Name the two JSON documents on a role."
+    }
+  ],
+  "session_close": {
+    "ren_voice": "Roles are assumed. Trust is who. Permissions are what. L1 reads both before changing anything. Next — CloudTrail, so you can prove who changed a policy.",
+    "summary_points": [
+      "Role ≠ user credentials",
+      "Trust vs permission policies",
+      "Instance profile = EC2 + role",
+      "Diagnose which document failed"
+    ],
+    "doubt_session": {
+      "ren_opening": "Questions on roles?",
+      "wait_for_response": true,
+      "ren_response_template": "Cover trust vs permissions, instance profiles, and why apps should not use long-lived user keys. Defer cross-account role crafting.",
+      "ren_closing": "Next — CloudTrail on the board: who changed what, when."
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "role_id": "l1_cloud_support_associate",
+  "content_status": "ready",
+  "duration_minutes": 8,
+  "ticket_id": "FIN-L1-023",
+  "tier": 2,
+  "sequence": 23,
+  "service": "cloudwatch",
+  "source_lessons": [
+    "PM-5.3"
+  ],
+  "unlock": {
+    "lessons_complete": [
+      "PM-5.3"
+    ],
+    "tickets_closed": [
+      "FIN-L1-022"
+    ]
+  },
+  "email": {
+    "message_id": "Logs Insight-juko",
+    "from": {
+      "name": "L2 On-call",
+      "email": "oncall@finova.tech",
+      "title": "Cloud Ops L2"
+    },
+    "to": [
+      {
+        "name": "You",
+        "email": "cloud-support@finova.tech",
+        "title": "Cloud Support Associate (L1)"
+      }
+    ],
+    "subject": "Logs Insights — count timeouts last 30m",
+    "body": "Need a count from the logs.\n\nWHAT HAPPENED\nCheckout timeouts spiked. The lines are already in CloudWatch Logs.\n\nWHAT YOU NEED TO DO\n1. Open CloudWatch, Logs Insights.\n2. Use log group /finova/payments.\n3. Set the time range to Last 30 minutes.\n4. Query messages that contain timeout and count the rows.\n\nDO NOT\nDo not delete the log group.\n\nREPLY WITH\nHow many timeout lines you counted.\n\n— On-call",
+    "received_at_label": "Today",
+    "priority": "P2",
+    "attachments": [
+      {
+        "name": "payments-sample.log",
+        "kind": "log",
+        "content": "timeout\nok\ntimeout\ntimeout\nok\ntimeout\ntimeout\nok\ntimeout\ntimeout\n"
+      }
+    ]
+  },
+  "work": {
+    "environment": "checklist",
+    "steps": [
+      {
+        "id": "s1",
+        "kind": "checklist",
+        "instruction": "Open log group /finova/payments (or read attachment).",
+        "confirm_label": "Logs opened"
+      },
+      {
+        "id": "s2",
+        "kind": "observe",
+        "instruction": "How many timeout lines in sample?",
+        "question": "Count?",
+        "accept_keywords": [
+          "7",
+          "seven"
+        ],
+        "hint": "7 timeouts",
+        "capture_as": "count"
+      }
+    ]
+  },
+  "reply": {
+    "min_words": 15,
+    "max_words": 200,
+    "accept_keywords": [
+      {
+        "id": "count",
+        "label": "count 7",
+        "any_of": [
+          "7",
+          "seven"
+        ]
+      },
+      {
+        "id": "what",
+        "label": "timeouts",
+        "any_of": [
+          "timeout",
+          "error"
+        ]
+      }
+    ],
+    "required_groups": [
+      "count",
+      "what"
+    ],
+    "model_reply": "Logs Insights (sample): 7 timeout errors in /finova/payments last 30m window. — L1",
+    "max_attempts_before_model": 3
+  },
+  "debrief": {
+    "english": "Log search returns a number + scope.",
+    "tanglish": "Count + log group solunga."
+  }
+}

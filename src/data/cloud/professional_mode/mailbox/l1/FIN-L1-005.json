@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "role_id": "l1_cloud_support_associate",
+  "content_status": "ready",
+  "duration_minutes": 8,
+  "ticket_id": "FIN-L1-005",
+  "tier": 2,
+  "sequence": 5,
+  "service": "iam",
+  "source_lessons": [
+    "PM-0.1",
+    "PM-1.1"
+  ],
+  "unlock": {
+    "lessons_complete": [
+      "PM-0.1",
+      "PM-1.1"
+    ],
+    "tickets_closed": [
+      "FIN-L1-004"
+    ]
+  },
+  "email": {
+    "message_id": "Cannot sign -fi0d",
+    "from": {
+      "name": "Kavya Shah",
+      "email": "kavya.shah@finova.tech",
+      "title": "New Analyst"
+    },
+    "to": [
+      {
+        "name": "You",
+        "email": "cloud-support@finova.tech",
+        "title": "Cloud Support Associate (L1)"
+      }
+    ],
+    "subject": "Cannot sign in to AWS console — first day",
+    "body": "Hi,\n\nWHAT HAPPENED\nI joined today. My console sign-in fails.\nUsername already in IAM: kavya.analyst\n\nWHAT YOU NEED TO DO\n1. Open IAM, then Users, then kavya.analyst.\n2. Reset the console password there.\n3. Require a new password at next sign-in.\n\nDO NOT\nDo not email a password in this thread. Do not delete the user.\n\nREPLY WITH\nSay you reset console access for kavya.analyst and that the password was not sent by email.\n\n— Kavya",
+    "received_at_label": "Today",
+    "priority": "P3"
+  },
+  "work": {
+    "environment": "checklist",
+    "steps": [
+      {
+        "id": "s1",
+        "kind": "checklist",
+        "instruction": "Confirm user kavya.analyst exists / open in IAM.",
+        "confirm_label": "Found the user"
+      },
+      {
+        "id": "s2",
+        "kind": "checklist",
+        "instruction": "Plan password reset + require change next login. No secrets in reply.",
+        "confirm_label": "Reset plan confirmed"
+      }
+    ]
+  },
+  "reply": {
+    "min_words": 15,
+    "max_words": 200,
+    "accept_keywords": [
+      {
+        "id": "user",
+        "label": "names user",
+        "any_of": [
+          "kavya",
+          "analyst"
+        ]
+      },
+      {
+        "id": "reset",
+        "label": "password/console reset",
+        "any_of": [
+          "reset",
+          "password",
+          "console",
+          "sign-in"
+        ]
+      },
+      {
+        "id": "safe",
+        "label": "safe channel",
+        "any_of": [
+          "not email password",
+          "secure",
+          "require",
+          "change at next"
+        ]
+      }
+    ],
+    "required_groups": [
+      "user",
+      "reset"
+    ],
+    "bonus_groups": [
+      "safe"
+    ],
+    "reject_keywords": [
+      "password is",
+      "pwd:",
+      "temp123",
+      "administratoraccess"
+    ],
+    "model_reply": "Hi Kavya — found kavya.analyst. Initiated console password reset with require-change. Use approved reset channel — not this thread. — L1",
+    "max_attempts_before_model": 3
+  },
+  "debrief": {
+    "english": "Never paste secrets into mail.",
+    "tanglish": "Password-ah mail-la paste pannaathinga."
+  }
+}

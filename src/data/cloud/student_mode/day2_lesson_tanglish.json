@@ -1,0 +1,72 @@
+{
+  "day": 2,
+  "part": "A",
+  "language": "tanglish",
+  "title": "Why Companies Pay for Cloud",
+  "duration_minutes": 14,
+  "blocks": [
+    {
+      "block": 0,
+      "type": "lesson_intro",
+      "heading": "LESSON 2 · WHY CLOUD WON",
+      "board_text": "Today:\n• Speed to market\n• Cost shape (pay for use)\n• Survive traffic spikes\n\nFinova-shaped stakes with ₹.",
+      "ren_voice": "Lesson 2. Companies fashion-ku cloud vanga maataanga. Speed, flexible cost, traffic explode aana survival — adhaan.",
+      "check_question": null
+    },
+    {
+      "block": 1,
+      "type": "why_companies",
+      "heading": "BEFORE vs AFTER",
+      "board_text": "Before cloud:\n• Crores upfront for hardware\n• Weeks to procure\n• Guess capacity wrong → crash or waste\n\nWith cloud:\n• Start near zero\n• Scale in minutes\n• Pay for what you use",
+      "ren_voice": "Cloud-ku munnadi startup months and crores waste pannitu product code ezhuduvaanga. Cloud-la small-aa start panni minutes-la scale.",
+      "check_question": {
+        "question": "Rendu business reasons solunga — companies cloud-ku move aana reason?",
+        "expected_response_type": "open",
+        "accept_keywords": [
+          "speed",
+          "cost",
+          "scale",
+          "spike",
+          "pay",
+          "use",
+          "fast"
+        ],
+        "ren_response_if_correct": "Speed and flexible cost — or spike survival. Nalla.",
+        "ren_response_if_incorrect": "Launch speed and 20x traffic overnight think pannunga."
+      }
+    },
+    {
+      "block": 2,
+      "type": "concept_intro",
+      "heading": "COST SHAPE",
+      "board_text": "CapEx: big buy now, hope you guessed right.\nOpEx: monthly bill that follows usage.\n\nCloud shifts most infrastructure spend toward OpEx.",
+      "ren_voice": "CapEx = generator vangradhu. OpEx = electricity bill. Cloud mostly OpEx feel — bill demand follow aagum.",
+      "check_question": null
+    },
+    {
+      "block": 3,
+      "type": "example",
+      "heading": "FINOVA LENS",
+      "board_text": "Finova launches a festival payment promo.\nTraffic can 15x for six hours.\nPhysical rack: crash or overbuy.\nCloud: scale up for the window, scale down after.",
+      "ren_voice": "Finova festival traffic. Aru hours madness. Cloud-la window-ku capacity add panni apram release. Adhaan AWS bill.",
+      "check_question": null
+    },
+    {
+      "block": 4,
+      "type": "summary",
+      "heading": "LOCK IT IN",
+      "board_text": "• Cloud wins on speed, cost shape, spike survival\n• Next: how elasticity and regions actually help",
+      "ren_voice": "Speed and survival. Next — technology how deliver panradhu.",
+      "check_question": null
+    }
+  ],
+  "lesson_summary": {
+    "board_text": "Speed · cost shape · spike survival",
+    "ren_voice": "Lesson 2 locked."
+  },
+  "doubt_session": {
+    "ren_opening": "CapEx OpEx-la doubt?",
+    "wait_for_response": true,
+    "ren_closing": "Ok, next."
+  }
+}

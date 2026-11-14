@@ -1,0 +1,153 @@
+{
+  "day": 2,
+  "language": "english",
+  "pass_threshold": 0.75,
+  "items": [
+    {
+      "id": "D2-Q1",
+      "type": "quiz",
+      "question": "Companies moved to cloud mainly for:",
+      "options": [
+        "Speed, flexible cost, and spike survival",
+        "Fashion only",
+        "Slower launches",
+        "Fixed forever capacity"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Business reasons."
+    },
+    {
+      "id": "D2-Q2",
+      "type": "quiz",
+      "question": "CapEx is closest to:",
+      "options": [
+        "Big buy now",
+        "Monthly usage bill",
+        "Free credits only",
+        "Ignoring hardware"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Capital expense."
+    },
+    {
+      "id": "D2-Q3",
+      "type": "quiz",
+      "question": "Festival traffic 15x for 6 hours — best move:",
+      "options": [
+        "Scale up for the window, then down",
+        "Buy a permanent rack today",
+        "Ignore and hope",
+        "Turn the product off"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Elasticity."
+    },
+    {
+      "id": "D2-Q4",
+      "type": "quiz",
+      "question": "OpEx cloud bills usually follow:",
+      "options": [
+        "Actual usage",
+        "Guessed peak forever",
+        "Office rent only",
+        "Laptop price"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Pay for use."
+    },
+    {
+      "id": "D2-TF1",
+      "type": "true_false",
+      "statement": "Cloud cost always looks like one forever CapEx purchase.",
+      "correct": false,
+      "ren_hint_english": "True or false — watch for the junior trap.",
+      "ren_hint_tanglish": "True or false — watch for the junior trap.",
+      "explanation": "Cloud usually feels like OpEx."
+    },
+    {
+      "id": "D2-TF2",
+      "type": "true_false",
+      "statement": "Being unable to scale can kill a product even if users love it.",
+      "correct": true,
+      "ren_hint_english": "True or false — watch for the junior trap.",
+      "ren_hint_tanglish": "True or false — watch for the junior trap.",
+      "explanation": "Friendster-style failure pattern."
+    },
+    {
+      "id": "D2-SA1",
+      "type": "short_answer",
+      "question": "Name two business reasons companies pay for cloud.",
+      "model_answer": "Speed to market and flexible cost or surviving traffic spikes.",
+      "accept_keywords": [
+        {
+          "id": "g1",
+          "label": "speed + cost/spike part 1",
+          "any_of": [
+            "speed",
+            "fast",
+            "launch"
+          ]
+        },
+        {
+          "id": "g2",
+          "label": "speed + cost/spike part 2",
+          "any_of": [
+            "cost",
+            "scale",
+            "spike",
+            "pay"
+          ]
+        }
+      ],
+      "required_groups": [
+        "g1",
+        "g2"
+      ],
+      "ren_hint_english": "Use your own words — hit the key idea.",
+      "ren_hint_tanglish": "Use your own words — hit the key idea.",
+      "explanation": "Speed to market and flexible cost or surviving traffic spikes."
+    },
+    {
+      "id": "D2-SA2",
+      "type": "short_answer",
+      "question": "What is CapEx vs OpEx in plain words?",
+      "model_answer": "CapEx is buying big upfront; OpEx is ongoing usage-shaped spend.",
+      "accept_keywords": [
+        {
+          "id": "g1",
+          "label": "capex/opex part 1",
+          "any_of": [
+            "capex",
+            "buy",
+            "upfront"
+          ]
+        },
+        {
+          "id": "g2",
+          "label": "capex/opex part 2",
+          "any_of": [
+            "opex",
+            "bill",
+            "usage",
+            "monthly"
+          ]
+        }
+      ],
+      "required_groups": [
+        "g1",
+        "g2"
+      ],
+      "ren_hint_english": "Use your own words — hit the key idea.",
+      "ren_hint_tanglish": "Use your own words — hit the key idea.",
+      "explanation": "CapEx is buying big upfront; OpEx is ongoing usage-shaped spend."
+    }
+  ]
+}

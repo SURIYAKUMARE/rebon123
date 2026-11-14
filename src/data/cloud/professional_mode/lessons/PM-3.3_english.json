@@ -1,0 +1,154 @@
+{
+  "lesson_id": "PM-3.3",
+  "lesson_title": "Application Load Balancer",
+  "session_id": "PM-3",
+  "session_name": "EC2",
+  "mode": "professional",
+  "language": "english",
+  "schema_version": 2,
+  "duration_minutes": 18,
+  "teaching_level": "principal_mentor_l5",
+  "company": {
+    "name": "Finova Technologies",
+    "your_role": "Cloud Engineer",
+    "current_account": "finova-dev",
+    "manager": "Arjun Mehta (Infrastructure Lead)"
+  },
+  "account": {
+    "account_id": "847291635028",
+    "account_name": "finova-dev",
+    "region": "ap-south-1"
+  },
+  "lesson_intro": {
+    "heading": "Cloud Engineer · PM-3.3",
+    "board_text": "Application Load Balancer\nFinova · finova-dev · ap-south-1\n\nWhy before how:\nUsers hit a stable entry — not one fragile instance IP.\n\nMental model:\nALB distributes to healthy targets across AZs.\n\nYou will: watch → learn → practice one navigation.",
+    "ren_voice": "I am Ren. Users hit a stable entry — not one fragile instance IP. Mental model: ALB distributes to healthy targets across AZs. I demonstrate, then you practice. Least privilege and Region discipline stay non-negotiable."
+  },
+  "whiteboard_intro": {
+    "duration_seconds": 40,
+    "board_text": "Application Load Balancer\n• ALB distributes to healthy targets across AZs.\n• Mistake: Single instance with Elastic IP as 'the website'.\n• Habit: Health checks must match real app readiness.",
+    "ren_voice": "Board picture: ALB distributes to healthy targets across AZs.. Juniors usually: Single instance with Elastic IP as 'the website'.. Your habit: Health checks must match real app readiness.."
+  },
+  "segments": [
+    {
+      "id": "S1",
+      "type": "demonstrate",
+      "title": "Open EC2",
+      "setup_voice": "Watch — we open EC2 the way a real ticket starts.",
+      "steps": [
+        {
+          "voice": "Navigate to EC2. Confirm Region ap-south-1 before you trust the empty list.",
+          "cursor": {
+            "action": "navigate",
+            "target": "service-ec2"
+          },
+          "pause_ms": 1100
+        },
+        {
+          "voice": "Load balancing belongs with compute design — one entry, many healthy workers.",
+          "cursor": {
+            "action": "highlight",
+            "target": "service-ec2"
+          },
+          "pause_ms": 900
+        }
+      ],
+      "lesson_voice": "If targets are unhealthy, ALB will not save a bad deploy.",
+      "check": {
+        "voice": "Why use an ALB instead of one instance IP?",
+        "wait_for_input": true,
+        "accept_keywords": [
+          "alb",
+          "load",
+          "balancer",
+          "healthy",
+          "target",
+          "az"
+        ],
+        "response_if_correct": "Stable entry and distribute only to healthy targets.",
+        "response_if_incorrect": "Health-aware distribution across instances/AZs."
+      }
+    },
+    {
+      "id": "S2",
+      "type": "teach",
+      "title": "Company story + trap",
+      "steps": [
+        {
+          "voice": "Finova marketing site on one instance — AZ blip took payments help pages down.",
+          "cursor": {
+            "action": "highlight",
+            "target": "service-ec2"
+          },
+          "pause_ms": 1000
+        },
+        {
+          "voice": "Trap: Single instance with Elastic IP as 'the website'.. Habit: Health checks must match real app readiness.",
+          "cursor": null,
+          "pause_ms": 800
+        }
+      ],
+      "check": {
+        "voice": "What habit will you keep from this lesson?",
+        "wait_for_input": true,
+        "accept_keywords": [
+          "alb",
+          "load",
+          "balancer",
+          "healthy",
+          "target",
+          "az",
+          "habit",
+          "region",
+          "least"
+        ],
+        "response_if_correct": "That habit is desk gold.",
+        "response_if_incorrect": "Health checks must match real app readiness."
+      }
+    },
+    {
+      "id": "S3",
+      "type": "practice",
+      "title": "Your turn",
+      "instruction_voice": "Your turn. Open EC2 yourself. Start every ticket here.",
+      "target": "service-ec2",
+      "success_targets": [
+        "service-ec2",
+        "service-ec2"
+      ],
+      "hint_after_seconds": 20,
+      "hint_voice": "Use search or Services menu — land on EC2.",
+      "completion_voice": "Good. You found the service. That is how Ops and Engineer days begin."
+    },
+    {
+      "id": "S4",
+      "type": "ask",
+      "title": "Say it back",
+      "question": "Why use an ALB instead of one instance IP?",
+      "wait_for_input": true,
+      "accept_keywords": [
+        "alb",
+        "load",
+        "balancer",
+        "healthy",
+        "target",
+        "az"
+      ],
+      "response_if_correct": "Stable entry and distribute only to healthy targets.",
+      "response_if_incorrect": "Health-aware distribution across instances/AZs."
+    }
+  ],
+  "session_close": {
+    "ren_voice": "Close PM-3.3. Health checks must match real app readiness.",
+    "summary_points": [
+      "ALB distributes to healthy targets across AZs.",
+      "Health checks must match real app readiness.",
+      "Region + account before panic"
+    ],
+    "doubt_session": {
+      "ren_opening": "Doubt on this service family?",
+      "wait_for_response": true,
+      "ren_closing": "See you on the next ticket lesson."
+    }
+  }
+}

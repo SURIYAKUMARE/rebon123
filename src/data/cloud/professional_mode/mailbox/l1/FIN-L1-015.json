@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "role_id": "l1_cloud_support_associate",
+  "content_status": "ready",
+  "duration_minutes": 8,
+  "ticket_id": "FIN-L1-015",
+  "tier": 2,
+  "sequence": 15,
+  "service": "iam",
+  "source_lessons": [
+    "PM-1.1",
+    "PM-1.3"
+  ],
+  "unlock": {
+    "lessons_complete": [
+      "PM-1.1"
+    ],
+    "tickets_closed": [
+      "FIN-L1-014"
+    ]
+  },
+  "email": {
+    "message_id": "Just give me-h8k4",
+    "from": {
+      "name": "Meera Iyer",
+      "email": "meera.iyer@finova.tech",
+      "title": "Payments Eng Manager"
+    },
+    "to": [
+      {
+        "name": "You",
+        "email": "cloud-support@finova.tech",
+        "title": "Cloud Support Associate (L1)"
+      }
+    ],
+    "subject": "Just give me AdministratorAccess / root — faster",
+    "body": "We are blocked. Speed matters.\n\nWHAT HAPPENED\nI want AdministratorAccess on my user, or the root password, so I can finish today.\n\nWHAT YOU NEED TO DO\n1. Refuse the request.\n2. If you open IAM, only look. Do not attach AdministratorAccess.\n\nDO NOT\nDo not share root. Do not attach AdministratorAccess.\n\nREPLY WITH\nRefuse. Ask what specific action and resource they need so we can grant a small policy.\n\n— Meera",
+    "received_at_label": "Today",
+    "priority": "P3"
+  },
+  "work": {
+    "environment": "checklist",
+    "steps": [
+      {
+        "id": "s1",
+        "kind": "checklist",
+        "instruction": "Refuse Admin/root shortcuts.",
+        "confirm_label": "Refused Admin/root"
+      },
+      {
+        "id": "s2",
+        "kind": "checklist",
+        "instruction": "Ask for the specific action + resource needed.",
+        "confirm_label": "Asked for scoped need"
+      }
+    ]
+  },
+  "reply": {
+    "min_words": 15,
+    "max_words": 200,
+    "accept_keywords": [
+      {
+        "id": "refuse",
+        "label": "refuses admin/root",
+        "any_of": [
+          "no",
+          "cannot",
+          "won't",
+          "refuse",
+          "not share root",
+          "not administrator"
+        ]
+      },
+      {
+        "id": "scoped",
+        "label": "asks scoped need",
+        "any_of": [
+          "scoped",
+          "specific",
+          "action",
+          "resource",
+          "least",
+          "what do you need"
+        ]
+      }
+    ],
+    "required_groups": [
+      "refuse",
+      "scoped"
+    ],
+    "reject_keywords": [
+      "here's root",
+      "administratoraccess attached"
+    ],
+    "model_reply": "I can't grant AdministratorAccess or share root. Tell me the exact action + resource — we'll request least privilege. — L1",
+    "max_attempts_before_model": 3
+  },
+  "debrief": {
+    "english": "Push back on Admin/root. Ask for scoped need.",
+    "tanglish": "Admin/root refuse — scoped need kelunga."
+  }
+}

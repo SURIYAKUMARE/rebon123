@@ -1,0 +1,83 @@
+{
+  "schema_version": 2,
+  "mode": "student",
+  "canonical": true,
+  "console_required": false,
+  "teaching_level": "principal_mentor_l5",
+  "languages": [
+    "english",
+    "tanglish"
+  ],
+  "estimated_hours_per_language": 2.5,
+  "lesson_count": 10,
+  "readiness": {
+    "check_id": "readiness",
+    "pass_threshold": 0.7,
+    "unlocks": "professional_mode"
+  },
+  "notes": "Max 10 lessons — fundamentals only, no console. Condensed from prior 22-lesson plan.",
+  "units": [
+    {
+      "unit_id": "SM-A",
+      "title": "Cloud literacy",
+      "lessons": [
+        {
+          "id": "SM-D1",
+          "title": "Meet Ren — What Cloud Really Is",
+          "duration_minutes": 14
+        },
+        {
+          "id": "SM-D2",
+          "title": "Why Companies Pay for Cloud",
+          "duration_minutes": 14
+        },
+        {
+          "id": "SM-D3",
+          "title": "How Cloud Helps — Elasticity & Regions",
+          "duration_minutes": 14
+        },
+        {
+          "id": "SM-D4",
+          "title": "Shared Responsibility — Who Fixes What",
+          "duration_minutes": 13
+        },
+        {
+          "id": "SM-D5",
+          "title": "Service Families Map",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "unit_id": "SM-B",
+      "title": "Families + Finova + readiness",
+      "lessons": [
+        {
+          "id": "SM-D6",
+          "title": "Identity & Compute — Why They Exist",
+          "duration_minutes": 14
+        },
+        {
+          "id": "SM-D7",
+          "title": "Storage & Network — Why They Exist",
+          "duration_minutes": 14
+        },
+        {
+          "id": "SM-D8",
+          "title": "Observe — Why Monitoring Exists",
+          "duration_minutes": 13
+        },
+        {
+          "id": "SM-D9",
+          "title": "Finova Company Lens",
+          "duration_minutes": 14
+        },
+        {
+          "id": "SM-D10",
+          "title": "Capstone — Ready for Professional Mode",
+          "duration_minutes": 15
+        }
+      ]
+    }
+  ]
+}

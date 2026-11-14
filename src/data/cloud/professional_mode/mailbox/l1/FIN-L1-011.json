@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "role_id": "l1_cloud_support_associate",
+  "content_status": "ready",
+  "duration_minutes": 8,
+  "ticket_id": "FIN-L1-011",
+  "tier": 1,
+  "sequence": 11,
+  "service": "iam",
+  "source_lessons": [
+    "PM-1.1"
+  ],
+  "unlock": {
+    "lessons_complete": [
+      "PM-1.1"
+    ],
+    "tickets_closed": [
+      "FIN-L1-010"
+    ]
+  },
+  "email": {
+    "message_id": "Offboarding -p3m5",
+    "from": {
+      "name": "Priya Nair",
+      "email": "priya.nair@finova.tech",
+      "title": "IT Onboarding"
+    },
+    "to": [
+      {
+        "name": "You",
+        "email": "cloud-support@finova.tech",
+        "title": "Cloud Support Associate (L1)"
+      }
+    ],
+    "subject": "Offboarding — disable analyst console + keys",
+    "body": "Analyst left the company.\n\nWHAT HAPPENED\nlea.analyst still has console access and an active access key.\n\nWHAT YOU NEED TO DO\n1. Open IAM, then Users, then lea.analyst.\n2. Disable console access.\n3. Deactivate the access key. Leave the key record in place.\n\nDO NOT\nDo not delete the user. We need the account for audit.\n\nREPLY WITH\nConfirm console is disabled, the key is deactivated, the user was kept, and ask for the HR ticket number.\n\n— Priya",
+    "received_at_label": "Today",
+    "priority": "P3"
+  },
+  "work": {
+    "environment": "checklist",
+    "steps": [
+      {
+        "id": "s1",
+        "kind": "checklist",
+        "instruction": "Disable console login for lea.analyst.",
+        "confirm_label": "Console disabled"
+      },
+      {
+        "id": "s2",
+        "kind": "checklist",
+        "instruction": "Deactivate access keys (keep for evidence).",
+        "confirm_label": "Keys deactivated"
+      },
+      {
+        "id": "s3",
+        "kind": "checklist",
+        "instruction": "Do not delete the IAM user.",
+        "confirm_label": "User retained"
+      }
+    ]
+  },
+  "reply": {
+    "min_words": 15,
+    "max_words": 200,
+    "accept_keywords": [
+      {
+        "id": "actions",
+        "label": "disabled console/keys",
+        "any_of": [
+          "disable",
+          "deactivate",
+          "console",
+          "key"
+        ]
+      },
+      {
+        "id": "nodelete",
+        "label": "did not delete",
+        "any_of": [
+          "not delete",
+          "retained",
+          "audit",
+          "kept"
+        ]
+      },
+      {
+        "id": "hr",
+        "label": "asks HR ticket",
+        "any_of": [
+          "hr",
+          "ticket",
+          "reference"
+        ]
+      }
+    ],
+    "required_groups": [
+      "actions",
+      "nodelete"
+    ],
+    "bonus_groups": [
+      "hr"
+    ],
+    "reject_keywords": [
+      "deleted the user",
+      "administratoraccess"
+    ],
+    "model_reply": "Disabled console and deactivated keys for lea.analyst. User not deleted (audit). Please share HR ticket #. — L1",
+    "max_attempts_before_model": 3
+  },
+  "debrief": {
+    "english": "Offboard = disable, don't destroy evidence.",
+    "tanglish": "Disable pannunga — delete pannaathinga."
+  }
+}

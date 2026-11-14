@@ -1,0 +1,159 @@
+{
+  "lesson_id": "PM-5.3",
+  "lesson_title": "Logs Insights and Incident Tracing",
+  "session_id": "PM-5",
+  "mode": "professional",
+  "language": "tanglish",
+  "schema_version": 2,
+  "duration_minutes": 20,
+  "company": {
+    "name": "Finova Technologies",
+    "your_role": "Cloud Support Associate (L1)",
+    "current_account": "finova-dev"
+  },
+  "account": {
+    "account_id": "847291635028",
+    "account_name": "finova-dev",
+    "region": "ap-south-1"
+  },
+  "lesson_intro": {
+    "heading": "CSA L1 · Logs and correlation",
+    "board_text": "Logs Insights for L1\n• Log group → streams → events\n• Basic query: fields / filter / sort / stats\n• Correlate: alarm time → logs → CloudTrail if IAM\n\nYou turn a red alarm into a narrative.",
+    "ren_voice": "Vanakkam. An alarm without logs is a siren without a story. Today — log groups, a basic Insights query, and how you correlate alarm time with log lines. That is L1 incident literacy."
+  },
+  "whiteboard_intro": {
+    "duration_seconds": 40,
+    "board_text": "Minimal Insights query\nfields @timestamp, @message\n| filter @message like /ERROR/\n| sort @timestamp desc\n| limit 20\n\nHabit: set the time range to the alarm window first.",
+    "ren_voice": "Vanakkam. You do not need every Insights function. fields, filter, sort, limit — enough to find ERROR lines in the alarm window."
+  },
+  "segments": [
+    {
+      "id": "S1",
+      "type": "demonstrate",
+      "title": "Log groups then Insights",
+      "setup_voice": "Paathukonga — Start from log groups — know which app writes where.",
+      "steps": [
+        {
+          "voice": "Log groups.",
+          "cursor": {
+            "action": "navigate",
+            "target": "cw-log-groups"
+          },
+          "pause_ms": 1000
+        },
+        {
+          "voice": "Logs Insights — pick the group, set time range to the alarm, run a filter for ERROR.",
+          "cursor": {
+            "action": "navigate",
+            "target": "cw-logs-insights"
+          },
+          "pause_ms": 1000
+        }
+      ],
+      "lesson_voice": "Wrong log group wastes the whole ticket. Confirm the service name Finova uses in the group path.",
+      "check": {
+        "voice": "Why set the Insights time range to the alarm window before querying?",
+        "wait_for_input": true,
+        "accept_keywords": [
+          "alarm",
+          "time",
+          "window",
+          "noise",
+          "correlate",
+          "when"
+        ],
+        "response_if_correct": "Correlation — you only want lines near the breach, not the whole week.",
+        "response_if_incorrect": "The alarm told you when — how does that constrain the query?"
+      }
+    },
+    {
+      "id": "S2",
+      "type": "teach",
+      "title": "Correlation chain",
+      "steps": [
+        {
+          "voice": "Alarm fires on CPU — open dashboards to confirm the spike shape.",
+          "cursor": {
+            "action": "navigate",
+            "target": "cw-dashboards"
+          },
+          "pause_ms": 800
+        },
+        {
+          "voice": "Then Insights for ERROR or timeout messages in that window.",
+          "cursor": {
+            "action": "navigate",
+            "target": "cw-logs-insights"
+          },
+          "pause_ms": 900
+        },
+        {
+          "voice": "If the log says AccessDenied on S3 — you already know the IAM playbook from last track.",
+          "cursor": null,
+          "pause_ms": 1000
+        }
+      ],
+      "check": {
+        "voice": "Alarm → graph → logs → ?  What do you open if logs show AccessDenied?",
+        "wait_for_input": true,
+        "accept_keywords": [
+          "iam",
+          "policy",
+          "role",
+          "permission",
+          "cloudtrail",
+          "user"
+        ],
+        "response_if_correct": "IAM — principal and policies — and CloudTrail if you need who changed them.",
+        "response_if_incorrect": "AccessDenied is an identity problem — which service?"
+      }
+    },
+    {
+      "id": "S3",
+      "type": "practice",
+      "title": "Open log groups",
+      "instruction_voice": "Ungal turn. Navigate to CloudWatch Log groups.",
+      "target": "cw-log-groups",
+      "success_targets": [
+        "cw-log-groups",
+        "cw-logs-insights"
+      ],
+      "hint_after_seconds": 18,
+      "hint_voice": "Hint: CloudWatch → Log groups.",
+      "completion_voice": "Super. Good. Know the group before you query."
+    },
+    {
+      "id": "S4",
+      "type": "ask",
+      "title": "Synthesis",
+      "question": "Write the four-step L1 correlation chain from alarm to root-cause hypothesis.",
+      "wait_for_input": true,
+      "accept_keywords": [
+        "alarm",
+        "dashboard",
+        "graph",
+        "log",
+        "insights",
+        "iam",
+        "time"
+      ],
+      "response_if_correct": "Alarm → confirm on dashboard → Insights in the time window → IAM/CloudTrail if AccessDenied — then hypothesis.",
+      "response_if_incorrect": "Start from the page, then prove it with a graph and a log line."
+    }
+  ],
+  "session_close": {
+    "ren_voice": "Vanakkam. Log group, time window, filter ERROR, correlate back to IAM when needed. That closes CSA L1 learning — console, IAM support, monitoring. Workspace tickets come next when we build them.",
+    "summary_points": [
+      "Log group before Insights",
+      "Time range = alarm window",
+      "fields / filter / sort / limit",
+      "Correlate to IAM when AccessDenied"
+    ],
+    "doubt_session": {
+      "ren_opening": "Doubt irukka? Last call for monitoring questions?",
+      "wait_for_response": true,
+      "ren_response_template": "Cover log groups, basic Insights, and alarm correlation. Defer subscription filters and OpenSearch.",
+      "ren_closing": "CSA L1 learning track complete. You are ready for Finova-style tickets when workspace opens. Seri — next lesson ku ready."
+    }
+  }
+}

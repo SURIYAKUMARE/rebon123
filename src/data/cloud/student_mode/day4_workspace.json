@@ -1,0 +1,136 @@
+{
+  "day": 4,
+  "language": "english",
+  "pass_threshold": 0.75,
+  "items": [
+    {
+      "id": "D4-Q1",
+      "type": "quiz",
+      "question": "Shared responsibility means:",
+      "options": [
+        "Provider secures the cloud; you secure what you put in it",
+        "AWS owns your passwords",
+        "You never configure anything",
+        "Root is always safe"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Split of duties."
+    },
+    {
+      "id": "D4-Q2",
+      "type": "quiz",
+      "question": "An open public bucket is whose problem first?",
+      "options": [
+        "The customer's configuration",
+        "Only AWS hardware",
+        "The electricity grid",
+        "DNS alone"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Your config."
+    },
+    {
+      "id": "D4-Q3",
+      "type": "quiz",
+      "question": "IAM mistakes are mainly:",
+      "options": [
+        "Customer responsibility",
+        "Always AWS bug",
+        "Impossible",
+        "Fixed by Region"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "You own identity config."
+    },
+    {
+      "id": "D4-Q4",
+      "type": "quiz",
+      "question": "Best habit:",
+      "options": [
+        "Never assume AWS magically secures bad configs",
+        "Share root with everyone",
+        "Disable MFA always",
+        "Ignore policies"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Own your configs."
+    },
+    {
+      "id": "D4-TF1",
+      "type": "true_false",
+      "statement": "AWS automatically fixes your weak IAM policies.",
+      "correct": false,
+      "ren_hint_english": "True or false — watch for the junior trap.",
+      "ren_hint_tanglish": "True or false — watch for the junior trap.",
+      "explanation": "You own identity and access config."
+    },
+    {
+      "id": "D4-TF2",
+      "type": "true_false",
+      "statement": "Provider owns physical data centers; you still own accounts and data access.",
+      "correct": true,
+      "ren_hint_english": "True or false — watch for the junior trap.",
+      "ren_hint_tanglish": "True or false — watch for the junior trap.",
+      "explanation": "Classic shared model."
+    },
+    {
+      "id": "D4-SA1",
+      "type": "short_answer",
+      "question": "In shared responsibility, what do YOU still own?",
+      "model_answer": "Accounts, identity, data access, and application/config choices.",
+      "accept_keywords": [
+        {
+          "id": "g1",
+          "label": "your configs part 1",
+          "any_of": [
+            "iam",
+            "account",
+            "password",
+            "data",
+            "config",
+            "policy"
+          ]
+        }
+      ],
+      "required_groups": [
+        "g1"
+      ],
+      "ren_hint_english": "Use your own words — hit the key idea.",
+      "ren_hint_tanglish": "Use your own words — hit the key idea.",
+      "explanation": "Accounts, identity, data access, and application/config choices."
+    },
+    {
+      "id": "D4-SA2",
+      "type": "short_answer",
+      "question": "Why is 'AWS will handle it' a dangerous junior phrase?",
+      "model_answer": "It ignores customer-side security like IAM, buckets, and keys.",
+      "accept_keywords": [
+        {
+          "id": "g1",
+          "label": "you still own configs part 1",
+          "any_of": [
+            "iam",
+            "bucket",
+            "config",
+            "customer",
+            "you"
+          ]
+        }
+      ],
+      "required_groups": [
+        "g1"
+      ],
+      "ren_hint_english": "Use your own words — hit the key idea.",
+      "ren_hint_tanglish": "Use your own words — hit the key idea.",
+      "explanation": "It ignores customer-side security like IAM, buckets, and keys."
+    }
+  ]
+}

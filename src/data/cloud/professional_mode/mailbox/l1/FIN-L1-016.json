@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "role_id": "l1_cloud_support_associate",
+  "content_status": "ready",
+  "duration_minutes": 8,
+  "ticket_id": "FIN-L1-016",
+  "tier": 3,
+  "sequence": 16,
+  "service": "iam",
+  "source_lessons": [
+    "PM-1.4"
+  ],
+  "unlock": {
+    "lessons_complete": [
+      "PM-1.4"
+    ],
+    "tickets_closed": [
+      "FIN-L1-015"
+    ]
+  },
+  "email": {
+    "message_id": "P1 — Access -v0kf",
+    "from": {
+      "name": "Security Desk",
+      "email": "security@finova.tech",
+      "title": "Security"
+    },
+    "to": [
+      {
+        "name": "You",
+        "email": "cloud-support@finova.tech",
+        "title": "Cloud Support Associate (L1)"
+      }
+    ],
+    "subject": "P1 — Access key found in public GitHub",
+    "body": "P1 from Security.\n\nWHAT HAPPENED\nAn access key for user deploy.bot was found in a public GitHub repo. The key is still Active in IAM.\n\nWHAT YOU NEED TO DO\n1. Open IAM, Users, deploy.bot, Security credentials.\n2. Deactivate the active access key.\n3. Leave the key in the account so we still have evidence.\n\nDO NOT\nDo not delete the key or the user.\n\nREPLY WITH\nSay the key is deactivated, Security is notified, an incident is open, and the key was kept.\n\n— Security",
+    "received_at_label": "Today",
+    "priority": "P1"
+  },
+  "work": {
+    "environment": "checklist",
+    "steps": [
+      {
+        "id": "s1",
+        "kind": "checklist",
+        "instruction": "Deactivate the exposed access key (keep for evidence).",
+        "confirm_label": "Key deactivated"
+      },
+      {
+        "id": "s2",
+        "kind": "checklist",
+        "instruction": "Notify Security / open incident — do not paste the secret in reply.",
+        "confirm_label": "Security notified"
+      }
+    ]
+  },
+  "reply": {
+    "min_words": 15,
+    "max_words": 200,
+    "accept_keywords": [
+      {
+        "id": "deact",
+        "label": "deactivated key",
+        "any_of": [
+          "deactivat",
+          "disabled",
+          "revoked"
+        ]
+      },
+      {
+        "id": "sec",
+        "label": "security/incident",
+        "any_of": [
+          "security",
+          "incident",
+          "notified"
+        ]
+      },
+      {
+        "id": "nodelete",
+        "label": "kept evidence",
+        "any_of": [
+          "not delete",
+          "evidence",
+          "retained",
+          "kept"
+        ]
+      }
+    ],
+    "required_groups": [
+      "deact",
+      "sec"
+    ],
+    "bonus_groups": [
+      "nodelete"
+    ],
+    "reject_keywords": [
+      "akia",
+      "secret key is"
+    ],
+    "model_reply": "Deactivated exposed access key on deploy.bot (retained for evidence). Security notified / incident opened. Secret not pasted here. — L1",
+    "max_attempts_before_model": 3
+  },
+  "debrief": {
+    "english": "Contain first: deactivate, don't destroy evidence.",
+    "tanglish": "Deactivate first — evidence vechikkunga."
+  }
+}

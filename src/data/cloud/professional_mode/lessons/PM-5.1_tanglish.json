@@ -1,0 +1,159 @@
+{
+  "lesson_id": "PM-5.1",
+  "lesson_title": "Reading Dashboards and Metrics",
+  "session_id": "PM-5",
+  "mode": "professional",
+  "language": "tanglish",
+  "schema_version": 2,
+  "duration_minutes": 20,
+  "company": {
+    "name": "Finova Technologies",
+    "your_role": "Cloud Support Associate (L1)",
+    "current_account": "finova-dev"
+  },
+  "account": {
+    "account_id": "847291635028",
+    "account_name": "finova-dev",
+    "region": "ap-south-1"
+  },
+  "lesson_intro": {
+    "heading": "CSA L1 · CloudWatch dashboards",
+    "board_text": "Dashboards and Metrics\nFinova monitoring for support\n\n• Namespace + metric name\n• Statistic and period\n• Read a spike before you reboot\n• Add a widget for the ticket service",
+    "ren_voice": "Vanakkam. Monitoring is half of L1. Before you restart anything, you read the graph. Today — dashboards, metrics, how to see a CPU spike and not panic."
+  },
+  "whiteboard_intro": {
+    "duration_seconds": 35,
+    "board_text": "Metric basics\n• Namespace: AWS/EC2, AWS/S3, …\n• Metric: CPUUtilization, StatusCheckFailed\n• Statistic: Average, Maximum\n• Period: 1 minute vs 5 minutes\n\nSupport habit: confirm region, then open the dashboard for that service.",
+    "ren_voice": "Vanakkam. A metric is a named time series in a namespace. Statistic and period change what the line means. Wrong region — empty dashboard. Same lesson as day one."
+  },
+  "segments": [
+    {
+      "id": "S1",
+      "type": "demonstrate",
+      "title": "Open dashboards",
+      "setup_voice": "Paathukonga — CloudWatch Dashboards — Finova keeps one per environment.",
+      "steps": [
+        {
+          "voice": "Open Dashboards.",
+          "cursor": {
+            "action": "navigate",
+            "target": "cw-dashboards"
+          },
+          "pause_ms": 1000
+        },
+        {
+          "voice": "All metrics view is where you hunt a metric that is not on a dashboard yet.",
+          "cursor": {
+            "action": "navigate",
+            "target": "cw-metrics"
+          },
+          "pause_ms": 1000
+        }
+      ],
+      "lesson_voice": "Tickets often say the site is slow. You open the EC2 CPU widget before you SSH. Graphs first.",
+      "check": {
+        "voice": "Why check region before trusting an empty CloudWatch dashboard?",
+        "wait_for_input": true,
+        "accept_keywords": [
+          "region",
+          "regional",
+          "empty",
+          "wrong",
+          "mumbai",
+          "virginia"
+        ],
+        "response_if_correct": "CloudWatch metrics are regional. Wrong region looks like nothing is wrong — or nothing exists.",
+        "response_if_incorrect": "Same trap as missing EC2 — which control changes your entire view?"
+      }
+    },
+    {
+      "id": "S2",
+      "type": "teach",
+      "title": "CPU metric and widgets",
+      "steps": [
+        {
+          "voice": "Pick EC2 CPUUtilization — Average over 5 minutes is the usual L1 read.",
+          "cursor": {
+            "action": "highlight",
+            "target": "cw-metric-ec2-cpu"
+          },
+          "pause_ms": 900
+        },
+        {
+          "voice": "Add widget puts it on the dashboard so the next ticket is faster.",
+          "cursor": {
+            "action": "highlight",
+            "target": "btn-add-widget"
+          },
+          "pause_ms": 800
+        },
+        {
+          "voice": "Read the line: a spike to 90% for one period is different from sustained 90%.",
+          "cursor": {
+            "action": "highlight",
+            "target": "graph-preview-line"
+          },
+          "pause_ms": 1000
+        }
+      ],
+      "check": {
+        "voice": "Maximum vs Average — which catches a short CPU spike better?",
+        "wait_for_input": true,
+        "accept_keywords": [
+          "maximum",
+          "max",
+          "peak",
+          "spike"
+        ],
+        "response_if_correct": "Maximum — Average can hide a short spike inside the period.",
+        "response_if_incorrect": "Think about a one-minute spike inside a five-minute average."
+      }
+    },
+    {
+      "id": "S3",
+      "type": "practice",
+      "title": "Open Dashboards",
+      "instruction_voice": "Ungal turn. Navigate to CloudWatch Dashboards yourself.",
+      "target": "cw-dashboards",
+      "success_targets": [
+        "cw-dashboards"
+      ],
+      "hint_after_seconds": 18,
+      "hint_voice": "Hint: CloudWatch → Dashboards.",
+      "completion_voice": "Super. Good. That is your first stop on a performance ticket."
+    },
+    {
+      "id": "S4",
+      "type": "ask",
+      "title": "Synthesis",
+      "question": "Ticket: checkout API latency high. What do you open first in CloudWatch and what two metric settings do you verify?",
+      "wait_for_input": true,
+      "accept_keywords": [
+        "dashboard",
+        "metric",
+        "region",
+        "statistic",
+        "period",
+        "cpu",
+        "latency"
+      ],
+      "response_if_correct": "Dashboard or metrics for the service — confirm region, then statistic and period so you are not misreading the line.",
+      "response_if_incorrect": "Graphs before reboot — which console, and which two knobs change the line?"
+    }
+  ],
+  "session_close": {
+    "ren_voice": "Vanakkam. Namespace, metric, statistic, period, region. Read before you act. Next — alarms so the graph pages you.",
+    "summary_points": [
+      "Metrics are regional",
+      "Statistic and period change meaning",
+      "Dashboards for ticket speed",
+      "Read spikes vs sustained load"
+    ],
+    "doubt_session": {
+      "ren_opening": "Doubt irukka? Questions on dashboards or metrics?",
+      "wait_for_response": true,
+      "ren_response_template": "Cover namespace, metric, statistic, period, region, and widgets. Defer custom metrics math and Contributor Insights.",
+      "ren_closing": "Next — alarms: OK, ALARM, INSUFFICIENT_DATA. Seri — next lesson ku ready."
+    }
+  }
+}

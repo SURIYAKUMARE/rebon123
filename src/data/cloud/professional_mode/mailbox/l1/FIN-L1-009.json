@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "role_id": "l1_cloud_support_associate",
+  "content_status": "ready",
+  "duration_minutes": 8,
+  "ticket_id": "FIN-L1-009",
+  "tier": 2,
+  "sequence": 9,
+  "service": "console",
+  "source_lessons": [
+    "PM-0.1"
+  ],
+  "unlock": {
+    "lessons_complete": [
+      "PM-0.1"
+    ],
+    "tickets_closed": [
+      "FIN-L1-008"
+    ]
+  },
+  "email": {
+    "message_id": "Mumbai is sl-sea2",
+    "from": {
+      "name": "Meera Iyer",
+      "email": "meera.iyer@finova.tech",
+      "title": "Payments Eng Manager"
+    },
+    "to": [
+      {
+        "name": "You",
+        "email": "cloud-support@finova.tech",
+        "title": "Cloud Support Associate (L1)"
+      }
+    ],
+    "subject": "Mumbai is slow — is it us or AWS?",
+    "body": "Payments latency is up in Mumbai.\n\nWHAT HAPPENED\nThe app feels slow. We do not know yet if AWS has a regional problem or if it is our code.\n\nWHAT YOU NEED TO DO\n1. Open AWS Health on the console home.\n2. Check Mumbai (ap-south-1) for an AWS event.\n3. Read the operational status before you blame Finova.\n\nDO NOT\nDo not restart instances or change the VPC.\n\nREPLY WITH\nWhat Health showed, and whether we should keep investigating the Finova app or wait on AWS.\n\n— Meera",
+    "received_at_label": "Today",
+    "priority": "P2"
+  },
+  "work": {
+    "environment": "checklist",
+    "steps": [
+      {
+        "id": "s1",
+        "kind": "checklist",
+        "instruction": "Check AWS Health / status for ap-south-1 (or note no open AWS event in sim).",
+        "confirm_label": "Checked AWS Health for Region"
+      },
+      {
+        "id": "s2",
+        "kind": "checklist",
+        "instruction": "Decide: escalate to app team vs wait on AWS event.",
+        "confirm_label": "Decision recorded"
+      }
+    ]
+  },
+  "reply": {
+    "min_words": 15,
+    "max_words": 200,
+    "accept_keywords": [
+      {
+        "id": "health",
+        "label": "checked AWS/region health",
+        "any_of": [
+          "health",
+          "aws",
+          "region",
+          "ap-south",
+          "status",
+          "event"
+        ]
+      },
+      {
+        "id": "next",
+        "label": "next step",
+        "any_of": [
+          "finova",
+          "app",
+          "escalate",
+          "monitor",
+          "no aws issue",
+          "continue"
+        ]
+      }
+    ],
+    "required_groups": [
+      "health",
+      "next"
+    ],
+    "model_reply": "Checked AWS Health for ap-south-1 — no blocking regional event in sim. Recommend continue Finova app triage while monitoring Health. — L1",
+    "max_attempts_before_model": 3
+  },
+  "debrief": {
+    "english": "Rule out AWS-side before blaming the app.",
+    "tanglish": "AWS Health paathutu app blame pannunga."
+  }
+}

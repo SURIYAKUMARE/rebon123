@@ -1,0 +1,174 @@
+{
+  "lesson_id": "PM-1.5",
+  "lesson_title": "CloudTrail: Who Changed It?",
+  "session_id": "PM-1",
+  "mode": "professional",
+  "language": "tanglish",
+  "schema_version": 2,
+  "duration_minutes": 20,
+  "company": {
+    "name": "Finova Technologies",
+    "your_role": "Cloud Support Associate (L1)",
+    "current_account": "finova-dev"
+  },
+  "account": {
+    "account_id": "847291635028",
+    "account_name": "finova-dev",
+    "region": "ap-south-1"
+  },
+  "lesson_intro": {
+    "heading": "CSA L1 · CloudTrail (board)",
+    "board_text": "CloudTrail — the audit record\nL1 skill: read an event, not operate a full console yet\n\n• Who: userIdentity\n• What: eventName\n• When: eventTime\n• Where: sourceIP / region\n• Result: errorCode if failed\n\nTie changes to a ticket timeline.",
+    "ren_voice": "Vanakkam. When someone says permissions worked yesterday and broke today — CloudTrail is how you prove what changed. Today is board-only at L1. You learn to read a sample event so when workspace tickets arrive, you already know the fields."
+  },
+  "whiteboard_intro": {
+    "duration_seconds": 50,
+    "board_text": "Sample event (simplified)\n{\n  \"eventName\": \"PutUserPolicy\",\n  \"eventTime\": \"2026-03-12T09:14:22Z\",\n  \"userIdentity\": { \"userName\": \"ops-arjun\" },\n  \"requestParameters\": { \"userName\": \"dev-rita\" },\n  \"errorCode\": null\n}\n\nStory: Arjun attached an inline policy to Rita at 09:14. That matches the ticket time.",
+    "ren_voice": "Vanakkam. Look at this sample. eventName is the API call. userIdentity is who called it. requestParameters show the target. Null errorCode means it succeeded. That is enough for L1 to narrate what happened."
+  },
+  "segments": [
+    {
+      "id": "S1",
+      "type": "teach",
+      "title": "Fields that matter on a ticket",
+      "steps": [
+        {
+          "voice": "eventName — AttachUserPolicy, CreateAccessKey, DeleteRole. The verb of the change.",
+          "cursor": null,
+          "pause_ms": 900
+        },
+        {
+          "voice": "userIdentity — human user, assumed role, or root. Never skip this.",
+          "cursor": null,
+          "pause_ms": 800
+        },
+        {
+          "voice": "eventTime — align with when the user said it broke. Filter the window, do not scroll forever.",
+          "cursor": null,
+          "pause_ms": 900
+        },
+        {
+          "voice": "errorCode — AccessDenied on the management call itself means the changer was also denied. Different story.",
+          "cursor": null,
+          "pause_ms": 900
+        }
+      ],
+      "check": {
+        "voice": "Which field tells you the API that changed IAM?",
+        "wait_for_input": true,
+        "accept_keywords": [
+          "eventname",
+          "event name",
+          "api",
+          "putuser",
+          "attach"
+        ],
+        "response_if_correct": "eventName — that is the API verb.",
+        "response_if_incorrect": "Look at the sample on the board — which key is the action name?"
+      }
+    },
+    {
+      "id": "S2",
+      "type": "teach",
+      "title": "Timeline habit",
+      "steps": [
+        {
+          "voice": "Ticket: Rita lost S3 at 10:00. You search CloudTrail for IAM events on Rita between 09:00 and 10:00.",
+          "cursor": null,
+          "pause_ms": 1000
+        },
+        {
+          "voice": "You find DetachGroupPolicy at 09:47 by ops-arjun. That is your root cause hypothesis — confirm with Arjun, then restore the group policy with least privilege.",
+          "cursor": null,
+          "pause_ms": 1100
+        },
+        {
+          "voice": "L1 does not need the full CloudTrail console today. You need the vocabulary. Workspace will put you in the real Event history later.",
+          "cursor": null,
+          "pause_ms": 900
+        }
+      ],
+      "check": {
+        "voice": "Why filter by time window instead of reading the entire account history?",
+        "wait_for_input": true,
+        "accept_keywords": [
+          "ticket",
+          "time",
+          "window",
+          "noise",
+          "when",
+          "broke",
+          "timeline"
+        ],
+        "response_if_correct": "Tickets have a when. Time filters cut noise and match the incident.",
+        "response_if_incorrect": "The user told you when it broke — how does that help your search?"
+      }
+    },
+    {
+      "id": "S2b",
+      "type": "practice",
+      "title": "Correlate identity in IAM",
+      "instruction_voice": "Ungal turn. When CloudTrail names a user, you open IAM Users next. Practice that handoff — open Users.",
+      "target": "nav-users",
+      "success_targets": [
+        "nav-users"
+      ],
+      "hint_after_seconds": 18,
+      "hint_voice": "Hint: IAM → Users — where you verify the principal from the event.",
+      "completion_voice": "Super. Good. Event names the who — Users is where you continue."
+    },
+    {
+      "id": "S3",
+      "type": "ask",
+      "title": "Read the sample",
+      "voice": "Use the sample event on the board.",
+      "question": "In one sentence: who did what to whom, and did it succeed?",
+      "wait_for_input": true,
+      "accept_keywords": [
+        "arjun",
+        "rita",
+        "policy",
+        "put",
+        "success",
+        "succeeded",
+        "inline"
+      ],
+      "response_if_correct": "ops-arjun successfully PutUserPolicy on dev-rita — an inline policy change.",
+      "response_if_incorrect": "Read userIdentity, eventName, requestParameters.userName, and errorCode."
+    },
+    {
+      "id": "S4",
+      "type": "ask",
+      "title": "Synthesis",
+      "question": "Name the five CloudTrail fields an L1 cites when explaining an IAM change on a ticket.",
+      "wait_for_input": true,
+      "accept_keywords": [
+        "eventname",
+        "eventtime",
+        "useridentity",
+        "request",
+        "error",
+        "who",
+        "what",
+        "when"
+      ],
+      "response_if_correct": "userIdentity, eventName, eventTime, requestParameters, errorCode.",
+      "response_if_incorrect": "Who, what, when, target, success or fail — map those to field names."
+    }
+  ],
+  "session_close": {
+    "ren_voice": "Vanakkam. CloudTrail turns arguments into timelines. Who, what, when, target, result. Board literacy today — console Event history in workspace later. IAM track for CSA L1 is complete on the learning side. Monitoring is next.",
+    "summary_points": [
+      "eventName / userIdentity / eventTime",
+      "requestParameters = target",
+      "errorCode shows success vs denial",
+      "Filter by ticket time window"
+    ],
+    "doubt_session": {
+      "ren_opening": "Doubt irukka? Questions on reading CloudTrail events?",
+      "wait_for_response": true,
+      "ren_response_template": "Stay on event fields and ticket timeline habits. Defer trail setup, Lake, and Insights.",
+      "ren_closing": "Next session track — CloudWatch dashboards for L1 monitoring. Seri — next lesson ku ready."
+    }
+  }
+}

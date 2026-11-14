@@ -1,0 +1,167 @@
+{
+  "day": 5,
+  "language": "english",
+  "pass_threshold": 0.75,
+  "items": [
+    {
+      "id": "D5-Q1",
+      "type": "quiz",
+      "question": "Before naming a product, map pain to a:",
+      "options": [
+        "Service family",
+        "Random emoji",
+        "Salary band",
+        "Laptop brand"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Family first."
+    },
+    {
+      "id": "D5-Q2",
+      "type": "quiz",
+      "question": "Identity family mainly answers:",
+      "options": [
+        "Who can do what",
+        "How big a disk is",
+        "Which AZ has rain",
+        "CDN pop count"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Who/what."
+    },
+    {
+      "id": "D5-Q3",
+      "type": "quiz",
+      "question": "Observe family exists to:",
+      "options": [
+        "See metrics, alarms, logs before customers scream",
+        "Delete VPCs",
+        "Issue credit cards",
+        "Paint servers"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Eyes on prod."
+    },
+    {
+      "id": "D5-Q4",
+      "type": "quiz",
+      "question": "Compute family is about:",
+      "options": [
+        "Where code runs",
+        "Only email",
+        "Only DNS",
+        "Only billing PDFs"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Run code."
+    },
+    {
+      "id": "D5-TF1",
+      "type": "true_false",
+      "statement": "Memorizing 200 service names beats knowing five families.",
+      "correct": false,
+      "ren_hint_english": "True or false — watch for the junior trap.",
+      "ren_hint_tanglish": "True or false — watch for the junior trap.",
+      "explanation": "Families first."
+    },
+    {
+      "id": "D5-TF2",
+      "type": "true_false",
+      "statement": "Ticket arrives → name the family before the product name.",
+      "correct": true,
+      "ren_hint_english": "True or false — watch for the junior trap.",
+      "ren_hint_tanglish": "True or false — watch for the junior trap.",
+      "explanation": "Desk habit."
+    },
+    {
+      "id": "D5-SA1",
+      "type": "short_answer",
+      "question": "List the five service families we use.",
+      "model_answer": "Identity, compute, storage, network, observe.",
+      "accept_keywords": [
+        {
+          "id": "g1",
+          "label": "five families part 1",
+          "any_of": [
+            "identity",
+            "iam"
+          ]
+        },
+        {
+          "id": "g2",
+          "label": "five families part 2",
+          "any_of": [
+            "compute"
+          ]
+        },
+        {
+          "id": "g3",
+          "label": "five families part 3",
+          "any_of": [
+            "storage",
+            "s3"
+          ]
+        },
+        {
+          "id": "g4",
+          "label": "five families part 4",
+          "any_of": [
+            "network",
+            "vpc"
+          ]
+        },
+        {
+          "id": "g5",
+          "label": "five families part 5",
+          "any_of": [
+            "observe",
+            "monitor",
+            "cloudwatch"
+          ]
+        }
+      ],
+      "required_groups": [
+        "g1",
+        "g2",
+        "g3",
+        "g4",
+        "g5"
+      ],
+      "ren_hint_english": "Use your own words — hit the key idea.",
+      "ren_hint_tanglish": "Use your own words — hit the key idea.",
+      "explanation": "Identity, compute, storage, network, observe."
+    },
+    {
+      "id": "D5-SA2",
+      "type": "short_answer",
+      "question": "Why map business pain to a family first?",
+      "model_answer": "So you pick the right problem class before drowning in product names.",
+      "accept_keywords": [
+        {
+          "id": "g1",
+          "label": "pain → family part 1",
+          "any_of": [
+            "pain",
+            "family",
+            "problem",
+            "map"
+          ]
+        }
+      ],
+      "required_groups": [
+        "g1"
+      ],
+      "ren_hint_english": "Use your own words — hit the key idea.",
+      "ren_hint_tanglish": "Use your own words — hit the key idea.",
+      "explanation": "So you pick the right problem class before drowning in product names."
+    }
+  ]
+}

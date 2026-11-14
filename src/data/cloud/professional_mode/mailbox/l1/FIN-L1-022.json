@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "role_id": "l1_cloud_support_associate",
+  "content_status": "ready",
+  "duration_minutes": 8,
+  "ticket_id": "FIN-L1-022",
+  "tier": 2,
+  "sequence": 22,
+  "service": "cloudwatch",
+  "source_lessons": [
+    "PM-5.2"
+  ],
+  "unlock": {
+    "lessons_complete": [
+      "PM-5.2"
+    ],
+    "tickets_closed": [
+      "FIN-L1-021"
+    ]
+  },
+  "email": {
+    "message_id": "Create ALB 5-hiu9",
+    "from": {
+      "name": "Arjun Mehta",
+      "email": "arjun.mehta@finova.tech",
+      "title": "Infrastructure Lead"
+    },
+    "to": [
+      {
+        "name": "You",
+        "email": "cloud-support@finova.tech",
+        "title": "Cloud Support Associate (L1)"
+      }
+    ],
+    "subject": "Create ALB 5xx alarm → SNS finova-ops-alerts",
+    "body": "Please add an alarm we do not have yet.\n\nWHAT HAPPENED\nWe can see CPU alarms. We do not yet alert when the load balancer returns lots of 5xx.\n\nWHAT YOU NEED TO DO\n1. Open CloudWatch, Alarms, Create alarm.\n2. Metric: AWS/ApplicationELB, HTTPCode_Target_5XX_Count.\n3. Threshold: greater than 10 for 5 minutes.\n4. Notify SNS topic finova-ops-alerts.\n\nDO NOT\nDo not delete HighCPU-payments.\n\nREPLY WITH\nThe metric, threshold 10, the 5 minute period, and SNS topic finova-ops-alerts.\n\n— Arjun",
+    "received_at_label": "Today",
+    "priority": "P3"
+  },
+  "work": {
+    "environment": "checklist",
+    "steps": [
+      {
+        "id": "s1",
+        "kind": "checklist",
+        "instruction": "Confirm metric: ALB HTTPCode_Target_5XX_Count (or sim equivalent).",
+        "confirm_label": "Metric confirmed"
+      },
+      {
+        "id": "s2",
+        "kind": "checklist",
+        "instruction": "Threshold >10 for 5 minutes; action SNS finova-ops-alerts.",
+        "confirm_label": "Threshold + SNS set in plan"
+      }
+    ]
+  },
+  "reply": {
+    "min_words": 15,
+    "max_words": 200,
+    "accept_keywords": [
+      {
+        "id": "metric",
+        "label": "5xx metric",
+        "any_of": [
+          "5xx",
+          "alb",
+          "http"
+        ]
+      },
+      {
+        "id": "thresh",
+        "label": "threshold 10 / 5 min",
+        "any_of": [
+          "10",
+          "5 min",
+          "five",
+          "threshold"
+        ]
+      },
+      {
+        "id": "sns",
+        "label": "sns topic",
+        "any_of": [
+          "finova-ops-alerts",
+          "sns"
+        ]
+      }
+    ],
+    "required_groups": [
+      "metric",
+      "sns"
+    ],
+    "bonus_groups": [
+      "thresh"
+    ],
+    "model_reply": "Alarm plan: ALB 5xx count > 10 for 5 minutes → notify SNS finova-ops-alerts. — L1",
+    "max_attempts_before_model": 3
+  },
+  "debrief": {
+    "english": "Config replies must include metric, threshold, action.",
+    "tanglish": "Metric + threshold + SNS solunga."
+  }
+}

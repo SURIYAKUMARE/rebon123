@@ -1,0 +1,154 @@
+{
+  "lesson_id": "PM-2.4",
+  "lesson_title": "Troubleshooting Connectivity",
+  "session_id": "PM-2",
+  "session_name": "VPC",
+  "mode": "professional",
+  "language": "english",
+  "schema_version": 2,
+  "duration_minutes": 18,
+  "teaching_level": "principal_mentor_l5",
+  "company": {
+    "name": "Finova Technologies",
+    "your_role": "Cloud Engineer",
+    "current_account": "finova-dev",
+    "manager": "Arjun Mehta (Infrastructure Lead)"
+  },
+  "account": {
+    "account_id": "847291635028",
+    "account_name": "finova-dev",
+    "region": "ap-south-1"
+  },
+  "lesson_intro": {
+    "heading": "Cloud Engineer · PM-2.4",
+    "board_text": "Troubleshooting Connectivity\nFinova · finova-dev · ap-south-1\n\nWhy before how:\nTimeout tickets are network until proven otherwise.\n\nMental model:\nPath: SG → NACL → route → subnet → reachability.\n\nYou will: watch → learn → practice one navigation.",
+    "ren_voice": "I am Ren. Timeout tickets are network until proven otherwise. Mental model: Path: SG → NACL → route → subnet → reachability. I demonstrate, then you practice. Least privilege and Region discipline stay non-negotiable."
+  },
+  "whiteboard_intro": {
+    "duration_seconds": 40,
+    "board_text": "Troubleshooting Connectivity\n• Path: SG → NACL → route → subnet → reachability.\n• Mistake: Blaming the app before checking routes and SG.\n• Habit: Trace the path on paper before changing five things.",
+    "ren_voice": "Board picture: Path: SG → NACL → route → subnet → reachability.. Juniors usually: Blaming the app before checking routes and SG.. Your habit: Trace the path on paper before changing five things.."
+  },
+  "segments": [
+    {
+      "id": "S1",
+      "type": "demonstrate",
+      "title": "Open VPC",
+      "setup_voice": "Watch — we open VPC the way a real ticket starts.",
+      "steps": [
+        {
+          "voice": "Navigate to VPC. Confirm Region ap-south-1 before you trust the empty list.",
+          "cursor": {
+            "action": "navigate",
+            "target": "service-vpc"
+          },
+          "pause_ms": 1100
+        },
+        {
+          "voice": "Connectivity failures start in VPC views — not random restarts.",
+          "cursor": {
+            "action": "highlight",
+            "target": "service-vpc"
+          },
+          "pause_ms": 900
+        }
+      ],
+      "lesson_voice": "Change one control at a time. Prove the hop.",
+      "check": {
+        "voice": "Name the order you check when traffic times out.",
+        "wait_for_input": true,
+        "accept_keywords": [
+          "sg",
+          "route",
+          "nacl",
+          "subnet",
+          "timeout",
+          "path"
+        ],
+        "response_if_correct": "SG, NACL, route, subnet — then app.",
+        "response_if_incorrect": "Network path first: SG, route, subnet."
+      }
+    },
+    {
+      "id": "S2",
+      "type": "teach",
+      "title": "Company story + trap",
+      "steps": [
+        {
+          "voice": "Finova checkout timeouts — missing route to NAT, not the Java bug everyone chased.",
+          "cursor": {
+            "action": "highlight",
+            "target": "service-vpc"
+          },
+          "pause_ms": 1000
+        },
+        {
+          "voice": "Trap: Blaming the app before checking routes and SG.. Habit: Trace the path on paper before changing five things.",
+          "cursor": null,
+          "pause_ms": 800
+        }
+      ],
+      "check": {
+        "voice": "What habit will you keep from this lesson?",
+        "wait_for_input": true,
+        "accept_keywords": [
+          "sg",
+          "route",
+          "nacl",
+          "subnet",
+          "timeout",
+          "path",
+          "habit",
+          "region",
+          "least"
+        ],
+        "response_if_correct": "That habit is desk gold.",
+        "response_if_incorrect": "Trace the path on paper before changing five things."
+      }
+    },
+    {
+      "id": "S3",
+      "type": "practice",
+      "title": "Your turn",
+      "instruction_voice": "Your turn. Open VPC yourself. Start every ticket here.",
+      "target": "service-vpc",
+      "success_targets": [
+        "service-vpc",
+        "service-vpc"
+      ],
+      "hint_after_seconds": 20,
+      "hint_voice": "Use search or Services menu — land on VPC.",
+      "completion_voice": "Good. You found the service. That is how Ops and Engineer days begin."
+    },
+    {
+      "id": "S4",
+      "type": "ask",
+      "title": "Say it back",
+      "question": "Name the order you check when traffic times out.",
+      "wait_for_input": true,
+      "accept_keywords": [
+        "sg",
+        "route",
+        "nacl",
+        "subnet",
+        "timeout",
+        "path"
+      ],
+      "response_if_correct": "SG, NACL, route, subnet — then app.",
+      "response_if_incorrect": "Network path first: SG, route, subnet."
+    }
+  ],
+  "session_close": {
+    "ren_voice": "Close PM-2.4. Trace the path on paper before changing five things.",
+    "summary_points": [
+      "Path: SG → NACL → route → subnet → reachability.",
+      "Trace the path on paper before changing five things.",
+      "Region + account before panic"
+    ],
+    "doubt_session": {
+      "ren_opening": "Doubt on this service family?",
+      "wait_for_response": true,
+      "ren_closing": "See you on the next ticket lesson."
+    }
+  }
+}

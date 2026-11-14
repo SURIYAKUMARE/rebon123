@@ -1,0 +1,144 @@
+{
+  "day": 6,
+  "language": "english",
+  "pass_threshold": 0.75,
+  "items": [
+    {
+      "id": "D6-Q1",
+      "type": "quiz",
+      "question": "IAM exists to answer:",
+      "options": [
+        "Who can do what",
+        "How fast disks spin",
+        "Rain in Mumbai",
+        "Font size"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Identity."
+    },
+    {
+      "id": "D6-Q2",
+      "type": "quiz",
+      "question": "Least privilege means:",
+      "options": [
+        "Only permissions the job needs",
+        "Always AdministratorAccess",
+        "Share root",
+        "Disable logs"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Least privilege."
+    },
+    {
+      "id": "D6-Q3",
+      "type": "quiz",
+      "question": "EC2/Lambda exist to:",
+      "options": [
+        "Run compute / code",
+        "Only store photos",
+        "Only draw VPCs",
+        "Only send SMS"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Compute."
+    },
+    {
+      "id": "D6-Q4",
+      "type": "quiz",
+      "question": "Admin as a shortcut is:",
+      "options": [
+        "A trap juniors take",
+        "Best practice always",
+        "Required by AWS",
+        "Free"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Trap."
+    },
+    {
+      "id": "D6-TF1",
+      "type": "true_false",
+      "statement": "Without identity controls, anyone can burn money and data.",
+      "correct": true,
+      "ren_hint_english": "True or false — watch for the junior trap.",
+      "ren_hint_tanglish": "True or false — watch for the junior trap.",
+      "explanation": "IAM protects the estate."
+    },
+    {
+      "id": "D6-TF2",
+      "type": "true_false",
+      "statement": "Least privilege means giving everyone Admin so tickets close faster.",
+      "correct": false,
+      "ren_hint_english": "True or false — watch for the junior trap.",
+      "ren_hint_tanglish": "True or false — watch for the junior trap.",
+      "explanation": "Opposite."
+    },
+    {
+      "id": "D6-SA1",
+      "type": "short_answer",
+      "question": "What problem does IAM solve?",
+      "model_answer": "Controls who can do what so strangers cannot burn ₹ or steal data.",
+      "accept_keywords": [
+        {
+          "id": "g1",
+          "label": "who can do what part 1",
+          "any_of": [
+            "who",
+            "permission",
+            "access",
+            "identity"
+          ]
+        },
+        {
+          "id": "g2",
+          "label": "who can do what part 2",
+          "any_of": [
+            "allow",
+            "deny",
+            "policy"
+          ]
+        }
+      ],
+      "required_groups": [
+        "g1",
+        "g2"
+      ],
+      "ren_hint_english": "Use your own words — hit the key idea.",
+      "ren_hint_tanglish": "Use your own words — hit the key idea.",
+      "explanation": "Controls who can do what so strangers cannot burn ₹ or steal data."
+    },
+    {
+      "id": "D6-SA2",
+      "type": "short_answer",
+      "question": "State the least-privilege habit in one line.",
+      "model_answer": "Never grant Admin as a shortcut — only what the job needs.",
+      "accept_keywords": [
+        {
+          "id": "g1",
+          "label": "least privilege part 1",
+          "any_of": [
+            "least",
+            "privilege",
+            "admin",
+            "need",
+            "job"
+          ]
+        }
+      ],
+      "required_groups": [
+        "g1"
+      ],
+      "ren_hint_english": "Use your own words — hit the key idea.",
+      "ren_hint_tanglish": "Use your own words — hit the key idea.",
+      "explanation": "Never grant Admin as a shortcut — only what the job needs."
+    }
+  ]
+}

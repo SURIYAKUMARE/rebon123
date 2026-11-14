@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "role_id": "l1_cloud_support_associate",
+  "content_status": "ready",
+  "duration_minutes": 8,
+  "ticket_id": "FIN-L1-001",
+  "tier": 1,
+  "sequence": 1,
+  "service": "console",
+  "source_lessons": [
+    "PM-0.1"
+  ],
+  "unlock": {
+    "lessons_complete": [
+      "PM-0.1"
+    ]
+  },
+  "email": {
+    "message_id": "Welcome to F-ds2m",
+    "from": {
+      "name": "Priya Nair",
+      "email": "priya.nair@finova.tech",
+      "title": "IT Onboarding"
+    },
+    "to": [
+      {
+        "name": "You",
+        "email": "cloud-support@finova.tech",
+        "title": "Cloud Support Associate (L1)"
+      }
+    ],
+    "subject": "Welcome to Finova — confirm your AWS account ID",
+    "body": "Hi,\n\nWHAT HAPPENED\nYou just joined Finova cloud support. Before you touch anything, we need proof you are in the right AWS account.\n\nWHAT YOU NEED TO DO\n1. Open the console.\n2. Open the account menu (top right).\n3. Read the 12-digit Account ID and the account alias.\n\nDO NOT\nDo not change any setting. Do not share a password.\n\nREPLY WITH\nThe Account ID and the alias you saw (expect finova-dev).\n\n— Priya",
+    "received_at_label": "Today",
+    "priority": "P4"
+  },
+  "work": {
+    "environment": "checklist",
+    "steps": [
+      {
+        "id": "s1",
+        "kind": "checklist",
+        "instruction": "Open account menu and find the 12-digit Account ID.",
+        "confirm_label": "I found the Account ID"
+      },
+      {
+        "id": "s2",
+        "kind": "observe",
+        "instruction": "Capture the Account ID for your reply.",
+        "question": "Account ID?",
+        "accept_keywords": [
+          "847291635028",
+          "8472",
+          "finova-dev"
+        ],
+        "hint": "Sim ID is 847291635028.",
+        "capture_as": "account_id"
+      }
+    ]
+  },
+  "reply": {
+    "min_words": 15,
+    "max_words": 200,
+    "accept_keywords": [
+      {
+        "id": "id",
+        "label": "states account id",
+        "any_of": [
+          "847291635028",
+          "account id",
+          "8472"
+        ]
+      },
+      {
+        "id": "alias",
+        "label": "mentions finova-dev",
+        "any_of": [
+          "finova-dev",
+          "finova",
+          "dev"
+        ]
+      }
+    ],
+    "required_groups": [
+      "id",
+      "alias"
+    ],
+    "model_reply": "Hi Priya, confirmed Account ID 847291635028 on finova-dev. — L1",
+    "max_attempts_before_model": 3
+  },
+  "debrief": {
+    "english": "Always know which account you are in.",
+    "tanglish": "Account confirm pannathukku apram touch pannunga."
+  }
+}

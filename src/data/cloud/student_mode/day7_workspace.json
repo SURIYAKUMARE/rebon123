@@ -1,0 +1,135 @@
+{
+  "day": 7,
+  "language": "english",
+  "pass_threshold": 0.75,
+  "items": [
+    {
+      "id": "D7-Q1",
+      "type": "quiz",
+      "question": "S3 is best thought of as:",
+      "options": [
+        "Durable object storage",
+        "A VPC router",
+        "An IAM user",
+        "A CPU type"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Objects."
+    },
+    {
+      "id": "D7-Q2",
+      "type": "quiz",
+      "question": "VPC is best thought of as:",
+      "options": [
+        "Your private network neighborhood",
+        "A photo album",
+        "A password vault only",
+        "A invoice PDF"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Private network."
+    },
+    {
+      "id": "D7-Q3",
+      "type": "quiz",
+      "question": "Leaving a bucket public 'just for testing' in company accounts is:",
+      "options": [
+        "Dangerous habit",
+        "Always required",
+        "Free security",
+        "Region setting"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Danger."
+    },
+    {
+      "id": "D7-Q4",
+      "type": "quiz",
+      "question": "Network family exists so resources can:",
+      "options": [
+        "Talk privately with controlled doors",
+        "Ignore identity",
+        "Skip backups",
+        "Delete CloudTrail"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Private paths."
+    },
+    {
+      "id": "D7-TF1",
+      "type": "true_false",
+      "statement": "Public buckets in shared company accounts are a common leak pattern.",
+      "correct": true,
+      "ren_hint_english": "True or false — watch for the junior trap.",
+      "ren_hint_tanglish": "True or false — watch for the junior trap.",
+      "explanation": "BPA matters."
+    },
+    {
+      "id": "D7-TF2",
+      "type": "true_false",
+      "statement": "VPC is only about prettier diagrams, not isolation.",
+      "correct": false,
+      "ren_hint_english": "True or false — watch for the junior trap.",
+      "ren_hint_tanglish": "True or false — watch for the junior trap.",
+      "explanation": "Isolation is the point."
+    },
+    {
+      "id": "D7-SA1",
+      "type": "short_answer",
+      "question": "Why does storage (S3) exist as a family?",
+      "model_answer": "To keep durable objects like receipts and images without owning disks.",
+      "accept_keywords": [
+        {
+          "id": "g1",
+          "label": "objects part 1",
+          "any_of": [
+            "object",
+            "storage",
+            "file",
+            "durable",
+            "s3"
+          ]
+        }
+      ],
+      "required_groups": [
+        "g1"
+      ],
+      "ren_hint_english": "Use your own words — hit the key idea.",
+      "ren_hint_tanglish": "Use your own words — hit the key idea.",
+      "explanation": "To keep durable objects like receipts and images without owning disks."
+    },
+    {
+      "id": "D7-SA2",
+      "type": "short_answer",
+      "question": "Why does network (VPC) exist?",
+      "model_answer": "Private neighborhood so apps are not flat on the public internet.",
+      "accept_keywords": [
+        {
+          "id": "g1",
+          "label": "private network part 1",
+          "any_of": [
+            "private",
+            "network",
+            "vpc",
+            "isolate",
+            "subnet"
+          ]
+        }
+      ],
+      "required_groups": [
+        "g1"
+      ],
+      "ren_hint_english": "Use your own words — hit the key idea.",
+      "ren_hint_tanglish": "Use your own words — hit the key idea.",
+      "explanation": "Private neighborhood so apps are not flat on the public internet."
+    }
+  ]
+}

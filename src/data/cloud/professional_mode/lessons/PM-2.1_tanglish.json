@@ -1,0 +1,151 @@
+{
+  "lesson_id": "PM-2.1",
+  "lesson_title": "VPC Architecture: The Building Blocks",
+  "session_id": "PM-2",
+  "session_name": "VPC",
+  "mode": "professional",
+  "language": "tanglish",
+  "schema_version": 2,
+  "duration_minutes": 18,
+  "teaching_level": "principal_mentor_l5",
+  "company": {
+    "name": "Finova Technologies",
+    "your_role": "Cloud Engineer",
+    "current_account": "finova-dev",
+    "manager": "Arjun Mehta (Infrastructure Lead)"
+  },
+  "account": {
+    "account_id": "847291635028",
+    "account_name": "finova-dev",
+    "region": "ap-south-1"
+  },
+  "lesson_intro": {
+    "heading": "Cloud Engineer · PM-2.1",
+    "board_text": "VPC Architecture: The Building Blocks\nFinova · finova-dev · ap-south-1\n\nWhy before how:\nFinova apps need a private neighborhood — not a flat public LAN.\n\nMental model:\nVPC = your private AWS network. Subnets = rooms. Route tables = doors.\n\nYou will: watch → learn → practice one navigation.",
+    "ren_voice": "Naan Ren. Finova apps need a private neighborhood — not a flat public LAN. Mental model: VPC = your private AWS network. Subnets = rooms. Route tables = doors. Naan demonstrate panren, neenga practice. Least privilege and Region — non-negotiable."
+  },
+  "whiteboard_intro": {
+    "duration_seconds": 40,
+    "board_text": "VPC Architecture: The Building Blocks\n• VPC = your private AWS network. Subnets = rooms. Route tables = doors.\n• Mistake: Treating default VPC as 'good enough' for production payments.\n• Habit: Draw public vs private before you create anything.",
+    "ren_voice": "Board: VPC = your private AWS network. Subnets = rooms. Route tables = doors.. Juniors: Treating default VPC as 'good enough' for production payments.. Habit: Draw public vs private before you create anything.."
+  },
+  "segments": [
+    {
+      "id": "S1",
+      "type": "demonstrate",
+      "title": "Open VPC",
+      "setup_voice": "Paathuko — ticket start aagura maadhiri VPC open panrom.",
+      "steps": [
+        {
+          "voice": "VPC-ku po. Region ap-south-1 confirm pannu.",
+          "cursor": {
+            "action": "navigate",
+            "target": "service-vpc"
+          },
+          "pause_ms": 1100
+        },
+        {
+          "voice": "This is the VPC console — where network tickets begin.",
+          "cursor": {
+            "action": "highlight",
+            "target": "service-vpc"
+          },
+          "pause_ms": 900
+        }
+      ],
+      "lesson_voice": "If connectivity fails, start with VPC, subnet, route, security group — in that order.",
+      "check": {
+        "voice": "What is a VPC in one sentence?",
+        "wait_for_input": true,
+        "accept_keywords": [
+          "vpc",
+          "private",
+          "network",
+          "subnet",
+          "route"
+        ],
+        "response_if_correct": "Your private network in AWS — rooms and doors for resources.",
+        "response_if_incorrect": "Think private neighborhood for your cloud resources."
+      }
+    },
+    {
+      "id": "S2",
+      "type": "teach",
+      "title": "Company story + trap",
+      "steps": [
+        {
+          "voice": "Finova payment API in a public subnet with open SSH — auditors will end you. Private compute, controlled entry.",
+          "cursor": {
+            "action": "highlight",
+            "target": "service-vpc"
+          },
+          "pause_ms": 1000
+        },
+        {
+          "voice": "Trap: Treating default VPC as 'good enough' for production payments.. Habit: Draw public vs private before you create anything.",
+          "cursor": null,
+          "pause_ms": 800
+        }
+      ],
+      "check": {
+        "voice": "Indha lesson-la entha habit vechikkuringa?",
+        "wait_for_input": true,
+        "accept_keywords": [
+          "vpc",
+          "private",
+          "network",
+          "subnet",
+          "route",
+          "habit",
+          "region",
+          "least"
+        ],
+        "response_if_correct": "Adhu desk gold.",
+        "response_if_incorrect": "Draw public vs private before you create anything."
+      }
+    },
+    {
+      "id": "S3",
+      "type": "practice",
+      "title": "Your turn",
+      "instruction_voice": "Ungal turn. VPC neenga open pannunga.",
+      "target": "service-vpc",
+      "success_targets": [
+        "service-vpc",
+        "service-vpc"
+      ],
+      "hint_after_seconds": 20,
+      "hint_voice": "Search illa Services menu use panni VPC find pannunga.",
+      "completion_voice": "Nalla. Service find aachu."
+    },
+    {
+      "id": "S4",
+      "type": "ask",
+      "title": "Say it back",
+      "question": "What is a VPC in one sentence?",
+      "wait_for_input": true,
+      "accept_keywords": [
+        "vpc",
+        "private",
+        "network",
+        "subnet",
+        "route"
+      ],
+      "response_if_correct": "Your private network in AWS — rooms and doors for resources.",
+      "response_if_incorrect": "Think private neighborhood for your cloud resources."
+    }
+  ],
+  "session_close": {
+    "ren_voice": "PM-2.1 close. Draw public vs private before you create anything.",
+    "summary_points": [
+      "VPC = your private AWS network. Subnets = rooms. Route tables = doors.",
+      "Draw public vs private before you create anything.",
+      "Region + account before panic"
+    ],
+    "doubt_session": {
+      "ren_opening": "Doubt irukka?",
+      "wait_for_response": true,
+      "ren_closing": "Next ticket lesson-la paakalam."
+    }
+  }
+}

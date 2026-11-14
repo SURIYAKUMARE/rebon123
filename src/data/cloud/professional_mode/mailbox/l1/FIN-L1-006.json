@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "role_id": "l1_cloud_support_associate",
+  "content_status": "ready",
+  "duration_minutes": 8,
+  "ticket_id": "FIN-L1-006",
+  "tier": 1,
+  "sequence": 6,
+  "service": "console",
+  "source_lessons": [
+    "PM-0.1"
+  ],
+  "unlock": {
+    "lessons_complete": [
+      "PM-0.1"
+    ],
+    "tickets_closed": [
+      "FIN-L1-004"
+    ]
+  },
+  "email": {
+    "message_id": "All our EC2 -1l6t",
+    "from": {
+      "name": "Rahul Dev",
+      "email": "rahul.dev@finova.tech",
+      "title": "Developer"
+    },
+    "to": [
+      {
+        "name": "You",
+        "email": "cloud-support@finova.tech",
+        "title": "Cloud Support Associate (L1)"
+      }
+    ],
+    "subject": "All our EC2 instances disappeared!!!",
+    "body": "HELP\n\nWHAT HAPPENED\nI opened EC2 and the instance list is empty. I think production was deleted.\n\nWHAT YOU NEED TO DO\n1. Check the Region in the top bar.\n2. Switch to Mumbai (ap-south-1).\n3. Open EC2, then Instances, and read the names that appear.\n\nDO NOT\nDo not terminate or stop anything.\n\nREPLY WITH\nSay the instances were not deleted. They were in the wrong Region. Name the Region where you found them.\n\n— Rahul",
+    "received_at_label": "Today",
+    "priority": "P2"
+  },
+  "work": {
+    "environment": "checklist",
+    "steps": [
+      {
+        "id": "s1",
+        "kind": "checklist",
+        "instruction": "Ask/check: which Region is selected? Likely us-east-1 trap.",
+        "confirm_label": "Checked Region"
+      },
+      {
+        "id": "s2",
+        "kind": "observe",
+        "instruction": "What Region should Finova India workloads use?",
+        "question": "Correct Region?",
+        "accept_keywords": [
+          "ap-south-1",
+          "mumbai"
+        ],
+        "hint": "Switch to ap-south-1",
+        "capture_as": "region"
+      }
+    ]
+  },
+  "reply": {
+    "min_words": 15,
+    "max_words": 200,
+    "accept_keywords": [
+      {
+        "id": "calm",
+        "label": "calms / not deleted",
+        "any_of": [
+          "not deleted",
+          "still there",
+          "wrong region",
+          "region",
+          "empty"
+        ]
+      },
+      {
+        "id": "fix",
+        "label": "tells correct region",
+        "any_of": [
+          "ap-south-1",
+          "mumbai"
+        ]
+      }
+    ],
+    "required_groups": [
+      "calm",
+      "fix"
+    ],
+    "model_reply": "Rahul — instances are not deleted. You were likely in the wrong Region. Switch to ap-south-1 (Mumbai) and refresh. — L1",
+    "max_attempts_before_model": 3
+  },
+  "debrief": {
+    "english": "False alarm: wrong Region looks like deletion.",
+    "tanglish": "Wrong Region = empty list. Calm reply."
+  }
+}

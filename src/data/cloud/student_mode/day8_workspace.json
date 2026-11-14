@@ -1,0 +1,135 @@
+{
+  "day": 8,
+  "language": "english",
+  "pass_threshold": 0.75,
+  "items": [
+    {
+      "id": "D8-Q1",
+      "type": "quiz",
+      "question": "Observe / CloudWatch exists so you:",
+      "options": [
+        "See problems before customers scream",
+        "Delete IAM forever",
+        "Skip Regions",
+        "Share root"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Eyes on prod."
+    },
+    {
+      "id": "D8-Q2",
+      "type": "quiz",
+      "question": "Best habit:",
+      "options": [
+        "Alarm before dashboard tourism",
+        "Only look after outage tweets",
+        "Disable all alarms",
+        "Ignore logs"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Alarm first."
+    },
+    {
+      "id": "D8-Q3",
+      "type": "quiz",
+      "question": "Metrics and logs help you:",
+      "options": [
+        "Triage incidents with evidence",
+        "Avoid accounts",
+        "Skip least privilege",
+        "Turn off MFA"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Evidence."
+    },
+    {
+      "id": "D8-Q4",
+      "type": "quiz",
+      "question": "No monitoring usually means:",
+      "options": [
+        "Customers tell you first",
+        "Perfect uptime forever",
+        "Free compute",
+        "Auto IAM"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Blind ops."
+    },
+    {
+      "id": "D8-TF1",
+      "type": "true_false",
+      "statement": "Dashboards without alarms are enough for production.",
+      "correct": false,
+      "ren_hint_english": "True or false — watch for the junior trap.",
+      "ren_hint_tanglish": "True or false — watch for the junior trap.",
+      "explanation": "Alarms wake you; tourism does not."
+    },
+    {
+      "id": "D8-TF2",
+      "type": "true_false",
+      "statement": "Observability is optional for payment systems.",
+      "correct": false,
+      "ren_hint_english": "True or false — watch for the junior trap.",
+      "ren_hint_tanglish": "True or false — watch for the junior trap.",
+      "explanation": "Trust requires eyes."
+    },
+    {
+      "id": "D8-SA1",
+      "type": "short_answer",
+      "question": "What problem does monitoring solve?",
+      "model_answer": "You learn about failures from metrics/alarms — not only angry customers.",
+      "accept_keywords": [
+        {
+          "id": "g1",
+          "label": "see before scream part 1",
+          "any_of": [
+            "alarm",
+            "metric",
+            "log",
+            "monitor",
+            "outage",
+            "customer"
+          ]
+        }
+      ],
+      "required_groups": [
+        "g1"
+      ],
+      "ren_hint_english": "Use your own words — hit the key idea.",
+      "ren_hint_tanglish": "Use your own words — hit the key idea.",
+      "explanation": "You learn about failures from metrics/alarms — not only angry customers."
+    },
+    {
+      "id": "D8-SA2",
+      "type": "short_answer",
+      "question": "What is one sticky observe habit?",
+      "model_answer": "Know what alarm wakes you at 2am before browsing dashboards.",
+      "accept_keywords": [
+        {
+          "id": "g1",
+          "label": "alarm habit part 1",
+          "any_of": [
+            "alarm",
+            "2am",
+            "wake",
+            "threshold"
+          ]
+        }
+      ],
+      "required_groups": [
+        "g1"
+      ],
+      "ren_hint_english": "Use your own words — hit the key idea.",
+      "ren_hint_tanglish": "Use your own words — hit the key idea.",
+      "explanation": "Know what alarm wakes you at 2am before browsing dashboards."
+    }
+  ]
+}

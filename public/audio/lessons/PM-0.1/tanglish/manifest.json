@@ -1,0 +1,21 @@
+{
+  "lesson_id": "pm_console_intro",
+  "lesson_file": "PM-0.1_tanglish.json",
+  "lesson_folder": "PM-0.1",
+  "language": "tanglish",
+  "engine": "indic-parler-tts",
+  "voice": "indic-parler-indian-female",
+  "generated_at": "2026-10-07T06:24:33.448904+00:00",
+  "clip_count": 1,
+  "url_prefix": "/audio/lessons/PM-0.1/tanglish",
+  "clips": {
+    "52331697623e2692": {
+      "file": "52331697623e2692.wav",
+      "url": "/audio/lessons/PM-0.1/tanglish/52331697623e2692.wav",
+      "bytes": 2242096,
+      "text": "Finova-ku welcome. Naan Ren. Service deep-dive-ku munnaadi — IAM, tickets, VPC — AWS console eppadi use panradhu, handle panradhu theriya vendum. Screen-la enna irukku. Region enga. Account ID enga. Search eppadi. Missing-nu theriyura edhu actually illai. Idhu ellla Professional path-kum Lesson one. Console first. Apram baaki.",
+      "text_preview": "Finova-ku welcome. Naan Ren. Service deep-dive-ku munnaadi — IAM, tickets, VPC — AWS console eppadi use panradhu, handle"
+    }
+  },
+  "notes": "Path A: static teaching lines only. Live doubts / dynamic Ren answers use Path B (local TTS), not this folder."
+}

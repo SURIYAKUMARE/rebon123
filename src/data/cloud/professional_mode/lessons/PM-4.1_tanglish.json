@@ -1,0 +1,154 @@
+{
+  "lesson_id": "PM-4.1",
+  "lesson_title": "S3 Fundamentals and Security",
+  "session_id": "PM-4",
+  "session_name": "S3",
+  "mode": "professional",
+  "language": "tanglish",
+  "schema_version": 2,
+  "duration_minutes": 18,
+  "teaching_level": "principal_mentor_l5",
+  "company": {
+    "name": "Finova Technologies",
+    "your_role": "Cloud Operations Associate",
+    "current_account": "finova-dev",
+    "manager": "Arjun Mehta (Infrastructure Lead)"
+  },
+  "account": {
+    "account_id": "847291635028",
+    "account_name": "finova-dev",
+    "region": "ap-south-1"
+  },
+  "lesson_intro": {
+    "heading": "Cloud Operations Associate · PM-4.1",
+    "board_text": "S3 Fundamentals and Security\nFinova · finova-dev · ap-south-1\n\nWhy before how:\nObject storage holds receipts, KYC images, exports — trust lives here.\n\nMental model:\nBucket = container. Object = file. Block Public Access is your seatbelt.\n\nYou will: watch → learn → practice one navigation.",
+    "ren_voice": "Naan Ren. Object storage holds receipts, KYC images, exports — trust lives here. Mental model: Bucket = container. Object = file. Block Public Access is your seatbelt. Naan demonstrate panren, neenga practice. Least privilege and Region — non-negotiable."
+  },
+  "whiteboard_intro": {
+    "duration_seconds": 40,
+    "board_text": "S3 Fundamentals and Security\n• Bucket = container. Object = file. Block Public Access is your seatbelt.\n• Mistake: Public bucket 'for testing' in a shared account.\n• Habit: Account BPA on. Prove public access is impossible before you celebrate.",
+    "ren_voice": "Board: Bucket = container. Object = file. Block Public Access is your seatbelt.. Juniors: Public bucket 'for testing' in a shared account.. Habit: Account BPA on. Prove public access is impossible before you celebrate.."
+  },
+  "segments": [
+    {
+      "id": "S1",
+      "type": "demonstrate",
+      "title": "Open S3",
+      "setup_voice": "Paathuko — ticket start aagura maadhiri S3 open panrom.",
+      "steps": [
+        {
+          "voice": "S3-ku po. Region ap-south-1 confirm pannu.",
+          "cursor": {
+            "action": "navigate",
+            "target": "service-s3"
+          },
+          "pause_ms": 1100
+        },
+        {
+          "voice": "S3 home — every storage access ticket starts with the bucket list.",
+          "cursor": {
+            "action": "highlight",
+            "target": "service-s3"
+          },
+          "pause_ms": 900
+        }
+      ],
+      "lesson_voice": "Encryption and BPA are not optional on Finova data.",
+      "check": {
+        "voice": "What is the first security control you verify on S3?",
+        "wait_for_input": true,
+        "accept_keywords": [
+          "s3",
+          "bucket",
+          "public",
+          "bpa",
+          "block",
+          "object"
+        ],
+        "response_if_correct": "Block Public Access — seatbelt before fancy policies.",
+        "response_if_incorrect": "BPA and who can read objects."
+      }
+    },
+    {
+      "id": "S2",
+      "type": "teach",
+      "title": "Company story + trap",
+      "steps": [
+        {
+          "voice": "A public KYC prefix leaked — brand damage worse than the engineering fix.",
+          "cursor": {
+            "action": "highlight",
+            "target": "service-s3"
+          },
+          "pause_ms": 1000
+        },
+        {
+          "voice": "Trap: Public bucket 'for testing' in a shared account.. Habit: Account BPA on. Prove public access is impossible before you celebrate.",
+          "cursor": null,
+          "pause_ms": 800
+        }
+      ],
+      "check": {
+        "voice": "Indha lesson-la entha habit vechikkuringa?",
+        "wait_for_input": true,
+        "accept_keywords": [
+          "s3",
+          "bucket",
+          "public",
+          "bpa",
+          "block",
+          "object",
+          "habit",
+          "region",
+          "least"
+        ],
+        "response_if_correct": "Adhu desk gold.",
+        "response_if_incorrect": "Account BPA on. Prove public access is impossible before you celebrate."
+      }
+    },
+    {
+      "id": "S3",
+      "type": "practice",
+      "title": "Your turn",
+      "instruction_voice": "Ungal turn. S3 neenga open pannunga.",
+      "target": "service-s3",
+      "success_targets": [
+        "service-s3",
+        "service-s3"
+      ],
+      "hint_after_seconds": 20,
+      "hint_voice": "Search illa Services menu use panni S3 find pannunga.",
+      "completion_voice": "Nalla. Service find aachu."
+    },
+    {
+      "id": "S4",
+      "type": "ask",
+      "title": "Say it back",
+      "question": "What is the first security control you verify on S3?",
+      "wait_for_input": true,
+      "accept_keywords": [
+        "s3",
+        "bucket",
+        "public",
+        "bpa",
+        "block",
+        "object"
+      ],
+      "response_if_correct": "Block Public Access — seatbelt before fancy policies.",
+      "response_if_incorrect": "BPA and who can read objects."
+    }
+  ],
+  "session_close": {
+    "ren_voice": "PM-4.1 close. Account BPA on. Prove public access is impossible before you celebrate.",
+    "summary_points": [
+      "Bucket = container. Object = file. Block Public Access is your seatbelt.",
+      "Account BPA on. Prove public access is impossible before you celebrate.",
+      "Region + account before panic"
+    ],
+    "doubt_session": {
+      "ren_opening": "Doubt irukka?",
+      "wait_for_response": true,
+      "ren_closing": "Next ticket lesson-la paakalam."
+    }
+  }
+}

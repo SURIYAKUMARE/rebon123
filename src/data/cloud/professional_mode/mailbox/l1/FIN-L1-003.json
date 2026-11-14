@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "role_id": "l1_cloud_support_associate",
+  "content_status": "ready",
+  "duration_minutes": 8,
+  "ticket_id": "FIN-L1-003",
+  "tier": 1,
+  "sequence": 3,
+  "service": "console",
+  "source_lessons": [
+    "PM-0.1"
+  ],
+  "unlock": {
+    "lessons_complete": [
+      "PM-0.1"
+    ],
+    "tickets_closed": [
+      "FIN-L1-002"
+    ]
+  },
+  "email": {
+    "message_id": "Use search —-z7cb",
+    "from": {
+      "name": "Arjun Mehta",
+      "email": "arjun.mehta@finova.tech",
+      "title": "Infrastructure Lead"
+    },
+    "to": [
+      {
+        "name": "You",
+        "email": "cloud-support@finova.tech",
+        "title": "Cloud Support Associate (L1)"
+      }
+    ],
+    "subject": "Use search — open IAM without hunting the mega-menu",
+    "body": "Team,\n\nWHAT HAPPENED\nNew L1s waste time hunting the services menu.\n\nWHAT YOU NEED TO DO\n1. Use the search box at the top of the console.\n2. Type IAM and open Identity and Access Management.\n3. Stop on the IAM page. You do not need to change a user.\n\nDO NOT\nDo not create a user or attach a policy on this ticket.\n\nREPLY WITH\nConfirm you opened IAM using search.\n\n— Arjun",
+    "received_at_label": "Today",
+    "priority": "P4"
+  },
+  "work": {
+    "environment": "checklist",
+    "steps": [
+      {
+        "id": "s1",
+        "kind": "checklist",
+        "instruction": "Use search (or Services) and open IAM.",
+        "confirm_label": "IAM is open"
+      },
+      {
+        "id": "s2",
+        "kind": "checklist",
+        "instruction": "Confirm account context before leaving.",
+        "confirm_label": "Account context checked"
+      }
+    ]
+  },
+  "reply": {
+    "min_words": 15,
+    "max_words": 200,
+    "accept_keywords": [
+      {
+        "id": "iam",
+        "label": "mentions IAM",
+        "any_of": [
+          "iam",
+          "identity"
+        ]
+      },
+      {
+        "id": "search",
+        "label": "mentions search/nav",
+        "any_of": [
+          "search",
+          "navigate",
+          "opened"
+        ]
+      }
+    ],
+    "required_groups": [
+      "iam"
+    ],
+    "bonus_groups": [
+      "search"
+    ],
+    "model_reply": "Opened IAM via console search on finova-dev. — L1",
+    "max_attempts_before_model": 3
+  },
+  "debrief": {
+    "english": "Search bar > wandering Services menu.",
+    "tanglish": "Search use pannunga."
+  }
+}

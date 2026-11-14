@@ -1,0 +1,127 @@
+{
+  "lesson_id": "PM-5.2",
+  "lesson_title": "Alarms: Reading and Creating",
+  "session_id": "PM-5",
+  "mode": "professional",
+  "language": "english",
+  "schema_version": 2,
+  "duration_minutes": 20,
+  "company": {
+    "name": "Finova Technologies",
+    "your_role": "Cloud Support Associate (L1)",
+    "current_account": "finova-dev"
+  },
+  "account": {
+    "account_id": "847291635028",
+    "account_name": "finova-dev",
+    "region": "ap-south-1"
+  },
+  "lesson_intro": {
+    "heading": "CSA L1 · CloudWatch Alarms",
+    "board_text": "Alarms for support\n• OK / ALARM / INSUFFICIENT_DATA\n• Threshold + period + datapoints\n• SNS notifies the on-call\n• Create a CPU alarm the Finova way",
+    "ren_voice": "Alarms page you before customers do. Today you read alarm states and create a basic EC2 CPU alarm with a threshold and SNS topic — the L1 pattern."
+  },
+  "whiteboard_intro": {
+    "duration_seconds": 35,
+    "board_text": "Alarm states\n• OK — metric within threshold\n• ALARM — breached\n• INSUFFICIENT_DATA — not enough points yet (new alarm, missing metric, wrong region)\n\nNever ignore INSUFFICIENT_DATA on a brand-new alarm — verify metric exists.",
+    "ren_voice": "Three states. OK, ALARM, INSUFFICIENT_DATA. New alarms often sit in INSUFFICIENT_DATA until datapoints arrive — that is not a green light."
+  },
+  "segments": [
+    {
+      "id": "S1",
+      "type": "demonstrate",
+      "title": "Alarms list",
+      "setup_voice": "Open Alarms — this is the queue your on-call lives in.",
+      "steps": [
+        {
+          "voice": "Alarms list.",
+          "cursor": { "action": "navigate", "target": "cw-alarms" },
+          "pause_ms": 1000
+        },
+        {
+          "voice": "Create alarm when a ticket asks for monitoring on a new service.",
+          "cursor": { "action": "navigate", "target": "cw-create-alarm" },
+          "pause_ms": 900
+        }
+      ],
+      "lesson_voice": "Reading first: which alarms are in ALARM right now? That is triage. Creating second: only when the runbook asks.",
+      "check": {
+        "voice": "A brand-new CPU alarm shows INSUFFICIENT_DATA for ten minutes. Name two likely causes.",
+        "wait_for_input": true,
+        "accept_keywords": ["region", "metric", "datapoint", "period", "instance", "missing", "new"],
+        "response_if_correct": "Wrong region, metric not emitting yet, or period/datapoints not satisfied.",
+        "response_if_incorrect": "Think missing data — region, metric existence, or not enough points."
+      }
+    },
+    {
+      "id": "S2",
+      "type": "teach",
+      "title": "Create CPU alarm",
+      "steps": [
+        {
+          "voice": "Select metric — EC2 CPUUtilization.",
+          "cursor": { "action": "highlight", "target": "btn-select-metric" },
+          "pause_ms": 800
+        },
+        {
+          "voice": "Condition greater or equal — threshold often 80 for Finova L1 CPU.",
+          "cursor": { "action": "highlight", "target": "cw-alarm-threshold" },
+          "pause_ms": 800
+        },
+        {
+          "voice": "Name it clearly — env, service, metric.",
+          "cursor": { "action": "highlight", "target": "cw-alarm-name" },
+          "pause_ms": 700
+        },
+        {
+          "voice": "SNS topic for dev alerts — then create.",
+          "cursor": { "action": "highlight", "target": "btn-create-alarm-submit" },
+          "pause_ms": 900
+        }
+      ],
+      "check": {
+        "voice": "Why include environment in the alarm name?",
+        "wait_for_input": true,
+        "accept_keywords": ["dev", "prod", "env", "which", "account", "confus", "ticket"],
+        "response_if_correct": "So on-call knows which world is burning — finova-dev vs prod.",
+        "response_if_incorrect": "You get paged at 2am — what do you need in the title?"
+      }
+    },
+    {
+      "id": "S3",
+      "type": "practice",
+      "title": "Open Alarms",
+      "instruction_voice": "Navigate to CloudWatch Alarms.",
+      "target": "cw-alarms",
+      "success_targets": ["cw-alarms", "cw-create-alarm"],
+      "hint_after_seconds": 18,
+      "hint_voice": "CloudWatch → Alarms.",
+      "completion_voice": "Good. That list is your triage board."
+    },
+    {
+      "id": "S4",
+      "type": "ask",
+      "title": "Synthesis",
+      "question": "Walk through creating an L1 CPU alarm: metric, condition, notify.",
+      "wait_for_input": true,
+      "accept_keywords": ["cpu", "threshold", "sns", "alarm", "greater", "metric", "notify"],
+      "response_if_correct": "Select EC2 CPUUtilization, set threshold with greater-or-equal, attach SNS, name with env — create.",
+      "response_if_incorrect": "Three pieces: which metric, when it fires, who gets the page."
+    }
+  ],
+  "session_close": {
+    "ren_voice": "OK, ALARM, INSUFFICIENT_DATA. Threshold with clear names and SNS. Next — logs, so an alarm becomes a story.",
+    "summary_points": [
+      "Three alarm states",
+      "INSUFFICIENT_DATA needs verification",
+      "Metric + threshold + SNS",
+      "Name with environment"
+    ],
+    "doubt_session": {
+      "ren_opening": "Questions on alarms?",
+      "wait_for_response": true,
+      "ren_response_template": "Cover states, threshold, SNS, naming. Defer anomaly detection and composite alarms.",
+      "ren_closing": "Last CSA monitoring lesson — Logs Insights and correlating an incident."
+    }
+  }
+}

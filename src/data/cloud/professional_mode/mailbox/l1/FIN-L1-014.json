@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "role_id": "l1_cloud_support_associate",
+  "content_status": "ready",
+  "duration_minutes": 8,
+  "ticket_id": "FIN-L1-014",
+  "tier": 2,
+  "sequence": 14,
+  "service": "iam",
+  "source_lessons": [
+    "PM-1.2"
+  ],
+  "unlock": {
+    "lessons_complete": [
+      "PM-1.2"
+    ],
+    "tickets_closed": [
+      "FIN-L1-013"
+    ]
+  },
+  "email": {
+    "message_id": "Lambda can't-o724",
+    "from": {
+      "name": "Rahul Dev",
+      "email": "rahul.dev@finova.tech",
+      "title": "Developer"
+    },
+    "to": [
+      {
+        "name": "You",
+        "email": "cloud-support@finova.tech",
+        "title": "Cloud Support Associate (L1)"
+      }
+    ],
+    "subject": "Lambda can't read DynamoDB — paste my access keys?",
+    "body": "My Lambda cannot read DynamoDB.\n\nWHAT HAPPENED\nThe function fails. I want to paste my IAM user access keys into the Lambda environment variables.\n\nWHAT YOU NEED TO DO\n1. Open IAM, then Roles.\n2. Find finova-lambda-payments.\n3. Read which service it trusts and which policy it has.\n\nDO NOT\nDo not create an access key. Do not paste user keys into Lambda.\n\nREPLY WITH\nNo. Tell them to use the Lambda execution role, not user access keys.\n\n— Rahul",
+    "received_at_label": "Today",
+    "priority": "P3"
+  },
+  "work": {
+    "environment": "checklist",
+    "steps": [
+      {
+        "id": "s1",
+        "kind": "checklist",
+        "instruction": "Reject long-lived user keys in Lambda.",
+        "confirm_label": "Rejected keys-in-env"
+      },
+      {
+        "id": "s2",
+        "kind": "checklist",
+        "instruction": "Correct approach: IAM role on the function (instance/task role pattern).",
+        "confirm_label": "Recommend function role"
+      }
+    ]
+  },
+  "reply": {
+    "min_words": 15,
+    "max_words": 200,
+    "accept_keywords": [
+      {
+        "id": "no",
+        "label": "don't paste keys",
+        "any_of": [
+          "no",
+          "do not",
+          "don't",
+          "never",
+          "keys"
+        ]
+      },
+      {
+        "id": "role",
+        "label": "use role",
+        "any_of": [
+          "role",
+          "execution role",
+          "instance profile",
+          "assume"
+        ]
+      }
+    ],
+    "required_groups": [
+      "no",
+      "role"
+    ],
+    "reject_keywords": [
+      "here is my key",
+      "akia"
+    ],
+    "model_reply": "Do not paste user access keys into Lambda. Attach an IAM role to the function with DynamoDB read only. — L1",
+    "max_attempts_before_model": 3
+  },
+  "debrief": {
+    "english": "Roles for services — not long-lived user keys.",
+    "tanglish": "Service-ku role — user keys illa."
+  }
+}

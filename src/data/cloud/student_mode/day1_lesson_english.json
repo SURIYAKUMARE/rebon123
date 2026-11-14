@@ -1,0 +1,84 @@
+{
+  "day": 1,
+  "part": "A",
+  "language": "english",
+  "title": "Meet Ren — What Cloud Really Is",
+  "duration_minutes": 14,
+  "blocks": [
+    {
+      "block": 0,
+      "type": "lesson_intro",
+      "heading": "STUDENT MODE · LESSON 1 OF 10",
+      "board_text": "Student Mode = cloud literacy BEFORE the console.\n\nToday:\n• Who Ren is and how she teaches\n• Cloud = rent, not own\n• Why this mode exists\n\nNo AWS console today. Board + voice only.",
+      "ren_voice": "I am Ren. I spent years in cloud at top companies, then left because schools and courses were not making people job-ready. This Student Mode is short on purpose — ten lessons of fundamentals, then you earn the console in Professional Mode. Today: what cloud actually is.",
+      "check_question": null
+    },
+    {
+      "block": 1,
+      "type": "concept_intro",
+      "heading": "CLOUD = RENT, NOT OWN",
+      "board_text": "Cloud computing = using computers, storage, and software over the internet that someone else owns and maintains.\n\nLike electricity: you do not buy a power plant. You connect, use, and pay for what you used.\n\nBig providers: AWS · Azure · Google Cloud",
+      "ren_voice": "Cloud means you rent technology over the internet instead of buying servers for your office. You never touch a physical machine. You pay for what you use. AWS, Azure, and Google Cloud own the data centers. That rent-versus-own shift is the whole foundation.",
+      "check_question": {
+        "question": "In one sentence — what makes cloud different from buying your own servers?",
+        "expected_response_type": "open",
+        "accept_keywords": [
+          "rent",
+          "own",
+          "buy",
+          "internet",
+          "pay",
+          "use"
+        ],
+        "ren_response_if_correct": "Yes — you rent instead of own. That changes money, speed, and who fixes the hardware.",
+        "ren_response_if_incorrect": "Think rent versus buy. Cloud is renting someone else's computers over the internet."
+      }
+    },
+    {
+      "block": 2,
+      "type": "why_companies",
+      "heading": "WHY THIS MODE COMES FIRST",
+      "board_text": "College often jumps to buttons before mental models.\nResult: people click without knowing why the bill exists.\n\nRebon order:\n1) Understand the problem cloud solves\n2) Then touch the console in Professional Mode",
+      "ren_voice": "I will not throw you into the console on day one. First you need a mental model. When you later open AWS, every service will map to a business problem — not a random menu.",
+      "check_question": {
+        "question": "Why do we delay the console in Student Mode?",
+        "expected_response_type": "open",
+        "accept_keywords": [
+          "fundament",
+          "mental",
+          "model",
+          "understand",
+          "before",
+          "why"
+        ],
+        "ren_response_if_correct": "Correct — fundamentals first so console clicks have meaning.",
+        "ren_response_if_incorrect": "Because clicking without a model creates button-pushers, not engineers."
+      }
+    },
+    {
+      "block": 3,
+      "type": "mistake_simulation",
+      "heading": "JUNIOR TRAP",
+      "board_text": "Trap: memorizing service names with no picture of rent vs own.\nHabit: always ask — what problem does this solve for the business?",
+      "ren_voice": "Juniors memorize EC2, S3, VPC like vocabulary lists. Useless under pressure. Habit: every concept must answer what business pain it removes.",
+      "check_question": null
+    },
+    {
+      "block": 4,
+      "type": "summary",
+      "heading": "LOCK IT IN",
+      "board_text": "• Cloud = rent infrastructure over the internet\n• Student Mode = literacy before console\n• Next: why companies actually pay for cloud",
+      "ren_voice": "Lock it: cloud is rent, not own. Ten short lessons. Console comes after you earn it.",
+      "check_question": null
+    }
+  ],
+  "lesson_summary": {
+    "board_text": "Cloud = rent. Console later.",
+    "ren_voice": "Lesson 1 done. You know the deal."
+  },
+  "doubt_session": {
+    "ren_opening": "Any doubt on rent versus own?",
+    "wait_for_response": true,
+    "ren_closing": "Good. See you in lesson 2."
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "day": 9,
+  "language": "english",
+  "pass_threshold": 0.75,
+  "items": [
+    {
+      "id": "D9-Q1",
+      "type": "quiz",
+      "question": "Finova stakes are mainly:",
+      "options": [
+        "Orders, money, trust",
+        "Wallpaper color",
+        "Coffee brand",
+        "Desk plants"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Payments trust."
+    },
+    {
+      "id": "D9-Q2",
+      "type": "quiz",
+      "question": "An outage at Finova risks:",
+      "options": [
+        "₹ and reputation",
+        "Only fonts",
+        "Only emoji",
+        "Only Region names"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Money + trust."
+    },
+    {
+      "id": "D9-Q3",
+      "type": "quiz",
+      "question": "Map every tech topic into:",
+      "options": [
+        "Orders · money · trust",
+        "Memes only",
+        "Random ports",
+        "Unused AZs"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Business lens."
+    },
+    {
+      "id": "D9-Q4",
+      "type": "quiz",
+      "question": "Cloud literacy missing during an outage causes:",
+      "options": [
+        "Slower recovery and blame chaos",
+        "Automatic refunds forever",
+        "Free Admin",
+        "No tickets"
+      ],
+      "correct_index": 0,
+      "ren_hint_english": "Think about the lesson mental model.",
+      "ren_hint_tanglish": "Think about the lesson mental model.",
+      "explanation": "Literacy matters."
+    },
+    {
+      "id": "D9-TF1",
+      "type": "true_false",
+      "statement": "At a payments company, trust is optional.",
+      "correct": false,
+      "ren_hint_english": "True or false — watch for the junior trap.",
+      "ren_hint_tanglish": "True or false — watch for the junior trap.",
+      "explanation": "Trust is the product."
+    },
+    {
+      "id": "D9-TF2",
+      "type": "true_false",
+      "statement": "Translate cloud topics into business stakes, not jargon only.",
+      "correct": true,
+      "ren_hint_english": "True or false — watch for the junior trap.",
+      "ren_hint_tanglish": "True or false — watch for the junior trap.",
+      "explanation": "Ren's company lens."
+    },
+    {
+      "id": "D9-SA1",
+      "type": "short_answer",
+      "question": "What three stakes define Finova's lens?",
+      "model_answer": "Orders, money, and trust.",
+      "accept_keywords": [
+        {
+          "id": "g1",
+          "label": "orders money trust part 1",
+          "any_of": [
+            "order"
+          ]
+        },
+        {
+          "id": "g2",
+          "label": "orders money trust part 2",
+          "any_of": [
+            "money",
+            "rupee",
+            "payment"
+          ]
+        },
+        {
+          "id": "g3",
+          "label": "orders money trust part 3",
+          "any_of": [
+            "trust",
+            "reputation"
+          ]
+        }
+      ],
+      "required_groups": [
+        "g1",
+        "g2",
+        "g3"
+      ],
+      "ren_hint_english": "Use your own words — hit the key idea.",
+      "ren_hint_tanglish": "Use your own words — hit the key idea.",
+      "explanation": "Orders, money, and trust."
+    },
+    {
+      "id": "D9-SA2",
+      "type": "short_answer",
+      "question": "Why does cloud literacy matter on outage day?",
+      "model_answer": "People who understand families recover faster and protect money/trust.",
+      "accept_keywords": [
+        {
+          "id": "g1",
+          "label": "recover + trust part 1",
+          "any_of": [
+            "outage",
+            "recover",
+            "literacy",
+            "trust",
+            "money"
+          ]
+        }
+      ],
+      "required_groups": [
+        "g1"
+      ],
+      "ren_hint_english": "Use your own words — hit the key idea.",
+      "ren_hint_tanglish": "Use your own words — hit the key idea.",
+      "explanation": "People who understand families recover faster and protect money/trust."
+    }
+  ]
+}

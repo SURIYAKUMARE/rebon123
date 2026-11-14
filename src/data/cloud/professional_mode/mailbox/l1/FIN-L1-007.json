@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "role_id": "l1_cloud_support_associate",
+  "content_status": "ready",
+  "duration_minutes": 8,
+  "ticket_id": "FIN-L1-007",
+  "tier": 1,
+  "sequence": 7,
+  "service": "console",
+  "source_lessons": [
+    "PM-0.1"
+  ],
+  "unlock": {
+    "lessons_complete": [
+      "PM-0.1"
+    ],
+    "tickets_closed": [
+      "FIN-L1-006"
+    ]
+  },
+  "email": {
+    "message_id": "About to run-q8q7",
+    "from": {
+      "name": "Meera Iyer",
+      "email": "meera.iyer@finova.tech",
+      "title": "Payments Eng Manager"
+    },
+    "to": [
+      {
+        "name": "You",
+        "email": "cloud-support@finova.tech",
+        "title": "Cloud Support Associate (L1)"
+      }
+    ],
+    "subject": "About to run a change — am I in prod or dev?",
+    "body": "Before I click anything.\n\nWHAT HAPPENED\nI am about to make a change and I am not sure if this is finova-dev or production.\n\nWHAT YOU NEED TO DO\n1. Open the account menu in the top right.\n2. Read the account alias and the Account ID.\n3. Tell me how I can check that myself next time.\n\nDO NOT\nDo not change resources on this ticket.\n\nREPLY WITH\nThe alias and Account ID, and that the check is the account menu at the top right.\n\n— Meera",
+    "received_at_label": "Today",
+    "priority": "P3"
+  },
+  "work": {
+    "environment": "checklist",
+    "steps": [
+      {
+        "id": "s1",
+        "kind": "checklist",
+        "instruction": "Open account menu: compare alias finova-dev vs finova-prod.",
+        "confirm_label": "Compared aliases"
+      },
+      {
+        "id": "s2",
+        "kind": "observe",
+        "instruction": "Dev Account ID for this sim?",
+        "question": "Dev Account ID?",
+        "accept_keywords": [
+          "847291635028"
+        ],
+        "hint": "847291635028",
+        "capture_as": "account_id"
+      }
+    ]
+  },
+  "reply": {
+    "min_words": 15,
+    "max_words": 200,
+    "accept_keywords": [
+      {
+        "id": "how",
+        "label": "how to check",
+        "any_of": [
+          "account",
+          "alias",
+          "top right",
+          "menu",
+          "id"
+        ]
+      },
+      {
+        "id": "dev",
+        "label": "mentions finova-dev",
+        "any_of": [
+          "finova-dev",
+          "dev",
+          "847291635028"
+        ]
+      }
+    ],
+    "required_groups": [
+      "how",
+      "dev"
+    ],
+    "model_reply": "Check top-right account menu: alias should be finova-dev and ID 847291635028 before any change. — L1",
+    "max_attempts_before_model": 3
+  },
+  "debrief": {
+    "english": "Verify account before every change.",
+    "tanglish": "Change-ku munnaadi account verify."
+  }
+}
