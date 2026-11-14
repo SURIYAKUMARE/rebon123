@@ -10,7 +10,7 @@ if (!rootEl) {
     '<p style="font-family:sans-serif;padding:24px">Unable to start the app: missing #root element. Please refresh.</p>';
 } else {
   createRoot(rootEl).render(
-    <ErrorBoundary label="Rebon">
+    <ErrorBoundary label="LexiClash">
       <App />
     </ErrorBoundary>
   );

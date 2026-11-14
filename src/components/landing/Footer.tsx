@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
           <div>
             <p className="font-display text-3xl md:text-4xl font-extrabold text-foreground tracking-[0.06em] mb-4">
-              REBON
+              LexiClash
             </p>
             <p className="text-muted-foreground max-w-sm leading-relaxed text-sm">
               <span className="text-amber-brand">Choose your path.</span>{" "}
@@ -28,7 +28,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-14 pt-8 border-t border-border flex flex-col sm:flex-row justify-between gap-3 text-sm text-muted-foreground font-mono-data">
-          <p>© {currentYear} REBON</p>
+          <p>© {currentYear} LexiClash</p>
           <p>Not edtech. A path with proof.</p>
         </div>
       </div>

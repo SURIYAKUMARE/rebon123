@@ -215,12 +215,12 @@ export const DomainConstellation = ({
           <span
             className="relative font-display font-extrabold text-white/90"
             style={{
-              fontSize: 26,
-              letterSpacing: "0.14em",
+              fontSize: 22,
+              letterSpacing: "0.10em",
               textShadow: "0 0 24px rgba(167,139,250,0.6)",
             }}
           >
-            REBON
+            LexiClash
           </span>
         </div>
       </div>

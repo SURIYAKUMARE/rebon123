@@ -27,7 +27,7 @@ export const PILLAR_TONE = {
     "Real AWS error messages, verbatim format",
     "Named managers with a real voice (Ravi, Priya, etc.) — not generic NPCs",
     "Ticket numbers (FQ-142) mirroring Jira",
-    "Rebon Score / tickets resolved on public profile — not inside workspace HUD",
+    "LexiClash Score / tickets resolved on public profile — not inside workspace HUD",
     "3-attempt system as mentorship, never punishment",
     "Mail mechanic as real workplace communication",
   ],

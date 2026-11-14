@@ -707,12 +707,12 @@ const DomainUniverse = ({ open, onClose, onSelect }: DomainUniverseProps) => {
                     <span
                       className="relative font-display font-extrabold text-white"
                       style={{
-                        fontSize: 32,
-                        letterSpacing: "0.14em",
+                        fontSize: 26,
+                        letterSpacing: "0.10em",
                         textShadow: "0 0 28px rgba(167,139,250,0.65)",
                       }}
                     >
-                      REBON
+                      LexiClash
                     </span>
                   </div>
                 </div>

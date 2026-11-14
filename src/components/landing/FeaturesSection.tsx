@@ -17,7 +17,7 @@ const audiences = [
     tag: "Colleges",
     accent: "#10B981",
     title: "Placements without replacing your syllabus.",
-    body: "REBON runs beside the degree — industry readiness your curriculum cannot move fast enough to cover.",
+    body: "LexiClash runs beside the degree — industry readiness your curriculum cannot move fast enough to cover.",
   },
 ];
 

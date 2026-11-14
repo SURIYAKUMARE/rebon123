@@ -73,7 +73,7 @@ const DomainNavbar = () => {
       <div className="w-full px-8 md:px-14">
         <div className="flex items-center justify-between h-16 md:h-[4.5rem]">
           <Link to="/" className="font-display text-xl font-extrabold tracking-[0.08em] text-foreground md:text-2xl">
-            REBON
+            LexiClash
           </Link>
 
           <div

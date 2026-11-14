@@ -30,9 +30,9 @@ const AppNavbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-silver to-primary flex items-center justify-center shadow-glow">
-              <span className="text-primary-foreground font-bold text-xl">R</span>
+              <span className="text-primary-foreground font-bold text-xl">L</span>
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-silver-light via-foreground to-primary bg-clip-text text-transparent">REBON</span>
+            <span className="text-xl font-bold bg-gradient-to-r from-silver-light via-foreground to-primary bg-clip-text text-transparent">LexiClash</span>
           </Link>
 
           {/* Desktop Navigation */}

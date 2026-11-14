@@ -33,7 +33,7 @@ const CTASection = () => {
             <span className="text-emerald-brand">Just proof.</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-10 max-w-xl mx-auto">
-            One student getting hired because REBON showed what they can do —
+            One student getting hired because LexiClash showed what they can do —
             that is how the story starts.
           </p>
           <Button variant="hero" size="xl" className="group" onClick={openUniverse}>

@@ -17,7 +17,7 @@ const avaDialogueSteps = [
   {
     id: "intro",
     getMessage: (name: string) =>
-      `Hello${name ? `, ${name}` : ""}. I'm Ren — your intelligence layer on Rebon. I will guide your entire learning journey.`,
+      `Hello${name ? `, ${name}` : ""}. I'm Ren — your intelligence layer on LexiClash. I will guide your entire learning journey.`,
   },
   {
     id: "analysis",
@@ -172,7 +172,7 @@ const AvaWelcome = ({ userLevel, lessonCount, onComplete }: AvaWelcomeProps) => 
       {/* Top HUD bar */}
       <div className="absolute top-0 left-0 right-0 h-12 flex items-center justify-between px-8 z-10" style={{ borderBottom: '1px solid rgba(0,200,255,0.08)' }}>
         <span className="text-[10px] font-mono tracking-[0.4em] text-cyan-500/50">REN // INTELLIGENCE LAYER v1</span>
-        <span className="text-[10px] font-mono tracking-[0.3em] text-cyan-500/30">REBON COGNITIVE WORKSPACE</span>
+        <span className="text-[10px] font-mono tracking-[0.3em] text-cyan-500/30">LEXICLASH COGNITIVE WORKSPACE</span>
       </div>
 
       {/* Main content */}

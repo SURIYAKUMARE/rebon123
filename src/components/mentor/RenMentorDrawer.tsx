@@ -370,13 +370,13 @@ export const RenMentorDrawer = () => {
                 <div className="flex flex-1 flex-col overflow-hidden bg-black font-mono text-xs">
                   <div className="flex-1 overflow-y-auto p-4 space-y-3">
                     <div className="text-[11px] text-muted-foreground border-b border-white/[0.08] pb-2">
-                      REBON AWS CloudShell [us-east-1] · Type &apos;help&apos; for commands
+                      LexiClash AWS CloudShell [us-east-1] · Type &apos;help&apos; for commands
                     </div>
 
                     {cliHistory.map((item, idx) => (
                       <div key={idx} className="space-y-1">
                         <div className="flex items-center gap-1.5 text-accent">
-                          <span className="text-emerald-400">rebon@cloud:~$</span>
+                          <span className="text-emerald-400">lexiclash@cloud:~$</span>
                           <span>{item.cmd}</span>
                         </div>
                         <pre className="text-[10px] text-slate-300 whitespace-pre-wrap bg-white/[0.02] p-2 rounded">

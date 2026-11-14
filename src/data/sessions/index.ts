@@ -24,7 +24,7 @@ export const cloudSessionCS1 = {
   session_description:
     "Project Phoenix foundations: cloud economics, regions, console, billing, and shared responsibility.",
   pace: "fresher",
-  program: "Rebon Student Mode",
+  program: "LexiClash Student Mode",
   domain: "cloud",
   language: "tanglish",
   total_lessons: cs1Lessons.length,
@@ -37,7 +37,7 @@ export const cloudSessionCS1B = {
   session_description:
     "Meet the AWS building blocks in plain language — EC2, S3, IAM, VPC, CloudWatch.",
   pace: "fresher",
-  program: "Rebon Student Mode",
+  program: "LexiClash Student Mode",
   domain: "cloud",
   language: "tanglish",
   total_lessons: cs1bLessons.length,

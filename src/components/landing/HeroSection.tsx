@@ -76,7 +76,7 @@ const HeroSection = () => {
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               >
                 <h1 className="font-display text-[clamp(4.75rem,14vw,9rem)] font-extrabold leading-[0.88] tracking-[0.06em] text-[#FAFAFA] mb-6 md:mb-8">
-                  REBON
+                  LexiClash
                 </h1>
                 <p className="text-[#A1A1AA] text-base md:text-lg leading-relaxed max-w-md mb-10">
                   Not a course platform. A place where you choose your path —

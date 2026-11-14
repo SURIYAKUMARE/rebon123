@@ -1,5 +1,5 @@
 /**
- * Automatic Pace Progression Engine — Rebon Student Mode
+ * Automatic Pace Progression Engine — LexiClash Student Mode
  *
  * Every student starts at FRESHER and is promoted automatically when
  * transition assessments pass. No manual pace switching in MVP.

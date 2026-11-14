@@ -93,7 +93,7 @@ const Auth = () => {
           });
         } else {
           toast({
-            title: "Welcome back to REBON",
+            title: "Welcome back to LexiClash",
             description: "Session authenticated. Entering console...",
           });
           navigate(destination, { replace: true });
@@ -216,7 +216,7 @@ const Auth = () => {
         </Link>
 
         <Link to="/" className="font-display text-xl font-extrabold tracking-[0.08em] text-foreground">
-          REBON
+          LexiClash
         </Link>
 
         <div className="flex items-center gap-2">
@@ -533,7 +533,7 @@ const Auth = () => {
 
             <div className="mt-6 text-center">
               <p className="text-xs text-muted-foreground">
-                {mode === "signin" ? "Don't have an account yet?" : "Already enrolled in REBON?"}{" "}
+                {mode === "signin" ? "Don't have an account yet?" : "Already enrolled in LexiClash?"}{" "}
                 <button
                   type="button"
                   onClick={() => setMode(mode === "signin" ? "signup" : "signin")}

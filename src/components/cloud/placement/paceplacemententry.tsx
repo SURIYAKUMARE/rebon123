@@ -36,7 +36,7 @@ export default function PacePlacementEntry({
         </h1>
         <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
           Every phase you skip is verified, not assumed. Companies trust your
-          Rebon profile because what it says is real. Choose which level you
+          LexiClash profile because what it says is real. Choose which level you
           want to test into — the assessment gets harder and more realistic the
           further you skip.
         </p>

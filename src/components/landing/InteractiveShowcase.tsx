@@ -33,7 +33,7 @@ export const InteractiveShowcase = () => {
             Test-drive the console before you start.
           </h2>
           <p className="text-muted-foreground text-sm md:text-base mt-4 leading-relaxed">
-            Not passive videos or slides. Rebon puts you directly inside simulated AWS topologies, live incident war rooms, and real architectural decisions.
+            Not passive videos or slides. LexiClash puts you directly inside simulated AWS topologies, live incident war rooms, and real architectural decisions.
           </p>
         </div>
 

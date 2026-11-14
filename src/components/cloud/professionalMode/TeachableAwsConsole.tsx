@@ -397,7 +397,7 @@ export const TeachableAwsConsole = forwardRef<TeachableConsoleHandle, Props>(
                 Something went wrong in the AWS Console
               </h2>
               <p className="max-w-md text-sm text-[#545b64]">
-                The rest of Rebon is still available. Refresh this view or return to the workspace.
+                The rest of LexiClash is still available. Refresh this view or return to the workspace.
               </p>
               <button
                 type="button"

@@ -37,7 +37,7 @@ const Navbar = () => {
             href="/"
             className="font-display text-xl font-extrabold tracking-[0.08em] text-foreground md:text-2xl"
           >
-            REBON
+            LexiClash
           </a>
 
           <div className="hidden md:flex items-center gap-10">

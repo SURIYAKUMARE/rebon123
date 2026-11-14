@@ -215,7 +215,7 @@ export const AwsSecurityInspector = ({
 
               {/* Drawer Footer Notice */}
               <div className="border-t border-white/[0.08] bg-[#080910] p-4 text-[11px] text-slate-400 flex items-center justify-between">
-                <span>REBON Sandbox: Zero real billing risk · Immutable audit logging</span>
+                <span>LexiClash Sandbox: Zero real billing risk · Immutable audit logging</span>
                 <span className="text-emerald-400 font-semibold">Protected</span>
               </div>
             </motion.div>
